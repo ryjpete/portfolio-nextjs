@@ -1,32 +1,23 @@
-import Image from "next/image";
+import Logo from "@/components/logo";
 
 export default function Home() {
-  // const image = (
-  //   <Image
-  //     className="dark:invert"
-  //     src="/next.svg"
-  //     alt="Next.js logo"
-  //     width={100}
-  //     height={20}
-  //     priority
-  //   />
-  // );
+  const image = <Logo />;
 
   const content = (
-    <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+    <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left w-full">
       <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-        Yo. I&apos;m Ryan. I build things.
+        Hey. I&apos;m Ryan. I build things.
       </h1>
-      <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-        I&apos;m a developer. Or a software engineer. Or a frontend engineer. Sometimes I do a bit of designing.
+      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+        I&apos;m a developer. Or a software engineer. Or a frontend engineer. Sometimes I do a bit of designing. Whatever the title, I&apos;ve been doing it for 20 years now.
       </p>
-      <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-        Whatever the title, here&apos;s me in a nutshell: I love building and organizing code to create digital experiences that are fast, accessible, and enjoyable for not only users, but also for my fellow developers.
+      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+        Here&apos;s me in a nutshell: I love building and organizing code to create digital experiences that are fast, accessible, and enjoyable for not only users, but also for my fellow developers.
       </p>
-      <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
         This site is a portfolio of sorts. It&apos;s also a playground for me to experiment with new web technologies and ideas. It&apos;s bare bones and simple. Definitely a work in progress. Keep checking back.
       </p>
-      <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
         Want to learn more or reach out to me? Find me on <a href="https://www.linkedin.com/in/ryanjenningspeterson/" className="underline">LinkedIn</a>.
       </p>
     </div>
@@ -62,8 +53,8 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        {/* {image} */}
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start">
+        {image}
         {content}
         {/* {bottom} */}
       </main>
