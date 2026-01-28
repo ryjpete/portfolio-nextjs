@@ -1,9 +1,21 @@
+:root {
+  --h1: var(--clr-gray-existential-angst);
+  --p: var(--clr-gray-cynical-black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --h1: var(--clr-gray-white-edgar);
+    --p: var(--clr-gray-white);
+  }
+}
+
 h1 {
   font: 600 1.875rem/2.5rem var(--font-google-sans-code);
-  color: var(--clr-gray-existential-angst);
+  color: var(--h1);
 }
 
 p {
   font: 400 1rem/1.5rem var(--font-google-sans-code);
-  color: var(--clr-gray-cynical-black);
+  color: var(--p);
 }
