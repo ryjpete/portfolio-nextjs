@@ -1,0 +1,48 @@
+@import '../../styles/colors.css';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 48px;
+  border-bottom: 1px dashed var(--clr-green-winds-breath);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: flex-start;
+
+  & :global(.logo) {
+    height: 85px;
+    width: 85px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 182px;
+  bottom: 0;
+  width: 182px;
+  padding: 48px;
+  border-right: 1px dashed var(--clr-green-winds-breath);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 639px) {
+  .top {
+    padding: 24px;
+    justify-content: center;
+  }
+
+  .sidebar {
+    display: none;
+    visibility: hidden;
+  }
+}

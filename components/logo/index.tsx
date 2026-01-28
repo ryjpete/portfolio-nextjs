@@ -8,7 +8,6 @@ export default function Logo() {
     className: "logo",
     style: {
       filter: "brightness(80%) saturate(0%) invert(0%) sepia(0%) saturate(10000%) hue-rotate(-10deg)",
-      marginBottom: 32,
     },
     src: logo,
     alt: "Ryan Peterson logo",
