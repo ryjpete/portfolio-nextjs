@@ -1,0 +1,46 @@
+@import "../../styles/colors.css";
+
+.image {
+  max-width: 150px;
+}
+
+.content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  & > h3 {
+    font-style: italic;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 576px) {
+  body .resume:global(.container) {
+    text-align: left;
+  }
+
+  .image {
+    position: absolute;
+    right: 36px;
+    width: 100px;
+  }
+
+  .intro {
+    text-align: left;
+    padding-right: 100px;
+  }
+}
