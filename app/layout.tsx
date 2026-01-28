@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Google_Sans_Code } from "next/font/google";
+
+import Header from "@/components/header";
+
 import "./globals.css";
 
 const googleSansCode = Google_Sans_Code({
@@ -17,10 +20,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const header = <Header />;
+
+  const content = <main className="main">{children}</main>;
+
   return (
     <html lang="en">
       <body className={`${googleSansCode.variable} antialiased`}>
-        {children}
+        {header}
+        {content}
       </body>
     </html>
   );

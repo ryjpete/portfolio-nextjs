@@ -1,8 +1,10 @@
 @import "tailwindcss";
+@import "../styles/typography.css";
+@import "../styles/colors.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--clr-gray-white);
+  --foreground: var(--clr-gray-cynical-black);
 }
 
 @theme inline {
@@ -13,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--clr-gray-existential-angst);
+    --foreground: var(--clr-gray-white-edgar);
   }
 }
 
@@ -23,12 +25,28 @@ body {
   color: var(--foreground);
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: var(--font-google-sans-code);
+
+  & main {
+    padding: 242px 48px 48px 242px;
+
+    & .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
 }
 
-h1 {
-  font-family: var(--font-google-sans-code);
-}
+@media (max-width: 639px) {
+  body {
+    & main {
+      padding: 156px 24px 24px 24px;
 
-p {
-  font-family: var(--font-google-sans-code);
+      & .container {
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
 }

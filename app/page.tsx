@@ -1,63 +1,24 @@
-import Logo from "@/components/logo";
-
 export default function Home() {
-  const image = <Logo />;
 
   const content = (
-    <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left w-full">
-      <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+    <div className="container">
+      <h1>
         Hey. I&apos;m Ryan. I build things.
       </h1>
-      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p>
         I&apos;m a developer. Or a software engineer. Or a frontend engineer. Sometimes I do a bit of designing. Whatever the title, I&apos;ve been doing it for 20 years now.
       </p>
-      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p>
         Here&apos;s me in a nutshell: I love building and organizing code to create digital experiences that are fast, accessible, and enjoyable for not only users, but also for my fellow developers.
       </p>
-      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p>
         This site is a portfolio of sorts. It&apos;s also a playground for me to experiment with new web technologies and ideas. It&apos;s bare bones and simple. Definitely a work in progress. Keep checking back.
       </p>
-      <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p>
         Want to learn more or reach out to me? Find me on <a href="https://www.linkedin.com/in/ryanjenningspeterson/" className="underline">LinkedIn</a>.
       </p>
     </div>
   );
 
-  // const bottom = (
-  //   <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-  //     <a
-  //       className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-  //       href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //     >
-  //       <Image
-  //         className="dark:invert"
-  //         src="/vercel.svg"
-  //         alt="Vercel logomark"
-  //         width={16}
-  //         height={16}
-  //       />
-  //       Deploy Now
-  //     </a>
-  //     <a
-  //       className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-  //       href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //     >
-  //       Documentation
-  //     </a>
-  //   </div>
-  // );
-
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start">
-        {image}
-        {content}
-        {/* {bottom} */}
-      </main>
-    </div>
-  );
+  return <>{content}</>;
 }
