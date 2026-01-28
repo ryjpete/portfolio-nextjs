@@ -15,7 +15,7 @@ export default function Home() {
         This site is a portfolio of sorts. It&apos;s also a playground for me to experiment with new web technologies and ideas. It&apos;s bare bones and simple. Definitely a work in progress. Keep checking back.
       </p>
       <p>
-        Want to learn more or reach out to me? Find me on <a href="https://www.linkedin.com/in/ryanjenningspeterson/" className="underline">LinkedIn</a>.
+        Want to learn more or reach out to me? Find me on <a href="https://www.linkedin.com/in/ryanjenningspeterson/" target="_blank" className="underline">LinkedIn</a>. Or check out my <a href="/resume" className="underline">resume</a>.
       </p>
     </div>
   );

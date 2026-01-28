@@ -1,11 +1,15 @@
 :root {
   --h1: var(--clr-gray-existential-angst);
+  --h2: var(--clr-gray-existential-angst);
+  --h3: var(--clr-gray-cynical-black);
   --p: var(--clr-gray-cynical-black);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --h1: var(--clr-gray-white-edgar);
+    --h2: var(--clr-gray-white-edgar);
+    --h3: var(--clr-gray-white);
     --p: var(--clr-gray-white);
   }
 }
@@ -13,6 +17,14 @@
 h1 {
   font: 600 1.875rem/2.5rem var(--font-google-sans-code);
   color: var(--h1);
+}
+h2 {
+  font: 500 1.5rem/2rem var(--font-google-sans-code);
+  color: var(--h2);
+}
+h3 {
+  font: 400 1.25rem/1.75rem var(--font-google-sans-code);
+  color: var(--h3);
 }
 
 p {
