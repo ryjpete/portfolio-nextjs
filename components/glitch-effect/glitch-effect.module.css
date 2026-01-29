@@ -1,0 +1,68 @@
+.glitch {
+  display: inline-block;
+  animation: glitchFlip 1.5s ease-in-out;
+}
+
+@keyframes glitchFlip {
+  0%, 100% {
+    color: inherit;
+    text-shadow: none;
+    transform: scaleX(1);
+  }
+  10% {
+    transform: scaleX(-1);
+    color: rgba(255, 0, 100, 0.8);
+  }
+  30% {
+    transform: scaleX(-1);
+    color: rgba(0, 255, 200, 0.8);
+  }
+  50% {
+    transform: scaleX(-1);
+    color: rgba(100, 100, 255, 0.8);
+  }
+  70% {
+    transform: scaleX(-1);
+    color: rgba(255, 200, 0, 0.8);
+  }
+  90% {
+    transform: scaleX(-1);
+    color: rgba(255, 100, 150, 0.8);
+  }
+  95% {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @keyframes glitchFlip {
+    0%, 100% {
+      color: inherit;
+      text-shadow: none;
+      transform: scaleX(1);
+    }
+    10% {
+      transform: scaleX(-1);
+      color: rgba(255, 100, 150, 0.9);
+    }
+    30% {
+      transform: scaleX(-1);
+      color: rgba(100, 255, 200, 0.9);
+    }
+    50% {
+      transform: scaleX(-1);
+      color: rgba(150, 150, 255, 0.9);
+    }
+    70% {
+      transform: scaleX(-1);
+      color: rgba(255, 200, 100, 0.9);
+    }
+    90% {
+      transform: scaleX(-1);
+      color: rgba(100, 200, 255, 0.9);
+    }
+    95% {
+      transform: scaleX(1);
+    }
+  }
+}
