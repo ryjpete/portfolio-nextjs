@@ -12,6 +12,7 @@ interface Experience {
   logo: string;
   responsibilities: string[];
   contact: { url: string; };
+  tech: { name: string; icon: string }[];
 }
 
 export default function WorkExperience() {
