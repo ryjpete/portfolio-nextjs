@@ -3,10 +3,11 @@ export default function Home() {
   const content = (
     <div className="container">
       <h1>
-        Hey. I&apos;m Ryan. I build things.
+        Hey. I&apos;m Ryan. I build and style digital things.
       </h1>
+      <h2>I&apos;m a UI Engineer.</h2>
       <p>
-        I&apos;m a developer. Or a software engineer. Or a frontend engineer. Sometimes I do a bit of designing. Whatever the title, I&apos;ve been doing it for 20 years now.
+        Or a web developer. Or a front software engineer. Sometimes I do a bit of designing. Whatever the title, I&apos;ve been doing it for 20 years now.
       </p>
       <p>
         Here&apos;s me in a nutshell: I love building and organizing code to create digital experiences that are fast, accessible, and enjoyable for not only users, but also for my fellow developers.
