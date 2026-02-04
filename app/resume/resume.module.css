@@ -1,24 +1,27 @@
 @import "../../styles/colors.css";
 
 .image {
-  max-width: 150px;
+  height: auto;
+  width: 200px;
+  max-width: 100px;
 }
 
 .content {
   max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 24px;
   width: 100%;
 }
 
 .intro {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
 
   & > h3 {
     font-style: italic;
+    margin-top: 4px;
   }
 }
 
@@ -26,9 +29,10 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
+  margin-top: 24px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   body .resume:global(.container) {
     text-align: left;
   }
@@ -36,7 +40,6 @@
   .image {
     position: absolute;
     right: 36px;
-    width: 100px;
   }
 
   .content {
@@ -46,5 +49,11 @@
   .intro {
     text-align: left;
     padding-right: 100px;
+  }
+}
+@media (min-width: 1100px) {
+  .image {
+    max-width: 150px;
+    right: 16px;
   }
 }
