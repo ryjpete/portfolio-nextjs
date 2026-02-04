@@ -1,14 +1,16 @@
 import Image from "next/image";
 
-import logo from "@/public/assets/images/logo.svg";
+// import logo from "@/public/assets/images/logo.svg";
+// import logo from "@/public/assets/images/logo-ripple.png";
+import logo from "@/app/icon-192.png";
+import Link from "next/link";
+
+import styles from "./logo.module.css";
 
 export default function Logo() {
 
   const props = {
-    className: "logo",
-    style: {
-      filter: "brightness(80%) saturate(0%) invert(0%) sepia(0%) saturate(10000%) hue-rotate(-10deg)",
-    },
+    className: `logo ${styles.logo}`,
     src: logo,
     alt: "Ryan Peterson logo",
     width: 100,
@@ -16,5 +18,5 @@ export default function Logo() {
     priority: true,
   };
 
-  return <Image {...props} alt={props.alt} />;
+  return <Link href="/"><Image {...props} alt={props.alt} /></Link>;
 }
