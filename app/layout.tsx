@@ -15,6 +15,7 @@ const googleSansCode = Google_Sans_Code({
 export const metadata: Metadata = {
   title: "Ryan Peterson <Dev />",
   description: "This crappy site is in progress. Enjoy the emptiness.",
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
@@ -29,6 +30,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Grateful Dev" />
+      </head>
       <body className={`${googleSansCode.variable} antialiased`}>
         {ripple}
         {glitch}
