@@ -1,6 +1,7 @@
 .glitch {
   display: inline-block;
   animation: glitchFlip 1.5s ease-in-out;
+  animation-composition: replace;
 }
 
 @keyframes glitchFlip {
@@ -11,58 +12,25 @@
   }
   10% {
     transform: scaleX(-1);
-    color: rgba(255, 0, 100, 0.8);
+    color: light-dark(oklch(60% 0.25 350), oklch(65% 0.20 350));
   }
   30% {
     transform: scaleX(-1);
-    color: rgba(0, 255, 200, 0.8);
+    color: light-dark(oklch(75% 0.20 180), oklch(80% 0.18 180));
   }
   50% {
     transform: scaleX(-1);
-    color: rgba(100, 100, 255, 0.8);
+    color: light-dark(oklch(60% 0.15 260), oklch(70% 0.15 260));
   }
   70% {
     transform: scaleX(-1);
-    color: rgba(255, 200, 0, 0.8);
+    color: light-dark(oklch(75% 0.20 80), oklch(80% 0.18 80));
   }
   90% {
     transform: scaleX(-1);
-    color: rgba(255, 100, 150, 0.8);
+    color: light-dark(oklch(70% 0.20 340), oklch(75% 0.18 340));
   }
   95% {
     transform: scaleX(1);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  @keyframes glitchFlip {
-    0%, 100% {
-      color: inherit;
-      text-shadow: none;
-      transform: scaleX(1);
-    }
-    10% {
-      transform: scaleX(-1);
-      color: rgba(255, 100, 150, 0.9);
-    }
-    30% {
-      transform: scaleX(-1);
-      color: rgba(100, 255, 200, 0.9);
-    }
-    50% {
-      transform: scaleX(-1);
-      color: rgba(150, 150, 255, 0.9);
-    }
-    70% {
-      transform: scaleX(-1);
-      color: rgba(255, 200, 100, 0.9);
-    }
-    90% {
-      transform: scaleX(-1);
-      color: rgba(100, 200, 255, 0.9);
-    }
-    95% {
-      transform: scaleX(1);
-    }
   }
 }

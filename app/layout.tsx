@@ -30,7 +30,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <head> 
         <meta name="apple-mobile-web-app-title" content="Grateful Dev" />
       </head>
       <body className={`${googleSansCode.variable} antialiased`}>

@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --h1: var(--clr-gray-existential-angst);
   --h2: var(--clr-gray-existential-angst);
   --h3: var(--clr-gray-cynical-black);
@@ -27,7 +27,8 @@ h3 {
   color: var(--h3);
 }
 
-p {
+p,
+li {
   font: 400 0.85rem/1.35rem var(--font-google-sans-code);
   color: var(--p);
 }
@@ -45,8 +46,60 @@ p {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-  p {
+  p,
+  li {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5rem; 
   }
+} */
+:root {
+  /* Typography colors using light-dark() */
+  --h1: light-dark(var(--clr-gray-existential-angst), var(--clr-gray-white-edgar));
+  --h2: light-dark(var(--clr-gray-existential-angst), var(--clr-gray-white-edgar));
+  --h3: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white));
+  --p: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white));
+
+  /* Fluid typography using clamp() */
+  --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 1.875rem);
+  --font-size-h2: clamp(1.15rem, 0.95rem + 1vw, 1.5rem);
+  --font-size-h3: clamp(1.05rem, 0.9rem + 0.75vw, 1.25rem);
+  --font-size-body: clamp(0.85rem, 0.75rem + 0.5vw, 1rem);
+
+  --line-height-h1: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);
+  --line-height-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --line-height-h3: clamp(1.45rem, 1.25rem + 0.75vw, 1.75rem);
+  --line-height-body: clamp(1.35rem, 1.2rem + 0.5vw, 1.5rem);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-family: var(--font-google-sans-code);
+  color: var(--h1);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-family: var(--font-google-sans-code);
+  color: var(--h2);
+}
+
+h3 {
+  font-weight: 400;
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-family: var(--font-google-sans-code);
+  color: var(--h3);
+}
+
+p,
+li {
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-google-sans-code);
+  color: var(--p);
 }
