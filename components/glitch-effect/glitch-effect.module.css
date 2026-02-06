@@ -1,3 +1,23 @@
+/* Light mode (default) */
+:root {
+  --glitch-primary: oklch(60% 0.25 350);
+  --glitch-secondary: oklch(75% 0.20 180);
+  --glitch-tertiary: oklch(60% 0.15 260);
+  --glitch-quaternary: oklch(75% 0.20 80);
+  --glitch-quinary: oklch(70% 0.20 340);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glitch-primary: oklch(65% 0.20 350);
+    --glitch-secondary: oklch(80% 0.18 180);
+    --glitch-tertiary: oklch(70% 0.15 260);
+    --glitch-quaternary: oklch(80% 0.18 80);
+    --glitch-quinary: oklch(75% 0.18 340);
+  }
+}
+
 .glitch {
   display: inline-block;
   animation: glitchFlip 1.5s ease-in-out;
@@ -12,23 +32,23 @@
   }
   10% {
     transform: scaleX(-1);
-    color: light-dark(oklch(60% 0.25 350), oklch(65% 0.20 350));
+    color: var(--glitch-primary);
   }
   30% {
     transform: scaleX(-1);
-    color: light-dark(oklch(75% 0.20 180), oklch(80% 0.18 180));
+    color: var(--glitch-secondary);
   }
   50% {
     transform: scaleX(-1);
-    color: light-dark(oklch(60% 0.15 260), oklch(70% 0.15 260));
+    color: var(--glitch-tertiary);
   }
   70% {
     transform: scaleX(-1);
-    color: light-dark(oklch(75% 0.20 80), oklch(80% 0.18 80));
+    color: var(--glitch-quaternary);
   }
   90% {
     transform: scaleX(-1);
-    color: light-dark(oklch(70% 0.20 340), oklch(75% 0.18 340));
+    color: var(--glitch-quinary);
   }
   95% {
     transform: scaleX(1);
