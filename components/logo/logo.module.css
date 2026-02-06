@@ -6,7 +6,8 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --logo-filter: brightness(230%) invert(75%) saturate(100%);
+    /* --logo-filter: brightness(230%) invert(75%) saturate(100%); */
+    --logo-filter: brightness(500%) invert(250%) saturate(0%);
   }
 }
 
