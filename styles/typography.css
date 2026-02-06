@@ -1,63 +1,9 @@
-/* :root {
+/* Light mode (default) */
+:root {
   --h1: var(--clr-gray-existential-angst);
   --h2: var(--clr-gray-existential-angst);
   --h3: var(--clr-gray-cynical-black);
   --p: var(--clr-gray-cynical-black);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --h1: var(--clr-gray-white-edgar);
-    --h2: var(--clr-gray-white-edgar);
-    --h3: var(--clr-gray-white);
-    --p: var(--clr-gray-white);
-  }
-}
-
-h1 {
-  font: 600 1.5rem/2rem var(--font-google-sans-code);
-  color: var(--h1);
-}
-h2 {
-  font: 500 1.15rem/1.5rem var(--font-google-sans-code);
-  color: var(--h2);
-}
-h3 {
-  font: 400 1.05rem/1.45rem var(--font-google-sans-code);
-  color: var(--h3);
-}
-
-p,
-li {
-  font: 400 0.85rem/1.35rem var(--font-google-sans-code);
-  color: var(--p);
-}
-
-@media (min-width: 576px) {
-  h1 {
-    font-size: 1.875rem;
-    line-height: 2.5rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-  p,
-  li {
-    font-size: 1rem;
-    line-height: 1.5rem; 
-  }
-} */
-:root {
-  /* Typography colors using light-dark() */
-  --h1: light-dark(var(--clr-gray-existential-angst), var(--clr-gray-white-edgar));
-  --h2: light-dark(var(--clr-gray-existential-angst), var(--clr-gray-white-edgar));
-  --h3: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white));
-  --p: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white));
 
   /* Fluid typography using clamp() */
   --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 1.875rem);
@@ -69,6 +15,15 @@ li {
   --line-height-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
   --line-height-h3: clamp(1.45rem, 1.25rem + 0.75vw, 1.75rem);
   --line-height-body: clamp(1.35rem, 1.2rem + 0.5vw, 1.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --h1: var(--clr-gray-white-edgar);
+    --h2: var(--clr-gray-white-edgar);
+    --h3: var(--clr-gray-white);
+    --p: var(--clr-gray-white);
+  }
 }
 
 h1 {
