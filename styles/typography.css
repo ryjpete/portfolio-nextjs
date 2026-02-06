@@ -1,9 +1,9 @@
 /* Light mode (default) */
 :root {
-  --h1: var(--clr-gray-existential-angst);
-  --h2: var(--clr-gray-existential-angst);
-  --h3: var(--clr-gray-cynical-black);
-  --p: var(--clr-gray-cynical-black);
+  --h1: oklch(8% 0 0);
+  --h2: oklch(8% 0 0);
+  --h3: oklch(15% 0 0);
+  --p: oklch(15% 0 0);
 
   /* Fluid typography using clamp() */
   --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 1.875rem);
@@ -17,12 +17,13 @@
   --line-height-body: clamp(1.35rem, 1.2rem + 0.5vw, 1.5rem);
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --h1: var(--clr-gray-white-edgar);
-    --h2: var(--clr-gray-white-edgar);
-    --h3: var(--clr-gray-white);
-    --p: var(--clr-gray-white);
+    --h1: oklch(95% 0 0);
+    --h2: oklch(95% 0 0);
+    --h3: oklch(100% 0 0);
+    --p: oklch(100% 0 0);
   }
 }
 

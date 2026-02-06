@@ -4,22 +4,16 @@
 
 /* Light mode (default) */
 :root {
-  --background: var(--clr-gray-white);
-  --foreground: var(--clr-gray-cynical-black);
+  --background: oklch(100% 0 0);
+  --foreground: oklch(15% 0 0);
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--clr-gray-existential-angst);
-    --foreground: var(--clr-gray-white-edgar);
+    --background: oklch(15% 0 0);
+    --foreground: oklch(95% 0 0);
   }
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-google-sans-code: var(--font-google-sans-code);
 }
 
 body {
