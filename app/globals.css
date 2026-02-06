@@ -2,19 +2,13 @@
 @import "../styles/typography.css";
 @import "../styles/colors.css";
 
+/* Light mode (default) */
 :root {
-  color-scheme: light dark;
-  --background: light-dark(var(--clr-gray-white), var(--clr-gray-existential-angst));
-  --foreground: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white-edgar));
+  --background: var(--clr-gray-white);
+  --foreground: var(--clr-gray-cynical-black);
 }
 
-@supports (color: light-dark(white, black)) {
-  :root {
-    --background: light-dark(var(--clr-gray-white), var(--clr-gray-existential-angst));
-    --foreground: light-dark(var(--clr-gray-cynical-black), var(--clr-gray-white-edgar));
-  }
-}
-
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--clr-gray-existential-angst);

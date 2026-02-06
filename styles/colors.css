@@ -1,12 +1,25 @@
+/* Light mode (default) */
 :root {
-  color-scheme: light dark;
-
   /* Grays */
-  --clr-gray-white: light-dark(oklch(100% 0 0), oklch(15% 0 0));
-  --clr-gray-white-edgar: light-dark(oklch(95% 0 0), oklch(20% 0 0));
-  --clr-gray-cynical-black: light-dark(oklch(15% 0 0), oklch(95% 0 0));
-  --clr-gray-existential-angst: light-dark(oklch(8% 0 0), oklch(100% 0 0));
+  --clr-gray-white: oklch(100% 0 0);
+  --clr-gray-white-edgar: oklch(95% 0 0);
+  --clr-gray-cynical-black: oklch(15% 0 0);
+  --clr-gray-existential-angst: oklch(8% 0 0);
 
   /* Greens */
-  --clr-green-winds-breath: light-dark(oklch(90% 0.01 120), oklch(30% 0.01 120));  
+  --clr-green-winds-breath: oklch(90% 0.01 120);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Grays */
+    --clr-gray-white: oklch(15% 0 0);
+    --clr-gray-white-edgar: oklch(20% 0 0);
+    --clr-gray-cynical-black: oklch(95% 0 0);
+    --clr-gray-existential-angst: oklch(100% 0 0);
+
+    /* Greens */
+    --clr-green-winds-breath: oklch(30% 0.01 120);
+  }
 }

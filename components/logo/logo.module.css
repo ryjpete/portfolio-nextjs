@@ -1,5 +1,17 @@
+/* Light mode (default) */
+:root {
+  --logo-filter: grayscale(100%) brightness(200%);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo-filter: brightness(230%) invert(75%) saturate(100%);
+  }
+}
+
 .logo {
-  filter: grayscale(100%) brightness(200%);
+  filter: var(--logo-filter);
   transition: filter 0.3s ease;
 
   &:hover {
