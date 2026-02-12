@@ -1,8 +1,7 @@
 import { formatDate } from "@/utils/utils";
 import Image from "next/image";
-import Link from "next/link";
 
-import imgPlaceholder from "@/public/assets/images/logo-plc.svg";
+import imgPlaceholder from "@public/assets/images/logo-plc.svg";
 
 import styles from "./experience.module.css";
 

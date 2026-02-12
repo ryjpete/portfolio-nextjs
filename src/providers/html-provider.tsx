@@ -21,9 +21,7 @@ export default function HtmlProvider({
         <meta name="apple-mobile-web-app-title" content="Grateful Dev" />
       </Head>
       <body className={`${googleSansCode.variable} antialiased`}>
-        {/* <main className="main"> */}
-          {children}
-        {/* </main> */}
+        {children}
       </body>
     </html>
   );
