@@ -1,3 +1,4 @@
+import BreatheEffect from '../breathe-effect';
 import Logo from '../logo';
 
 import styles from './header.module.css';
@@ -7,7 +8,9 @@ export default function Header () {
 
   const top = (
     <div className={styles.top}>
-      {logo}
+      <BreatheEffect>
+        {logo}
+      </BreatheEffect>
     </div>
   );
 

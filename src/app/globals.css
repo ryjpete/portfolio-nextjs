@@ -20,11 +20,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-google-sans-code);
+  overflow-x: hidden;
 
   & .main {
     padding-block-start: 170px;
     padding-block-end: 24px;
     padding-inline: 24px;
+    min-height: 100vh;
 
     & .container {
       display: flex;

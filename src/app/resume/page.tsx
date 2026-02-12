@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import imgRjp from "@/public/assets/images/rjp.png";
+import imgRjp from "@public/assets/images/rjp.png";
 
 import WorkExperience from "@/components/work-experience";
 
