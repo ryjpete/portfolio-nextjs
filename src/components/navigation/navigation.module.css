@@ -1,0 +1,130 @@
+@import "../../styles/colors.css";
+
+@property --insetBlockStart {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 114px;
+}
+
+.navigation {
+  flex: 1;
+  display: none;
+  position: fixed;
+  inset-block-start: var(--insetBlockStart);
+  inset-inline-start: 0;
+  inline-size: 100vw;
+  block-size: calc(100vh - var(--insetBlockStart));
+
+  &.open {
+    display: block;
+    background-color: var(--clr-violet-quiet-melody);
+  }
+
+  & ul {
+    block-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: flex-start;
+    gap: 12px;
+
+    & li {
+      /* block-size: 182px; */
+      /* inline-size: 182px; */
+      /* padding: 48px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      /* flex: 1; */
+      inline-size: 100%;
+      aspect-ratio: 1 / 1;
+
+
+      & a {
+        /* background-color: rgba(255 255 255 / 0.45); */
+        /* border: 1px dashed var(--clr-gray-white); */
+        /* border-radius: 50%; */
+        color: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: 100%;
+        block-size: 100%;
+
+        & svg {
+          block-size: 20px;
+          inline-size: 20px;
+
+          & path {
+            stroke: var(--clr-green-winds-breath);
+          }
+        }
+
+        &:global(.active) {
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            z-index: -1;
+            border-width: 1px;
+            border-style: solid;
+            border-color: color-mix(in oklab, var(--clr-green-winds-breath) 20%, transparent);
+            border-radius: 5%;
+          }
+
+          & svg path {
+            stroke: var(--clr-green-winds-breath);
+            /* stroke: var(--clr-violet-quiet-melody); */
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .navigation {
+    display: flex;
+    position: relative;
+    block-size: auto;
+    inset: auto;
+    inline-size: auto;
+    background-color: transparent;
+    flex: unset;
+    padding-right: 48px;
+
+    & ul {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+
+      & li {
+        aspect-ratio: unset;
+
+        & a {
+          padding-inline: 48px;
+
+          &:global(.active) {
+            & svg path {
+              stroke: var(--clr-violet-quiet-melody);
+            }
+
+            &::after {
+              border: none;
+            }
+          }
+
+          & svg {
+            block-size: 24px;
+            inline-size: 24px;
+
+            & path {
+              stroke: var(--clr-gray-cynical-black);
+            }
+          }
+        }
+      }
+    }
+  }
+}

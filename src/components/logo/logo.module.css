@@ -7,15 +7,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* --logo-filter: brightness(230%) invert(75%) saturate(100%); */
-    --logo-filter: brightness(500%) invert(250%) saturate(0%);
+    /* --logo-filter: brightness(500%) invert(250%) saturate(0%); */
   }
 }
 
 .logo {
-  filter: var(--logo-filter);
-  transition: filter 0.3s ease;
+  /* filter: var(--logo-filter); */
+  /* transition: filter 0.3s ease; */
 
   &:hover {
-    filter: none;
+    /* filter: none; */
   }
 }

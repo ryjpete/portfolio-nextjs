@@ -1,0 +1,66 @@
+@import "../../styles/colors.css";
+
+.content {
+  max-inline-size: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  inline-size: 100%;
+
+  & section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .head {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      gap: 16px;
+
+      .skillItem {
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        border: 1px dashed var(--clr-green-winds-breath);
+        padding: 3px 6px;
+
+        .name {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  & > h3 {
+    font-style: italic;
+    margin-block-start: 4px;
+  }
+}
+
+@media (width >= 768px) {
+  .content {
+    gap: 36px;
+
+    & section .list {
+      justify-content: flex-start;
+    }
+  }
+
+  .intro {
+    text-align: start;
+    padding-inline-end: 100px;
+  }
+}

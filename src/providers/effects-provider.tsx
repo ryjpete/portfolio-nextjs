@@ -16,7 +16,7 @@ export default function EffectsProvider({
   return (
     <>
       {ripple}
-      {glitch}
+      {/* {glitch} */}
       {children}
     </>
   );
