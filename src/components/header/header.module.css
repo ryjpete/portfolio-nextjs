@@ -17,11 +17,25 @@
   border-block-end: 1px dashed var(--clr-green-winds-breath);
   backdrop-filter: blur(4px);
   display: flex;
-  justify-content: center;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  gap: 8px;
+
+  .logo {
+    /* block-size: 182px;
+    inline-size: 182px; */
+  }
 
   & :global(.logo) {
-    block-size: 85px;
-    inline-size: 85px;
+    block-size: 65px;
+    /* inline-size: 65px; */
+    inline-size: auto;
+    margin-inline: auto;
+  }
+
+  & > button {
+    cursor: pointer;
+    width: 32px;
   }
 }
 
@@ -38,14 +52,37 @@
   visibility: hidden;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 400px) { */
+@media (width >= 400px) {
   .top {
-    padding: 48px;
-    justify-content: flex-start;
+    flex-direction: row;
+
+    & ul {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .header {
+    & button {
+      display: none;
+    }
+
+    .top {
+      padding: 0;
+      align-items: stretch;
+      justify-content: space-between;
+
+      .logo {
+        padding: 48px;
+      }
+    }
   }
 
   .sidebar {
     display: block;
     visibility: visible;
+    inset-block-start: 162px;
   }
 }
