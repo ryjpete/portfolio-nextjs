@@ -41,17 +41,18 @@ export default function ResumePage() {
 
   const content = (
     <>
-      <h1>Ryan Peterson.</h1>
-      {intro}
+      {/* <h1>Ryan Peterson.</h1> */}
+      {/* {intro} */}
       {work}
     </>
   );
 
   return (
-    <div className={`container ${styles.resume}`}>
+    // <div className={`container ${styles.resume}`}>
+    <>
       {/* {image} */}
       {content}
       {/* <p><Link href="/" className="underline">Go back home</Link></p> */}
-    </div>
+    </>
   );
 }

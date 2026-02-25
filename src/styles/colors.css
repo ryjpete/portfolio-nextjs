@@ -5,6 +5,7 @@
   --clr-gray-white-edgar: oklch(95% 0 0);
   --clr-gray-cynical-black: oklch(15% 0 0);
   --clr-gray-existential-angst: oklch(8% 0 0);
+  --clr-gray-black: oklch(0% 0 0);
 
   /* Greens */
   --clr-green-winds-breath: oklch(90% 0.01 120);
@@ -12,6 +13,7 @@
   /* Reds */
   --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
   --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
+  --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
 
   /* Violets */
   --clr-violet-quiet-melody: oklch(54.309% 0.26829 286.452);
@@ -26,6 +28,7 @@
     --clr-gray-white-edgar: oklch(20% 0 0);
     --clr-gray-cynical-black: oklch(95% 0 0);
     --clr-gray-existential-angst: oklch(100% 0 0);
+    --clr-gray-black: oklch(100% 0 0);
 
     /* Greens */
     --clr-green-winds-breath: oklch(30% 0.01 120);
@@ -33,6 +36,7 @@
     /* Reds */
     --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
     --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
+    --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
 
     /* Violets */
     --clr-violet-quiet-melody: oklch(30% 0.26829 286.452);

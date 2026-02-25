@@ -6,16 +6,20 @@ import styles from "./app-background.module.css";
 
 const bgByRoute: Record<string, { color: string; imageOpacity: number }> = {
   "/": {
-    color: "#05070f",
+    color: "oklch(0.18 0.02 260)",
     imageOpacity: 1
   },
+  "/about": {
+    color: "var(--clr-red-bonker-pink)",
+    imageOpacity: 0.05
+  },
   "/resume": {
-    color: "#f4b2cf",
-    imageOpacity: 0.12
+    color: "var(--clr-red-himalayan-balsam)",
+    imageOpacity: 0.05
   },
   "/projects": {
-    color: "#9fb7ff",
-    imageOpacity: 0.18
+    color: "var(--clr-red-ponzu-brown)",
+    imageOpacity: 0.05
   },
 };
 
@@ -23,7 +27,7 @@ export function AppBackground() {
   const pathname = usePathname();
   console.log('pathname', pathname);
 
-  const bg = bgByRoute[pathname] ?? { color: "#0b1020", imageOpacity: 0.2 };
+  const bg = bgByRoute[pathname] ?? { color: "oklch(0.22 0.03 265)", imageOpacity: 0.2 };
 
   return (
     <div className={styles.appBg}

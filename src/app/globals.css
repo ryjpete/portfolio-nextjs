@@ -40,7 +40,7 @@ body {
   }
 
   .container {
-    padding-block-start: clamp(16.5rem, 23vw, 18rem);
+    padding-block: clamp(12rem, 23vw, 17rem) clamp(6rem, 6rem, 12rem);
     inline-size: 100dvw;
     max-width: none;
   }
@@ -87,7 +87,6 @@ body {
     }
   }
 
-  /* &.resume, */
   &[data-page="resume"] {
     background: var(--clr-red-himalayan-balsam);
 
@@ -101,50 +100,4 @@ body {
       opacity: 0.05;
     }
   }
-
-  /* & .main {
-    padding-block-start: 170px;
-    padding-block-end: 24px;
-    padding-inline: 24px;
-    min-height: 100vh;
-
-    & .container {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      max-inline-size: none;
-      gap: 24px;
-    }
-  } */
 }
-
-/* @media (width >= 768px) {
-  body .main {
-    padding-block-start: 230px;
-    padding-inline-end: 48px;
-    padding-inline-start: 230px;
-
-    & .container {
-      align-items: flex-start;
-      text-align: left;
-    }
-  }
-} */
-
-/* @media (width >= 1100px) {
-  body .main {
-    padding-inline-end: 242px;
-    position: relative;
-
-    &::after {
-      content: '';
-      position: fixed;
-      inset-block-start: 162px;
-      inset-block-end: 0;
-      inset-inline-end: 182px;
-      inline-size: 0;
-      border-inline-start: 1px dashed var(--clr-green-winds-breath); 
-    }
-  }
-} */
