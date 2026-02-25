@@ -2,8 +2,8 @@
 
 .header {
   position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: 0;
+  inset-block-start: 40px;
+  inset-inline-end: 40px;
   z-index: 2;
 }
 
@@ -39,19 +39,6 @@
   }
 }
 
-.sidebar {
-  display: none;
-  position: fixed;
-  inset-inline-start: 0;
-  inset-block-start: 182px;
-  inset-block-end: 0;
-  inline-size: 182px;
-  padding: 48px;
-  border-inline-end: 1px dashed var(--clr-green-winds-breath);
-  backdrop-filter: blur(4px);
-  visibility: hidden;
-}
-
 /* @media (min-width: 400px) { */
 @media (width >= 400px) {
   .top {
@@ -78,11 +65,5 @@
         padding: 48px;
       }
     }
-  }
-
-  .sidebar {
-    display: block;
-    visibility: visible;
-    inset-block-start: 162px;
   }
 }

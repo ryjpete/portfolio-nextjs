@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Providers } from "@/providers/providers";
 
+import { AppBackground } from "@/components/app-background";
 import Header from "@/components/header";
 
 import "./globals.css";
@@ -18,14 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const header = <Header />;
+  const appBg = <AppBackground />;
 
   return (
     <Providers>
+      {appBg}
       {header}
 
-      <main className="main">
+      {children}
+      {/* <main className="main">
         {children}
-      </main>
+      </main> */}
     </Providers>
   );
 }

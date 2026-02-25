@@ -9,8 +9,13 @@
   /* Greens */
   --clr-green-winds-breath: oklch(90% 0.01 120);
 
+  /* Reds */
+  --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
+  --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
+
   /* Violets */
   --clr-violet-quiet-melody: oklch(54.309% 0.26829 286.452);
+  --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
 }
 
 /* Dark mode */
@@ -25,7 +30,12 @@
     /* Greens */
     --clr-green-winds-breath: oklch(30% 0.01 120);
 
+    /* Reds */
+    --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
+    --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
+
     /* Violets */
     --clr-violet-quiet-melody: oklch(30% 0.26829 286.452);
+    --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
   }
 }

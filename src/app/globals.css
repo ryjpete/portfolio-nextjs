@@ -4,25 +4,105 @@
 
 /* Light mode (default) */
 :root {
-  --background: oklch(100% 0 0);
+  --background: var(--clr-violet-binary-black);
   --foreground: oklch(15% 0 0);
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(15% 0 0);
+    --background: var(--clr-violet-binary-black);
     --foreground: oklch(95% 0 0);
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-google-sans-code);
+  font-family: var(--font-russo-one);
   overflow-x: hidden;
+  transition: background-color 0.6s ease-in-out;
+  position: relative;
 
-  & .main {
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url("@/app/assets/logos/galaxy.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    padding-block-start: clamp(16.5rem, 23vw, 18rem);
+    inline-size: 100dvw;
+    max-width: none;
+  }
+
+  &.home,
+  &[data-page="home"] {
+    background: var(--background);
+
+    & .container {
+      max-width: none;
+      block-size: 100dvh;
+      inline-size: 100dvw;
+      display: flex;
+      align-items: start;
+      overflow-y: hidden;
+
+      & h1 {
+        position: relative;
+
+        & .subs {
+          position: absolute;
+          inset-inline-start: 7dvw;
+          inset-block-start: 100%;
+          display: flex;
+          flex-direction: column;
+
+          & span {
+            opacity: 0.2;
+
+            &:first-of-type {
+              opacity: 0.6;
+            }
+
+            &:nth-of-type(2) {
+              opacity: 0.4;
+            }
+
+            &:nth-of-type(3) {
+              opacity: 0.3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* &.resume, */
+  &[data-page="resume"] {
+    background: var(--clr-red-himalayan-balsam);
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    &::before {
+      opacity: 0.05;
+    }
+  }
+
+  /* & .main {
     padding-block-start: 170px;
     padding-block-end: 24px;
     padding-inline: 24px;
@@ -36,10 +116,10 @@ body {
       max-inline-size: none;
       gap: 24px;
     }
-  }
+  } */
 }
 
-@media (width >= 768px) {
+/* @media (width >= 768px) {
   body .main {
     padding-block-start: 230px;
     padding-inline-end: 48px;
@@ -50,9 +130,9 @@ body {
       text-align: left;
     }
   }
-}
+} */
 
-@media (width >= 1100px) {
+/* @media (width >= 1100px) {
   body .main {
     padding-inline-end: 242px;
     position: relative;
@@ -67,4 +147,4 @@ body {
       border-inline-start: 1px dashed var(--clr-green-winds-breath); 
     }
   }
-}
+} */

@@ -1,22 +1,22 @@
 /* Light mode (default) */
 :root {
-  --h1: oklch(8% 0 0);
+  --h1: oklch(100% 0 0);
   --h2: oklch(8% 0 0);
   --h3: oklch(15% 0 0);
-  --p: oklch(15% 0 0);
+  --p: oklch(100% 0 0);
   --a: oklch(54.309% 0.26829 286.452);
   --aHover: oklch(4% 0 0);
 
   /* Fluid typography using clamp() */
-  --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 1.875rem);
-  --font-size-h2: clamp(1.15rem, 0.95rem + 1vw, 1.5rem);
-  --font-size-h3: clamp(1.05rem, 0.9rem + 0.75vw, 1.25rem);
-  --font-size-body: clamp(0.85rem, 0.75rem + 0.5vw, 1rem);
+  --font-size-h1: clamp(1.5rem, 10vw, 11rem);
+  /* --font-size-h2: clamp(1.15rem, 0.95rem + 1vw, 1.5rem); */
+  /* --font-size-h3: clamp(1.05rem, 0.9rem + 0.75vw, 1.25rem); */
+  --font-size-body: clamp(1.125rem, 0.75rem + 0.5vw, 1rem);
 
-  --line-height-h1: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);
-  --line-height-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-  --line-height-h3: clamp(1.45rem, 1.25rem + 0.75vw, 1.75rem);
-  --line-height-body: clamp(1.35rem, 1.2rem + 0.5vw, 1.5rem);
+  --line-height-h1: clamp(2.5rem, 10vw, 9rem);
+  /* --line-height-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem); */
+  /* --line-height-h3: clamp(1.45rem, 1.25rem + 0.75vw, 1.75rem); */
+  --line-height-body: clamp(2, 1.2rem + 0.5vw, 1.5rem);
 }
 
 /* Dark mode */
@@ -32,18 +32,19 @@
 }
 
 h1 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
-  font-family: var(--font-google-sans-code);
   color: var(--h1);
+  text-shadow: 0 0 2.4rem #FC8FA5;
+  text-transform: uppercase;
 }
 
 h2 {
   font-weight: 500;
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
-  font-family: var(--font-google-sans-code);
+  /* font-family: var(--font-google-sans-code); */
   color: var(--h2);
 }
 
@@ -51,7 +52,7 @@ h3 {
   font-weight: 400;
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
-  font-family: var(--font-google-sans-code);
+  /* font-family: var(--font-google-sans-code); */
   color: var(--h3);
 }
 
@@ -60,7 +61,7 @@ li {
   font-weight: 400;
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
-  font-family: var(--font-google-sans-code);
+  font-family: var(--font-inter);
   color: var(--p);
 }
 

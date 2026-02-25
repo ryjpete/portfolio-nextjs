@@ -16,35 +16,35 @@ export default function Header() {
 	};
 
 	const logo = (
-		<div className={styles.logo}>
-			{/* <BreatheEffect> */}
+		// <div className={styles.logo}>
+			// {/* <BreatheEffect> */}
 			<Logo />
-			{/* </BreatheEffect> */}
-		</div>
+			// {/* </BreatheEffect> */}
+		// </div>
 	);
 
-	const nav = <Navigation isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />;
+	// const nav = <Navigation isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />;
 
-	const trigger = (
-		<button aria-label="Toggle navigation" onClick={toggleTrigger}>
-			<Bars3Icon />
-		</button>
-	);
+	// const trigger = (
+	// 	<button aria-label="Toggle navigation" onClick={toggleTrigger}>
+	// 		<Bars3Icon />
+	// 	</button>
+	// );
 
 	const top = (
-		<div className={styles.top}>
+		<>
 			{logo}
-			{nav}
-			{trigger}
-		</div>
+			{/* {nav} */}
+			{/* {trigger} */}
+		</>
 	);
 
-	const sidebar = <div className={styles.sidebar} />;
+	// const sidebar = <div className={styles.sidebar} />;
 
 	return (
 		<header className={styles.header}>
 			{top}
-			{sidebar}
+			{/* {sidebar} */}
 		</header>
 	);
 }
