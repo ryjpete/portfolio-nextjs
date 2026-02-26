@@ -24,7 +24,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-russo-one);
+  font-family: var(--font-inter);
   overflow-x: hidden;
   transition: background-color 0.6s ease-in-out;
   position: relative;
@@ -40,7 +40,7 @@ body {
   }
 
   .container {
-    padding-block: clamp(12rem, 23vw, 17rem) clamp(6rem, 6rem, 12rem);
+    padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem);
     inline-size: 100dvw;
     max-width: none;
   }
@@ -56,6 +56,7 @@ body {
       display: flex;
       align-items: start;
       overflow-y: hidden;
+      padding-block-end: 0;
 
       & h1 {
         position: relative;

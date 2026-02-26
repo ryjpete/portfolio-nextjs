@@ -31,11 +31,18 @@ export async function GET() {
           end: "2026-01-15T00:00:00Z"
         },
         responsibilities: [
-          "Constructed comprehensive React applications with responsive designs and modern UI/UX patterns.",
-          "Developed cross-platform mobile applications with React Native for iOS and Android, integrating native modules and device APIs.",
-          "Created Python-based Kivy applications for AI technology products.",
-          "Delivered technical mentorship to team members and junior developers.",
-          "Enhanced system performance by maintaining and optimizing existing codebases.",
+          "Design and develop responsive, accessible web applications using React and Next.js",
+          "Architect and implement component-based UIs with a strong focus on CSS craftsmanship (modern CSS features, CSS Modules, fluid typography, color systems)",
+          "Build and maintain cross-platform mobile applications using React Native",
+          "Collaborate closely with design teams to achieve high-fidelity Figma-to-code parity",
+          "Develop and consume RESTful APIs and integrate data-driven components",
+          "Implement design systems including color tokens, typography scales, and responsive layout patterns",
+          "Create engaging micro-interactions and visual effects (animations, transitions, effects)",
+          "Write clean, maintainable JavaScript/TypeScript across the full frontend stack",
+          "Establish and enforce code quality standards via linting and best practices",
+          "Mentor junior developers and contribute to technical decision-making",
+          "Optimize application performance and ensure cross-browser/device compatibility",
+          "Contribute to progressive web app (PWA) features including manifests, icons, and offline support",
         ],
         tech: [
           {
@@ -180,6 +187,7 @@ export async function GET() {
       {
         id: 3,
         company: "HY Connect",
+        description: "A full-service integrated marketing and advertising agency.",
         position: [
           "Web Developer - Contract"
         ],
@@ -200,6 +208,7 @@ export async function GET() {
       {
         id: 4,
         company: "SEM Visibility",
+        description: "A digital marketing firm specializing in SEO, e-commerce solutions, and development.",
         position: [
           "Sr. Web Developer"
         ],
@@ -224,6 +233,7 @@ export async function GET() {
         id: 5,
         company: "Dealer HD",
         logo: "/assets/images/logo-dhd.svg",
+        description: "A digital marketing and advertising agency specializing in services for car dealerships.",
         position: [
           "Web Designer"
         ],
@@ -247,6 +257,7 @@ export async function GET() {
         id: 6,
         company: "Envisionit",
         logo: "/assets/images/logo-env.svg",
+        description: "A digital marketing and advertising agency.",
         contact: {
           url: "https://envisionitagency.com/",
         },
@@ -274,6 +285,7 @@ export async function GET() {
         id: 7,
         company: "Takeda Pharmaceuticals",
         logo: "/assets/images/logo-takeda.svg",
+        description: "A multinational pharmaceuticals company originating in Japan.",
         contact: {
           url: "https://www.takeda.com/",
         },

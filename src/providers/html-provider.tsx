@@ -15,6 +15,7 @@ const russoOne = Russo_One({
 });
 
 const inter = Inter({
+  weight: ["300", "400", "500", "600", "700", "900"],
   variable: "--font-inter",
   subsets: ["latin"],
 });
