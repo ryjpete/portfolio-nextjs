@@ -9,12 +9,12 @@ import Link from "next/link";
 // import logo from "@/app/assets/logos/ripple/logo-ripple.png";
 import logo from "@/app/assets/logos/logo.svg";
 
-import styles from "./logo.module.css";
+// import styles from "./logo.module.css";
 
 export default function Logo() {
 
   const props = {
-    className: `logo ${styles.logo}`,
+    className: "logo",
     src: logo,
     alt: "Ryan Peterson logo",
     // width: 100,

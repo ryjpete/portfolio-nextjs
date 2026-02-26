@@ -2,68 +2,26 @@
 
 .header {
   position: fixed;
-  inset-block-start: 40px;
-  inset-inline-end: 40px;
+  inset-block-start: 24px;
+  inset-inline: 0;
   z-index: 2;
-}
-
-.top {
-  position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  z-index: 1;
-  inline-size: 100%;
-  padding: 24px;
-  border-block-end: 1px dashed var(--clr-green-winds-breath);
-  backdrop-filter: blur(4px);
   display: flex;
-  /* flex-direction: row; */
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
 
-  .logo {
-    /* block-size: 182px;
-    inline-size: 182px; */
-  }
-
-  & :global(.logo) {
-    block-size: 65px;
-    /* inline-size: 65px; */
-    inline-size: auto;
+  & > div > a {
+    display: flex;
     margin-inline: auto;
   }
 
-  & > button {
-    cursor: pointer;
-    width: 32px;
-  }
-}
-
-/* @media (min-width: 400px) { */
-@media (width >= 400px) {
-  .top {
-    flex-direction: row;
-
-    & ul {
-      justify-content: flex-end;
-    }
+  & :global(.logo) {
+    block-size: auto;
+    inline-size: clamp(75px, 25vw, 125px);
   }
 }
 
 @media (width >= 768px) {
   .header {
-    & button {
-      display: none;
-    }
-
-    .top {
-      padding: 0;
-      align-items: stretch;
-      justify-content: space-between;
-
-      .logo {
-        padding: 48px;
-      }
-    }
+    justify-content: end;
+    inset-inline-end: 24px;
   }
 }

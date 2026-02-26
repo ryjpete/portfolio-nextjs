@@ -1,26 +1,26 @@
 "use client";
 
-import { Bars3Icon } from "@heroicons/react/24/solid";
+// import { useState } from "react";
+
+// import { Bars3Icon } from "@heroicons/react/24/solid";
+
 import BreatheEffect from "../breathe-effect";
 import Logo from "../logo";
-import Navigation from "../navigation";
+// import Navigation from "../navigation";
 
 import styles from "./header.module.css";
-import { useState } from "react";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const toggleTrigger = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
+	// const toggleTrigger = () => {
+	// 	setIsMenuOpen(!isMenuOpen);
+	// };
 
 	const logo = (
-		// <div className={styles.logo}>
-			// {/* <BreatheEffect> */}
+		<BreatheEffect>
 			<Logo />
-			// {/* </BreatheEffect> */}
-		// </div>
+		</BreatheEffect>
 	);
 
 	// const nav = <Navigation isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />;
@@ -31,20 +31,16 @@ export default function Header() {
 	// 	</button>
 	// );
 
-	const top = (
-		<>
-			{logo}
-			{/* {nav} */}
-			{/* {trigger} */}
-		</>
-	);
-
-	// const sidebar = <div className={styles.sidebar} />;
+	// const top = (
+	// 	<>
+	// 		{/* {nav} */}
+	// 		{/* {trigger} */}
+	// 	</>
+	// );
 
 	return (
 		<header className={styles.header}>
-			{top}
-			{/* {sidebar} */}
+			{logo}
 		</header>
 	);
 }

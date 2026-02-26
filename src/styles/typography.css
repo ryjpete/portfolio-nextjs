@@ -10,7 +10,8 @@
   --aHover: oklch(4% 0 0);
 
   /* Fluid typography using clamp() */
-  --font-size-h1: clamp(1.5rem, 10vw, 15rem);
+  --font-size-h1: 10vw;
+
   --font-size-h2: clamp(3.125rem, 3.125rem, 3.125rem);
   --font-size-h3: clamp(1.875rem, 1.875rem, 1.875rem);
   --font-size-h4: clamp(1.65rem, 1.65rem, 1.65rem);
@@ -18,7 +19,10 @@
   /* --font-size-body: clamp(1.125rem, 0.75rem + 0.5vw, 1rem); */
   --font-size-body: clamp(1rem, 0.75rem, 1rem);
 
-  --line-height-h1: clamp(2.5rem, 10vw, 11rem);
+  
+  --line-height-h1: 9vw;
+
+
   --line-height-h2: 1;
   --line-height-h3: 1.5;
   --line-height-h4: 1.5;

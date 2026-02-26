@@ -43,9 +43,12 @@ body {
     padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem);
     inline-size: 100dvw;
     max-width: none;
+
+    & > * {
+      flex: 1;
+    }
   }
 
-  &.home,
   &[data-page="home"] {
     background: var(--background);
 
@@ -60,13 +63,19 @@ body {
 
       & h1 {
         position: relative;
+        text-align: center;
+
+        & > span {
+          position: relative;
+        }
 
         & .subs {
           position: absolute;
-          inset-inline-start: 7dvw;
-          inset-block-start: 100%;
+          inset-inline-start: 0;
+          inset-block-start: 90%;
           display: flex;
           flex-direction: column;
+          text-align: start;
 
           & span {
             opacity: 0.2;
@@ -84,6 +93,12 @@ body {
             }
           }
         }
+      }
+    }
+
+    @media (width >= 576px) {
+      & .container h1 {
+        text-align: start;
       }
     }
   }
