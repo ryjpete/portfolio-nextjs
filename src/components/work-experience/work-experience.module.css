@@ -1,0 +1,4 @@
+.workExperience {
+  display: flex;
+  flex-direction: column;
+}

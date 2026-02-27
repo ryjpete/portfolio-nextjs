@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import Experience from "../experience";
+
+import styles from "./work-experience.module.css";
 
 interface Experience {
   id: number;
@@ -23,18 +26,18 @@ export default function WorkExperience() {
     fetch("/api/resume")
       .then((res) => res.json())
       .then((data) => {
-        setExperiences(data);
+        setExperiences(data.workExperiences);
         setLoading(false);
       });
   }, []);
 
+  console.log('experiences', experiences);
+
   if (loading) return <div>Loading work experience...</div>
 
   return (
-    <>
-      <h3>Work Experience</h3>
-
-      {experiences.map((exp) => <Experience key={exp.id} {...exp} />)}
-    </>
+    <div className={styles.workExperience}>
+      {experiences && experiences.map((exp) => <Experience key={exp.id} {...exp} />)}
+    </div>
   );
 }
