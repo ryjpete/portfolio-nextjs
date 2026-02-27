@@ -5,15 +5,35 @@ import Link from "next/link";
 import styles from "./home.module.css";
 
 export default function HomeContent() {
+  const onHover = () => {
+    
+  };
+
   return (
     <div className={`container ${styles.container}`}>
       <h1>
-        HI. I&rsquo;M <Link href="/about">RYAN</Link>.<br />
-        I&rsquo;M A <Link href="/resume">UI ENGINEER</Link>.<br />
+        <span>HI. I&rsquo;M </span>
+        <Link
+          href="/about"
+          className={styles.link}
+          onMouseEnter={onHover}
+        >
+          RYAN
+        </Link>
+        <span>.</span>
+        <br />
+        <span>I&rsquo;M a </span>
+        <Link
+          href="/resume"
+          className={styles.link}
+        >
+          UI ENGINEER
+        </Link>
+        <span>.</span>
+        <br />
         {/* I <Link href="/projects">BUILD THINGS</Link>. */}
-        I <span>
-          BUILD
-
+        <span>I </span><span className={styles.build}>
+          BUILD{" "}
           <div className={styles.subs}>
             <span>CREATE</span>
             <span>DEVELOP</span>
@@ -22,7 +42,7 @@ export default function HomeContent() {
             <span>PLAY</span>
           </div>
         </span>
-        &nbsp;THINGS.
+        <span>THINGS.</span>
       </h1>
     </div>
   );
