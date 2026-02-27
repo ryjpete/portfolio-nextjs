@@ -1,0 +1,49 @@
+.container {
+  max-width: none;
+  block-size: 100dvh;
+  inline-size: 100dvw;
+  display: flex;
+  align-items: start;
+  overflow-y: hidden;
+  padding-block-end: 0;
+
+  & h1 {
+    position: relative;
+    text-align: center;
+
+    & > span {
+      position: relative;
+    }
+
+    & .subs {
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 90%;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      & span {
+        opacity: 0.2;
+
+        &:first-of-type {
+          opacity: 0.6;
+        }
+
+        &:nth-of-type(2) {
+          opacity: 0.4;
+        }
+
+        &:nth-of-type(3) {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 576px) {
+  .container h1 {
+    text-align: start;
+  }
+}
