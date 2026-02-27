@@ -1,24 +1,18 @@
 @import "../../../styles/colors.css";
 
-.content {
-  max-inline-size: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  inline-size: 100%;
-}
-
 .work {
   background-color: var(--clr-gray-black);
-  padding: 3rem 6rem;
+  padding: 0 3rem;
 }
 
-@media (min-width: 768px) {
-  body .resume:global(.container) {
-    text-align: start;
+@media (width >= 576px) {
+  .work {
+    padding-inline: 4rem;
   }
+}
 
-  .content {
-    gap: 36px;
+@media (width >= 768px) {
+  .work {
+    padding: 3rem 6rem;
   }
 }

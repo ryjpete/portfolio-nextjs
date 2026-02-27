@@ -1,3 +1,4 @@
 .workExperience {
-  /* background-color: var(--clr-gray-black); */
+  display: flex;
+  flex-direction: column;
 }

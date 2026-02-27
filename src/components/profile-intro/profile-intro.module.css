@@ -60,6 +60,10 @@
       }
     }
   }
+
+  & > p {
+    text-align: center;
+  }
 }
 
 .end {
@@ -107,6 +111,10 @@
       & p {
         text-align: start;
       }
+    }
+
+    & > p {
+      text-align: start;
     }
   }
 }

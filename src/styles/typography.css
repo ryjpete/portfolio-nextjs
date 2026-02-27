@@ -10,25 +10,19 @@
   --aHover: oklch(4% 0 0);
 
   /* Fluid typography using clamp() */
+  --font-size-body: clamp(0.65rem, 5vw, 1rem);
   --font-size-h1: 10vw;
-
-  --font-size-h2: clamp(3.125rem, 3.125rem, 3.125rem);
-  --font-size-h3: clamp(1.875rem, 1.875rem, 1.875rem);
-  --font-size-h4: clamp(1.65rem, 1.65rem, 1.65rem);
-  --font-size-h5: clamp(1.25rem, 1.25rem, 1.25rem);
-  /* --font-size-body: clamp(1.125rem, 0.75rem + 0.5vw, 1rem); */
-  --font-size-body: clamp(1rem, 0.75rem, 1rem);
-
+  --font-size-h2: clamp(1.75rem, 5vw, 2.5rem);
+  --font-size-h3: clamp(1.25rem, 5vw, 1.875rem);
+  --font-size-h4: clamp(1.15rem, 5vw, 1.625rem);
+  --font-size-h5: clamp(1.15rem, 5vw, 1.25rem);
   
+  --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
   --line-height-h1: 9vw;
-
-
   --line-height-h2: 1;
   --line-height-h3: 1.5;
   --line-height-h4: 1.5;
   --line-height-h5: 1.5;
-  /* --line-height-body: clamp(2, 1.2rem + 0.5vw, 1.5rem); */
-  --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
 }
 
 /* Dark mode */
