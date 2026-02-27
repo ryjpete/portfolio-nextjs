@@ -17,6 +17,10 @@
     block-size: auto;
     inline-size: clamp(75px, 25vw, 125px);
   }
+
+  .logoScroll {
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @media (width >= 768px) {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 // import { useState } from "react";
 
 // import { Bars3Icon } from "@heroicons/react/24/solid";
@@ -11,7 +12,30 @@ import Logo from "../logo";
 import styles from "./header.module.css";
 
 export default function Header() {
+	const headerRef = useRef<HTMLDivElement>(null);
+	const logoRef = useRef<HTMLDivElement>(null);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (logoRef.current) {
+				if (window.innerWidth >= 768) {
+					if (window.scrollY > 25) {
+						logoRef.current.style.transform = "scale(0.4)";
+						logoRef.current.style.transformOrigin = "top right";
+					} else {
+						logoRef.current.style.transform = "scale(1)";
+					}
+				} else {
+					logoRef.current.style.transform = "scale(1)";
+				}
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	// const toggleTrigger = () => {
 	// 	setIsMenuOpen(!isMenuOpen);
@@ -19,7 +43,9 @@ export default function Header() {
 
 	const logo = (
 		<BreatheEffect>
-			<Logo />
+			<div ref={logoRef} className={styles.logoScroll}>
+				<Logo />
+			</div>
 		</BreatheEffect>
 	);
 
@@ -39,7 +65,7 @@ export default function Header() {
 	// );
 
 	return (
-		<header className={styles.header}>
+		<header ref={headerRef} className={styles.header}>
 			{logo}
 		</header>
 	);
