@@ -6,11 +6,18 @@
   inset-inline: 0;
   z-index: 2;
   display: flex;
+  align-items: center;
   justify-content: center;
 
-  & > div > a {
-    display: flex;
-    margin-inline: auto;
+  & > div {
+    /* &:only-of-type {
+      margin-inline-start: auto;
+    } */
+
+    & > a {
+      display: flex;
+      margin-inline: auto;
+    }
   }
 
   & :global(.logo) {
@@ -23,9 +30,40 @@
   }
 }
 
-@media (width >= 768px) {
+.back {
+  border: 1px solid var(--clr-gray-white);
+  block-size: 32px;
+  inline-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset-inline-start: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent 70%);
+    color: var(--clr-gray-black);
+  }
+}
+
+@media (width >= 576px) {
   .header {
-    justify-content: end;
-    inset-inline-end: 24px;
+    align-items: start;
+    justify-content: space-between;
+    inset-inline: 24px;
+
+    & > div:only-of-type {
+      margin-inline-start: auto;
+    }
+  }
+
+  .back {
+    inset-block-start: 40px;
+    inset-inline-start: 0;
+    block-size: 64px;
+    inline-size: 64px;
+    position: relative;
   }
 }
