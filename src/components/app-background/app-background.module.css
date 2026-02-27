@@ -1,0 +1,32 @@
+.appBg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.appBgColor,
+.appBgImage {
+  position: absolute;
+  inset: 0;
+  transition: opacity 700ms ease, background-color 700ms ease;
+}
+
+.appBgColor {
+  background-color: var(--bg-color);
+}
+
+.appBgImage {
+  background-image: url("@/app/assets/logos/galaxy.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: var(--img-opacity);
+}
+
+/* Optional accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .appBgColor,
+  .appBgImage {
+    transition: none;
+  }
+}

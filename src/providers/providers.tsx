@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import HtmlProvider from "./html-provider";
-import EffectsProvider from "./effects-provider";
+// import EffectsProvider from "./effects-provider";
 
 interface ProvidersProps {
   children: ReactNode;
@@ -11,9 +11,9 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <HtmlProvider>
-      <EffectsProvider>
+      {/* <EffectsProvider> */}
         {children}
-      </EffectsProvider>
+      {/* </EffectsProvider> */}
     </HtmlProvider>
   );
 }

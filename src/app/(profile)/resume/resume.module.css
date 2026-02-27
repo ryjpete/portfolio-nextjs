@@ -1,0 +1,18 @@
+@import "../../../styles/colors.css";
+
+.work {
+  background-color: var(--clr-gray-black);
+  padding: 0 3rem;
+}
+
+@media (width >= 576px) {
+  .work {
+    padding-inline: 4rem;
+  }
+}
+
+@media (width >= 768px) {
+  .work {
+    padding: 3rem 6rem;
+  }
+}

@@ -1,68 +1,87 @@
 /* Light mode (default) */
 :root {
-  --h1: oklch(8% 0 0);
-  --h2: oklch(8% 0 0);
-  --h3: oklch(15% 0 0);
-  --p: oklch(15% 0 0);
+  --h1: oklch(100% 0 0);
+  --h2: oklch(100% 0 0);
+  --h3: oklch(100% 0 0);
+  --h4: oklch(100% 0 0);
+  --h5: oklch(100% 0 0);
+  --p: oklch(100% 0 0);
   --a: oklch(54.309% 0.26829 286.452);
   --aHover: oklch(4% 0 0);
 
   /* Fluid typography using clamp() */
-  --font-size-h1: clamp(1.5rem, 1.2rem + 1.5vw, 1.875rem);
-  --font-size-h2: clamp(1.15rem, 0.95rem + 1vw, 1.5rem);
-  --font-size-h3: clamp(1.05rem, 0.9rem + 0.75vw, 1.25rem);
-  --font-size-body: clamp(0.85rem, 0.75rem + 0.5vw, 1rem);
-
-  --line-height-h1: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);
-  --line-height-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-  --line-height-h3: clamp(1.45rem, 1.25rem + 0.75vw, 1.75rem);
-  --line-height-body: clamp(1.35rem, 1.2rem + 0.5vw, 1.5rem);
+  --font-size-body: clamp(0.65rem, 5vw, 1rem);
+  --font-size-h1: 10vw;
+  --font-size-h2: clamp(1.75rem, 5vw, 2.5rem);
+  --font-size-h3: clamp(1.25rem, 5vw, 1.875rem);
+  --font-size-h4: clamp(1.15rem, 5vw, 1.625rem);
+  --font-size-h5: clamp(1.15rem, 5vw, 1.25rem);
+  
+  --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
+  --line-height-h1: 9vw;
+  --line-height-h2: 1;
+  --line-height-h3: 1.5;
+  --line-height-h4: 1.5;
+  --line-height-h5: 1.5;
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --h1: oklch(95% 0 0);
-    --h2: oklch(95% 0 0);
+    --h1: oklch(100% 0 0);
+    --h2: oklch(100% 0 0);
     --h3: oklch(100% 0 0);
+    --h4: oklch(100% 0 0);
+    --h5: oklch(100% 0 0);
     --p: oklch(100% 0 0);
-    --a: oklch(30% 0.26829 286.452);
-    --aHover: oklch(98% 0 0);
+    --a: oklch(54.309% 0.26829 286.452);
+    --aHover: oklch(4% 0 0);
   }
 }
 
 h1 {
-  font-weight: 600;
-  font-size: var(--font-size-h1);
-  line-height: var(--line-height-h1);
-  font-family: var(--font-google-sans-code);
+  font: 400 var(--font-size-h1)/var(--line-height-h1) var(--font-russo-one);
   color: var(--h1);
+  text-shadow: 0 0 2.4rem #FC8FA5;
+  text-transform: uppercase;
+
+  & a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
 h2 {
-  font-weight: 500;
-  font-size: var(--font-size-h2);
-  line-height: var(--line-height-h2);
-  font-family: var(--font-google-sans-code);
+  font: 400 var(--font-size-h2)/var(--line-height-h2) var(--font-russo-one);
   color: var(--h2);
+  text-transform: uppercase;
 }
 
 h3 {
-  font-weight: 400;
-  font-size: var(--font-size-h3);
-  line-height: var(--line-height-h3);
-  font-family: var(--font-google-sans-code);
+  font: 900 var(--font-size-h3)/var(--line-height-h3) var(--font-inter);
   color: var(--h3);
+}
+
+h4 {
+  font: 900 var(--font-size-h4)/var(--line-height-h4) var(--font-inter);
+  color: var(--h4);
+}
+
+h5 {
+  font: 400 var(--font-size-h5)/var(--line-height-h5) var(--font-russo-one);
+  color: var(--h5);
+  text-transform: uppercase;
 }
 
 p,
 li {
-  font-weight: 400;
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  font-family: var(--font-google-sans-code);
-  color: var(--p);
-}
+  font: 400 calc(var(--font-size-body) - 0.125rem)/calc(var(--line-height-body) - 0.125rem) var(--font-inter);
+  color: var(--p);}
 
 a {
   font-weight: 500;

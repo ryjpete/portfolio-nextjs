@@ -1,152 +1,233 @@
-@import '../../styles/colors.css';
+/* @import '../../styles/colors.css'; */
+
+@property --imgSize {
+  syntax: '<length>';
+  inherits: false;
+  /* initial-value: clamp(50px, 10vw, 125px); */
+  initial-value: 100px;
+}
 
 .exp {
+  position: relative;
+  padding-block: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  position: relative;
+  gap: 3rem;
 
   &::after {
     content: '';
     position: absolute;
-    inset-inline: -24px;
-    inset-block-end: -24px;
-    block-size: 0;
-    border-block-end: 1px dashed var(--clr-green-winds-breath);
+    inset-block-end: 0;
+    inset-inline: 0;
+    background-color: var(--clr-red-himalayan-balsam);
+    block-size: 2px;
+    border-radius: 1px;
   }
 
-  & > img {
-    inline-size: 60px;
-    block-size: 60px;
+  &:last-of-type::after {
+    display: none;
   }
 
-  .plc {
-    filter: grayscale(100%) brightness(55%) invert(10%) sepia(20%);
+  & > div {
+    flex: 1;
   }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  inline-size: 100%;
-
-  .head {
+  
+  .info {
+    flex: 0.75;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 1.5rem;
 
-    & h2 > a {
+    .coInfo {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
 
-      & > svg {
-        inline-size: 16px;
-        block-size: 16px;
+      p {
+        text-align: center;
+      }
+
+      & > img {
+        inline-size: var(--imgSize);
+        block-size: var(--imgSize);
+      }
+
+      .name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
         position: relative;
-        inset-block-start: 2px;
-        inset-inline-start: 2px;
+
+        & > h3 {
+          color: var(--h3);
+          text-align: center;
+          white-space: nowrap;
+        }
+
+        & > svg {
+          position: absolute;
+          inset-block-start: 0.15rem;
+          inset-inline-end: -1rem;
+          block-size: 16px;
+          inline-size: 16px;
+        }
+      }
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .icons {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 32px;
+        inline-size: 100%;
+
+        .icon {
+          block-size: 24px;
+          inline-size: 24px;
+          filter: invert(65%) sepia(35%) saturate(500%) hue-rotate(291deg) brightness(202%) contrast(97%);
+        }
       }
     }
   }
-}
 
-.items {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  .item {
+  .position {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1rem;
 
-    .icons {
+    & > h2 {
+      text-align: center;
+    }
+
+    .list {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      gap: 8px;
-      margin-block-start: 4px;
+      gap: 0.5rem 0.75rem;
 
-      & img {
-        block-size: 30px;
-        inline-size: 30px;
-        filter: grayscale(100%) brightness(55%) invert(10%) sepia(20%);
+      & > li {
+        position: relative;
+        padding-inline-end: 8px;
+        font-size: 0.75rem;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 0.85;
+
+        &::after {
+          content: "||";
+          position: absolute;
+          inset-inline-end: -0.5rem;
+        }
+
+        &:last-child {
+          padding-inline-end: 0;
+
+          &::after {
+            content: "";
+          }
+        }
       }
     }
 
-    & ul {
+    .respList {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 0.75rem;
+      list-style: disc;
+      padding-inline-start: 1.5rem;
     }
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .exp .plc,
-  .items .item .icons img {
-    filter: grayscale(100%) brightness(1800%) invert(50%) sepia(20%);
-  }
-}
+@media (width >= 576px) {
+  .exp {
+    .info {
+      align-items: start;
 
-@media (min-width: 576px) {
-  .exp > img {
-    inline-size: 50px;
-    block-size: 50px;
-  }
+      .coInfo {
+        align-items: start;
 
-  .content {
-    padding-block-start: 10px;
-  }
+        & p {
+          text-align: start;
+        }
+      }
 
-  .items .item {
-    &:first-of-type {
-      padding-block-start: 8px;
+      .stack {
+        align-items: start;
+        inline-size: 100%;
+
+        .icons {
+          grid-template-columns: repeat(7, 1fr);
+        }
+      }
+    }
+
+    .position {
+      align-items: start;
+
+      .list {
+        justify-content: start;
+      }
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
+  .exp {
+    gap: 4rem;
+    padding-block: 4rem;
+
+    .info {
+      gap: 2.5rem;
+
+      .coInfo {
+        align-items: start;
+
+        .name {
+          flex-direction: row;
+
+          & > h3 {
+            text-align: start;
+          }
+        }
+      }
+
+      .stack {
+        align-items: start;
+
+        .icons {
+          inline-size: 65%;
+
+          .icon {
+            block-size: 32px;
+            inline-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 992px) {
   .exp {
     flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    
-    .content .head h2 > a {
-      justify-content: flex-start;
+
+    .info .stack .icons {
+      grid-template-columns: repeat(4, 1fr);
+      inline-size: 85%;
     }
 
-    .items .item {
-      & ul {
-        list-style-type: disc;
-        padding-inline-start: 18px;
-      }
-
-      .icons {
-        justify-content: flex-start;
-      }
+    .position > h2 {
+      text-align: start;
     }
-  }
-}
-
-@media (min-width: 1200px) {
-  .items .item {
-    flex-direction: row;
-    gap: 32px;
-    
-    & p:first-of-type {
-      min-inline-size: 165px;
-      text-align: end;
-    }
-  }
-}
-
-@media (min-width: 1400px) {
-  .exp > img {
-    inline-size: 60px;
-    block-size: 60px;
   }
 }
