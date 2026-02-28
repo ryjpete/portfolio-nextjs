@@ -66,4 +66,8 @@ body {
       opacity: 0.05;
     }
   }
+
+  & button {
+    cursor: pointer;
+  }
 }

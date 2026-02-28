@@ -31,8 +31,6 @@ export default function WorkExperience() {
       });
   }, []);
 
-  console.log('experiences', experiences);
-
   if (loading) return <div>Loading work experience...</div>
 
   return (

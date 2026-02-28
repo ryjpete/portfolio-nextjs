@@ -1,25 +1,31 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 // import { useState } from "react";
 
 // import { Bars3Icon } from "@heroicons/react/24/solid";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
+import { useProject } from "@/context/ProjectContext";
+
+import Back from "../back";
 import BreatheEffect from "../breathe-effect";
 import Logo from "../logo";
 // import Navigation from "../navigation";
 
 import styles from "./header.module.css";
-import { usePathname } from "next/navigation";
 
 export default function Header() {
 	const pathname = usePathname();
+	const { activeProject, setActiveProject } = useProject();
 	
 	const headerRef = useRef<HTMLDivElement>(null);
 	const logoRef = useRef<HTMLDivElement>(null);
-	const backRef = useRef<HTMLButtonElement>(null);
+	const backRef = useRef<HTMLDivElement>(null);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const isProjectPage = pathname === "/projects";
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -32,14 +38,12 @@ export default function Header() {
 						if (backRef.current) {
 							backRef.current.style.transform = "scale(0.65)";
 							backRef.current.style.transformOrigin = "top left";
-							backRef.current.style.top = "2px";
 						}
 					} else {
 						logoRef.current.style.transform = "scale(1)";
 						if (backRef.current) {
 							backRef.current.style.transform = "scale(1)";
 							backRef.current.style.transformOrigin = "top left";
-							backRef.current.style.top = "40px";
 						}
 					}
 				} else {
@@ -61,14 +65,19 @@ export default function Header() {
 	// 	setIsMenuOpen(!isMenuOpen);
 	// };
 
+	const handleCloseProject = () => {
+		setActiveProject(null);
+	};
+
 	const handleBack = () => {
 		window.history.back();
 	};
 
+	// const back = pathname !== "/" && !(isProjectPage && activeProject) && (
 	const back = pathname !== "/" && (
-		<button ref={backRef} aria-label="Go back" onClick={handleBack} className={styles.back}>
-			<ArrowLeftIcon strokeWidth={1} height={48} width={48} color="var(--clr-gray-white)" />
-		</button>
+		<div ref={backRef} className={`${styles.back} ${activeProject ? styles.projectBack : ""}`}>
+			<Back onClick={activeProject ? handleCloseProject : handleBack} />
+		</div>
 	);
 
 	const logo = (

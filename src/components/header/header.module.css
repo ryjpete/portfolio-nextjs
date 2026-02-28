@@ -4,20 +4,14 @@
   position: fixed;
   inset-block-start: 24px;
   inset-inline: 0;
-  z-index: 2;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  & > div {
-    /* &:only-of-type {
-      margin-inline-start: auto;
-    } */
-
-    & > a {
-      display: flex;
-      margin-inline: auto;
-    }
+  & > div > a {
+    display: flex;
+    margin-inline: auto;
   }
 
   & :global(.logo) {
@@ -31,20 +25,24 @@
 }
 
 .back {
-  border: 1px solid var(--clr-gray-white);
-  block-size: 32px;
-  inline-size: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  inset-inline-start: 10px;
-  cursor: pointer;
+  inset-block-start: 10px;
+  inset-inline-start: 24px;
   transition: all 0.3s ease-in-out;
 
-  &:hover {
-    background-color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent 70%);
-    color: var(--clr-gray-black);
+  & > button {
+    border: 1px solid var(--clr-gray-white);
+    block-size: 32px;
+    inline-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent 70%);
+      color: var(--clr-gray-black);
+    }
   }
 }
 
@@ -60,10 +58,21 @@
   }
 
   .back {
-    inset-block-start: 40px;
-    inset-inline-start: 0;
-    block-size: 64px;
-    inline-size: 64px;
     position: relative;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+
+    & > button {
+      inset-block-start: 40px;
+      inset-inline-start: 0;
+      block-size: 64px;
+      inline-size: 64px;
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .back.projectBack {
+    transform: translateX(6rem);
   }
 }
