@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { useProject } from "@/context/ProjectContext";
@@ -7,6 +8,26 @@ import { useProject } from "@/context/ProjectContext";
 import Categories from "../categories";
 
 import styles from "./project.module.css";
+import Image from "next/image";
+
+interface Project {
+  title: string;
+  slug: string;
+  url?: string;
+  target?: string;
+  client?: string;
+  type?: string;
+  blurb?: string;
+  description?: string;
+  cats?: string[];
+  images: {
+    thumb: string;
+    imageSet?: string[];
+  };
+  techs?: {
+    [category: string]: string[];
+  };
+}
 
 interface ProjectProps {
   slug: string;
@@ -14,8 +35,29 @@ interface ProjectProps {
 
 export default function Project({ slug }: ProjectProps) {
   const router = useRouter();
-
   const { activeProject, setActiveProject } = useProject();
+  const [loading, setLoading] = useState(!activeProject);
+
+  console.log("activeProject", activeProject);
+
+  useEffect(() => {
+    // If there's an active project, don't fetch
+    if (activeProject) return;
+
+    // If no active project, fetch by slug
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.projects.find((p: Project) => p.slug === slug);
+
+        if (found) {
+          setActiveProject(found);
+        } else {
+          router.push("/projects");
+        }
+      })
+      .finally(() => setLoading(false));
+  }, [slug]);
 
   const handleClose = () => {
     setActiveProject(null);
@@ -38,6 +80,15 @@ export default function Project({ slug }: ProjectProps) {
         </p>
       )}
       {activeProject?.cats && <Categories />}
+      {activeProject?.images?.imageSet && (
+        <div className={styles.imageSet}>
+          {activeProject.images.imageSet.map((src, index) => (
+            <div key={index}>
+              <Image src={src} alt={`${activeProject.title} screenshot ${index + 1}`} width={800} height={600} className={styles.image} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 

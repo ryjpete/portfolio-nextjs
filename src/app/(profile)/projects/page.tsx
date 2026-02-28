@@ -22,6 +22,7 @@ interface Project {
   cats?: string[];
   images: {
     thumb: string;
+    imageSet?: string[];
   };
   techs?: {
     [category: string]: string[];
