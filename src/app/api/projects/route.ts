@@ -22,6 +22,11 @@ export async function GET() {
         ],
         images: {
           thumb: "/assets/images/projects/proj_grateful-dev.png",
+          imageSet: [
+            "/assets/images/projects/grateful-dev/thumb01.png",
+            "/assets/images/projects/grateful-dev/thumb02.png",
+            "/assets/images/projects/grateful-dev/thumb03.png",
+          ],
         },
         techs: {
           "Core Framework": [
