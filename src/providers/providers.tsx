@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import HtmlProvider from "./html-provider";
+import { ProjectProvider } from "@/context/ProjectContext";
 // import EffectsProvider from "./effects-provider";
 
 interface ProvidersProps {
@@ -11,9 +12,11 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <HtmlProvider>
-      {/* <EffectsProvider> */}
-        {children}
-      {/* </EffectsProvider> */}
+      <ProjectProvider>
+        {/* <EffectsProvider> */}
+          {children}
+        {/* </EffectsProvider> */}
+      </ProjectProvider>
     </HtmlProvider>
   );
 }
