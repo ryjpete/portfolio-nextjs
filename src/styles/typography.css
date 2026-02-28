@@ -81,14 +81,5 @@ h5 {
 p,
 li {
   font: 400 calc(var(--font-size-body) - 0.125rem)/calc(var(--line-height-body) - 0.125rem) var(--font-inter);
-  color: var(--p);}
-
-a {
-  font-weight: 500;
-  color: var(--a);
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: var(--aHover);
-  }
+  color: var(--p);
 }

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 // import { useState } from "react";
 
 // import { Bars3Icon } from "@heroicons/react/24/solid";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+// import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 import { useProject } from "@/context/ProjectContext";
 
@@ -25,7 +25,7 @@ export default function Header() {
 	const backRef = useRef<HTMLDivElement>(null);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const isProjectPage = pathname === "/projects";
+	// const isProjectPage = pathname === "/projects";
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -67,6 +67,7 @@ export default function Header() {
 
 	const handleCloseProject = () => {
 		setActiveProject(null);
+		window.history.back();
 	};
 
 	const handleBack = () => {

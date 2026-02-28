@@ -51,6 +51,47 @@
       }
     }
   }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    padding-block-end: 3rem;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      
+      .url {
+        font-weight: 700;
+        color: var(--clr-gray-white);
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .techCategory {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & h2 {
+          font-size: var(--font-size-h3);
+        }
+
+        & ul {
+          gap: 0.5rem;
+          list-style: disc;
+          padding-inline-start: 1rem;
+        }
+      }
+    }
+  }
 }
 
 @media (width >= 576px) {
@@ -113,6 +154,11 @@
           border: none;
         }
       }
+    }
+
+    .content {
+      flex-direction: row;
+      gap: 8rem;
     }
   }
 }
