@@ -3,21 +3,22 @@
 import { createContext, useContext, useState } from "react";
 
 interface Project {
-	title: string;
-	slug: string;
-	url?: string;
-	target?: string;
-	client?: string;
-	type?: string;
-	blurb?: string;
-	description?: string;
-	cats?: string[];
-	images: {
-		thumb: string;
-	};
-	techs?: {
-		[category: string]: string[];
-	};
+  title: string;
+  slug: string;
+  url?: string;
+  target?: string;
+  client?: string;
+  type?: string;
+  blurb?: string;
+  description?: string;
+  cats?: string[];
+  images: {
+    thumb: string;
+    imageSet?: string[];
+  };
+  techs?: {
+    [category: string]: string[];
+  };
 }
 
 interface ProjectContextType {
