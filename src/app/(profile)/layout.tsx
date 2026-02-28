@@ -7,13 +7,13 @@ export default function ProfileLayout({
   modal,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
+  modal?: React.ReactNode;
 }) {
   return (
     <div className="container">
       <ProfileIntro />
       {children}
-      {modal}
+      {modal && modal}
     </div>
   );
 }
