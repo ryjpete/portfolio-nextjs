@@ -25,7 +25,6 @@ const bgByRoute: Record<string, { color: string; imageOpacity: number }> = {
 
 export function AppBackground() {
   const pathname = usePathname();
-  console.log('pathname', pathname);
 
   const bg = bgByRoute[pathname] ?? { color: "oklch(0.22 0.03 265)", imageOpacity: 0.2 };
 

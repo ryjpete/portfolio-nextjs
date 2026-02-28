@@ -38,11 +38,6 @@
       }
     }
 
-    .cats {
-      display: flex;
-      gap: 1rem;
-    }
-
     &.persist {
       border: 3px solid var(--clr-green-cold-blooded);
       background: unset;
