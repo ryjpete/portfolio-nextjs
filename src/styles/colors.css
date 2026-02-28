@@ -8,7 +8,9 @@
   --clr-gray-black: oklch(0% 0 0);
 
   /* Greens */
+  --clr-green-pearl-powder: oklch(0.9932 0.0225 114.93);
   --clr-green-winds-breath: oklch(90% 0.01 120);
+  --clr-green-cold-blooded: oklch(0.9269 0.0557 197.62);
 
   /* Reds */
   --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
@@ -31,7 +33,9 @@
     --clr-gray-black: oklch(100% 0 0);
 
     /* Greens */
+    --clr-green-pearl-powder: oklch(0.9932 0.0225 114.93);
     --clr-green-winds-breath: oklch(30% 0.01 120);
+    --clr-green-cold-blooded: oklch(0.9269 0.0557 197.62);
 
     /* Reds */
     --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
