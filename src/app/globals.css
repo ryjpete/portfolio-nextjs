@@ -5,7 +5,7 @@
 /* Light mode (default) */
 :root {
   --background: var(--clr-violet-binary-black);
-  --foreground: oklch(15% 0 0);
+  --foreground: oklch(95% 0 0);
 }
 
 /* Dark mode */
