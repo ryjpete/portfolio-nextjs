@@ -41,6 +41,7 @@ export async function GET() {
           "Data": [
             "Custom REST API routes via Next.js API handlers",
             "Static JSON (served via API routes)",
+            "Live image feed via proxied API route (NASA Hubble Site API)",
           ],
           "Dev Tooling": [
             "ESLint",

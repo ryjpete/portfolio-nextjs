@@ -10,6 +10,7 @@
   & h1 {
     position: relative;
     text-align: center;
+    text-shadow: 0 0 2.4rem color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%);
 
     & > * {
       transition: opacity 0.3s ease-in-out;
@@ -30,6 +31,7 @@
       display: flex;
       flex-direction: column;
       text-align: start;
+      text-shadow: 0 0 2.4rem color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%);
 
       & span {
         opacity: 0.2;
@@ -56,15 +58,21 @@
   }
 }
 
-@keyframes pulse {
-  0%, 100% { text-shadow: 0 0 12px var(--clr-red-himalayan-balsam), 0 0 24px var(--clr-red-himalayan-balsam); }
-  50% { text-shadow: 0 0 6px var(--clr-red-himalayan-balsam), 0 0 12px var(--clr-red-himalayan-balsam); }
-}
+/* @keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 0.3em color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%), 
+    0 0 0.6em color-mix(in srgb, var(--clr-gray-white) 50%, var(--clr-gray-white) 50%);
+  }
+  50% {
+    text-shadow: 0 0 0.2em color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%), 
+    0 0 0.4em color-mix(in srgb, var(--clr-gray-white) 50%, var(--clr-gray-white) 50%);
+  }
+} */
 
 .link {
   font: inherit;
   text-shadow: unset;
-  animation: pulse 4.2s ease-in-out infinite;
+  /* animation: pulse 4.2s ease-in-out infinite; */
   transition: text-shadow 0.2s ease-in-out;
 
   &:first-of-type {
@@ -73,11 +81,12 @@
   &:nth-of-type(2) {
     --delay: 2.2;
   }
-  animation-delay: calc(var(--delay) * 1s);
+  /* animation-delay: calc(var(--delay) * 1s); */
 
   &:hover {
-    animation: unset;
-    text-shadow: 0 0 32px var(--clr-red-himalayan-balsam), 0 0 64px var(--clr-red-himalayan-balsam);
+    /* animation: unset; */
+    text-shadow: 0 0 clamp(16px, 4vw, 32px) color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 100%), 
+    0 0 clamp(32px, 8vw, 64px) color-mix(in srgb, var(--clr-gray-white) 50%, var(--clr-gray-white) 100%);
     opacity: 1;
   }
 }

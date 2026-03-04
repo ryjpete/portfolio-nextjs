@@ -1,12 +1,12 @@
 /* Light mode (default) */
 :root {
-  --h1: oklch(100% 0 0);
+  --h1: oklch(100% 0 0 / 0.7);
   --h2: oklch(100% 0 0);
   --h3: oklch(100% 0 0);
   --h4: oklch(100% 0 0);
   --h5: oklch(100% 0 0);
   --p: oklch(100% 0 0);
-  --a: oklch(54.309% 0.26829 286.452);
+  --a: oklch(100% 0 0);
   --aHover: oklch(4% 0 0);
 
   /* Fluid typography using clamp() */
@@ -28,13 +28,13 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --h1: oklch(100% 0 0);
+    --h1: oklch(100% 0 0 / 0.7);
     --h2: oklch(100% 0 0);
     --h3: oklch(100% 0 0);
     --h4: oklch(100% 0 0);
     --h5: oklch(100% 0 0);
     --p: oklch(100% 0 0);
-    --a: oklch(54.309% 0.26829 286.452);
+    --a: oklch(100% 0 0);
     --aHover: oklch(4% 0 0);
   }
 }
@@ -42,17 +42,13 @@
 h1 {
   font: 400 var(--font-size-h1)/var(--line-height-h1) var(--font-russo-one);
   color: var(--h1);
-  text-shadow: 0 0 2.4rem #FC8FA5;
+  /* text-shadow: 0 0 2.4rem color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%); */
   text-transform: uppercase;
 
   & a {
-    color: inherit;
+    color: var(--a);
     font-weight: inherit;
     text-decoration: none;
-
-    &:hover {
-      color: inherit;
-    }
   }
 }
 
