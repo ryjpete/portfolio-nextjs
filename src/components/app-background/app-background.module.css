@@ -17,7 +17,7 @@
 }
 
 .appBgImage {
-  background-image: url("@/app/assets/logos/galaxy.jpg");
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   opacity: var(--img-opacity);
