@@ -24,7 +24,7 @@ const bgByRoute: Record<string, { color: string; imageOpacity: number }> = {
   },
 };
 
-export function AppBackground() {
+export default function AppBackground() {
   const pathname = usePathname();
   // const [bgImageLoaded, setBgImageLoaded] = useState<string | null>(null);
 
