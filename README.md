@@ -8,8 +8,10 @@ My personal portfolio site built with Next.js and TypeScript.
 - **React 19+**
 - **TypeScript**
 - **CSS Modules**
-- **Tailwind CSS** (base/reset utility)
+- **Tailwind CSS 4** (base/reset utility)
 - **ESLint, TurboPack, Vercel**
+- **Storybook 10+** (nextjs-vite) — component development & testing
+- **HeroIcons** — icon library
 
 ## Getting Started
 
@@ -29,28 +31,50 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
+## Storybook & Testing Scripts
+
+```bash
+npm run storybook        # Start Storybook at localhost:6006
+npm run build-storybook  # Build Storybook for deployment
+npm run test             # Run vitest Storybook visual tests
+```
+
 ## Project Structure
 
 ```
 src/
-  app/           # Pages, layouts, and API routes
+  app/
+    api/         # Backend API routes
+    (profile)/   # Profile layout group with sub-routes
+      about/
+      projects/
+      resume/
+    home/
+    skills/
+    layout.tsx   # Root layout with providers
+    page.tsx
   components/    # Reusable UI components
   config/        # Site-wide configuration (navigation, etc.)
-  context/       # React context providers
+  context/       # React context providers (ProjectContext)
   hooks/         # Custom React hooks
   providers/     # App-level providers
   styles/        # Global styles, color tokens, typography
-  utils/         # Utility functions
+  utils/
 public/
   assets/        # Static images and media
+.storybook/      # Storybook configuration & preview settings
 ```
 
 ## Features
 
-- Animated background that changes per route
-- Scroll-shrinking header logo
-- Project modal with URL routing
-- Resume page pulling from a static API route
+- Scroll-shrinking header logo with smooth animations
+- Project modal with URL routing and ProjectContext integration
+- Resume page pulling from static API route
+- Component-driven development with Storybook integration
+
+<!-- ## Testing
+
+- Storybook visual & interaction testing -->
 
 ## Deployment
 
