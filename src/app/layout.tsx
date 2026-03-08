@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Providers } from "@/providers/providers";
 
-import { AppBackground } from "@/components/app-background";
+import AppBackground from "@/components/app-background";
 import Header from "@/components/header";
 
 import "./globals.css";

@@ -9,10 +9,12 @@ import { usePathname } from "next/navigation";
 
 import { useProject } from "@/context/ProjectContext";
 
-import Back from "../back";
 import BreatheEffect from "../breathe-effect";
+import IconButton from "../icon-button";
 import Logo from "../logo";
 // import Navigation from "../navigation";
+
+import iconBack from "../../../public/assets/images/icons/icon-back.svg";
 
 import styles from "./header.module.css";
 
@@ -77,7 +79,11 @@ export default function Header() {
 	// const back = pathname !== "/" && !(isProjectPage && activeProject) && (
 	const back = pathname !== "/" && (
 		<div ref={backRef} className={`${styles.back} ${activeProject ? styles.projectBack : ""}`}>
-			<Back onClick={activeProject ? handleCloseProject : handleBack} />
+			<IconButton
+				onClick={activeProject ? handleCloseProject : handleBack}
+				src={iconBack}
+				ariaLabel="Back"
+			/>
 		</div>
 	);
 

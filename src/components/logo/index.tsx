@@ -12,5 +12,12 @@ export default function Logo() {
     priority: true,
   };
 
-  return <Link href="/"><Image {...props} alt={props.alt} /></Link>;
+  return (
+    <Link href="/">
+      <Image
+        {...props}
+        alt={props.alt}
+      />
+    </Link>
+  );
 }
