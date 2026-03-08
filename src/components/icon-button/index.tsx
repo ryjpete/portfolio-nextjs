@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import styles from "./icon-button.module.css";
+
 interface IconButtonProps {
   onClick: () => void;
   src: string;
@@ -20,6 +22,7 @@ export default function IconButton({
       type="button"
       aria-label={ariaLabel}
       onClick={onClick}
+      className={styles.iconBtn}
     >
       <Image
         src={src}
