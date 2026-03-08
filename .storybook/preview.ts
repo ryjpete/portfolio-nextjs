@@ -2,6 +2,16 @@ import type { Preview } from '@storybook/nextjs-vite'
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      options: {
+        dark: { name: 'Dark', value: '#333' },
+        light: { name: 'Light', value: '#F7F9F2' },
+      },
+    },
+    initialGlobals: {
+      backgrounds: { value: 'dark' },
+    },
+
     controls: {
       matchers: {
        color: /(background|color)$/i,
