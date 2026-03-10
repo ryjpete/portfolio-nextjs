@@ -15,8 +15,10 @@ import Logo from "../logo";
 // import Navigation from "../navigation";
 
 import iconBack from "../../../public/assets/images/icons/icon-back.svg";
+import imgLines from "@/app/assets/imgs/lines.svg";
 
 import styles from "./header.module.css";
+import Image from "next/image";
 
 export default function Header() {
 	const pathname = usePathname();
@@ -76,6 +78,12 @@ export default function Header() {
 		window.history.back();
 	};
 
+	const lines = (
+		<div className={styles.lines} data-page={pathname}>
+			<Image src={imgLines} alt="Decorative lines" width={200} height={100} />
+		</div>
+	);
+
 	// const back = pathname !== "/" && !(isProjectPage && activeProject) && (
 	const back = pathname !== "/" && (
 		<div ref={backRef} className={`${styles.back} ${activeProject ? styles.projectBack : ""}`}>
@@ -112,6 +120,7 @@ export default function Header() {
 
 	return (
 		<header ref={headerRef} className={styles.header}>
+			{lines} 
 			{back}
 			{logo}
 		</header>

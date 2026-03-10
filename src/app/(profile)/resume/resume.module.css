@@ -1,18 +1,76 @@
 @import "../../../styles/colors.css";
 
 .work {
-  background-color: var(--clr-gray-black);
-  padding: 0 3rem;
+  padding: 4rem 3rem 0;
+
+  & > div {
+    position: relative;
+  }
+
+  .tabFrame {
+    block-size: 23dvw;
+    inline-size: 100dvw;
+    transform: translateX(-3rem);
+    display: flex;
+    align-items: end;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 -3rem -1px;
+      z-index: -1;
+      background-color: var(--clr-gray-black);
+      clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+      transform-origin: 0 100%;
+    }
+  }
+
+  & > div:not(.tabFrame) {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 -3rem;
+      z-index: -1;
+      background-color: var(--clr-gray-black);
+    }
+  }
 }
 
 @media (width >= 576px) {
   .work {
     padding-inline: 4rem;
+
+    .tabFrame {
+      transform: translateX(-4rem);
+
+      &::after {
+        inset-inline: -4rem;
+      }
+    }
+
+    & > div:not(.tabFrame)::after {
+      inset-inline: -6rem;
+    }
   }
 }
 
 @media (width >= 768px) {
   .work {
     padding: 3rem 6rem;
+
+    .tabFrame::after {
+      inset-inline: -6rem;
+    }
+
+    & > div:not(.tabFrame)::after {
+      inset-inline: -6rem;
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .work > div:nth-child(2) > div {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
   }
 }

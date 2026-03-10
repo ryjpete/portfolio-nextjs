@@ -239,7 +239,7 @@ export async function GET() {
         ],
         tenure: {
           start: "2010-06-15T00:00:00Z",
-          end: "2010-06-15T00:00:00Z"
+          end: "2011-06-15T00:00:00Z"
         },
         responsibilities: [
           "Created stylized mockups for car dealership websites based on a pre-themed structure of template ﬁles",
