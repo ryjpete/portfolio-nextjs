@@ -24,27 +24,6 @@
   }
 }
 
-.lines {
-  position: absolute;
-  inset: 0 0 auto 10dvw;
-  z-index: -1;
-  block-size: auto;
-  inline-size: 100%;
-  display: flex;
-  justify-content: flex-start;
-  pointer-events: none;
-  opacity: 0.15;
-
-  > img {
-    block-size: auto;
-    inline-size: 100dvw;
-  }
-
-  &[data-page="/"] {
-    opacity: 0.8;
-  }
-}
-
 .back {
   position: absolute;
   inset-block-start: 10px;
@@ -63,10 +42,6 @@
     }
   }
 
-  .lines {
-    inset-block-start: -100px;
-  }
-
   .back {
     position: relative;
     inset-block-start: 0;
@@ -75,10 +50,6 @@
 }
 
 @media (width >= 768px) {
-  .lines {
-    inset-block-start: -300px;
-  }
-
   .back.projectBack {
     transform: translateX(6rem);
   }

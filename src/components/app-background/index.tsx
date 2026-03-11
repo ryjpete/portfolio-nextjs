@@ -2,6 +2,9 @@
 
 // import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import imgLines from "@/app/assets/imgs/lines.svg";
 
 import styles from "./app-background.module.css";
 
@@ -61,6 +64,12 @@ export default function AppBackground() {
 
   const bg = bgByRoute[pathname] ?? { color: "oklch(0.22 0.03 265)", imageOpacity: 0.2 };
 
+  const lines = (
+    <div className={styles.lines} data-page={pathname}>
+			<Image src={imgLines} alt="Decorative lines" width={200} height={100} />
+		</div>
+  );
+
   return (
     <div className={styles.appBg}
       style={
@@ -74,6 +83,7 @@ export default function AppBackground() {
       aria-hidden
     >
       <div className={styles.appBgColor} />
+      {lines}
       <div className={styles.appBgImage} />
     </div>
   );
