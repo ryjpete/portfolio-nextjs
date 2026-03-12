@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import imgBack from "../../../public/assets/images/icons/icon-back.svg";
 import imgGo from "../../../public/assets/images/icons/icon-go.svg";
 
@@ -22,12 +23,25 @@ export default function Carousel({
 	onTabClick: (tabName: string) => void;
 }) {
 	const activeIndex = carousel.findIndex((tab) => tab.name === activeTab);
-	console.log(
-		"Carousel rendered with activeTab:",
-		activeTab,
-		"activeIndex:",
-		activeIndex,
-	);
+	const panelsRef = useRef<HTMLDivElement>(null);
+
+	const [panelHeight, setPanelHeight] = useState<number | undefined>(undefined);
+
+	useLayoutEffect(() => {
+		const activePanelElement = panelsRef.current?.children[activeIndex] as HTMLElement;
+		if (!activePanelElement) return;
+		
+		const resizeObserver = new ResizeObserver(() => {
+			setPanelHeight(activePanelElement.scrollHeight);
+		});
+
+		resizeObserver.observe(activePanelElement);
+
+		return () => {
+			resizeObserver.disconnect();
+		};
+	}, [activeIndex]);
+
 	const offset = activeIndex * -100;
 
 	const tabs = (
@@ -60,13 +74,23 @@ export default function Carousel({
 
 	const panels = (
 		<div
+			ref={panelsRef}
 			className={styles.panels}
-			style={{ transform: `translateX(${offset}vw)` }}
+			style={{
+				transform: `translateX(${offset}vw)`,
+				height: panelHeight ? `${panelHeight}px` : undefined,
+			}}
 		>
 			{carousel.map((panel, index) => (
-    	  <div key={index} className={styles.panel}>
-					{typeof panel.panel === "function" ? panel.panel() : panel.panel}
-      	</div>
+				<div
+					key={index}
+					className={`${styles.panel} ${activeTab === panel.name ? styles.active : ""}`}
+				>
+					{typeof panel.panel === "function"
+						? panel.panel()
+						: panel.panel
+					}
+				</div>
 			))}
 		</div>
 	);
