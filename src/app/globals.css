@@ -6,6 +6,8 @@
 :root {
   --background: var(--clr-violet-binary-black);
   --foreground: oklch(95% 0 0);
+
+  --max-width: 1500px;
 }
 
 /* Dark mode */
@@ -13,8 +15,11 @@
   :root {
     --background: var(--clr-violet-binary-black);
     --foreground: oklch(95% 0 0);
+
+  --max-width: 1500px;
   }
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -59,7 +64,7 @@ body {
     .container {
       display: flex;
       flex-direction: column;
-      gap: 4rem;
+      gap: 0;
     }
 
     &::before {

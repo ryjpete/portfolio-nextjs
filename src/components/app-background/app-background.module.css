@@ -30,3 +30,25 @@
     transition: none;
   }
 }
+
+.lines {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  block-size: auto;
+  inline-size: 100%;
+  display: flex;
+  justify-content: flex-start;
+  pointer-events: none;
+  opacity: 0.15;
+
+  > img {
+    block-size: auto;
+    inline-size: 50dvw;
+    margin-inline: auto;
+  }
+
+  &[data-page="/"] {
+    opacity: 0.8;
+  }
+}

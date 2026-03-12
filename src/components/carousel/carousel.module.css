@@ -1,0 +1,107 @@
+.carousel {
+  min-inline-size: 100vw;
+
+  .tabs {
+    display: flex;
+    position: relative;
+    inline-size: calc(100vw * var(--num-tabs));
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    transition: transform 0.3s ease-in-out;
+
+    .tab {
+      inline-size: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 3dvw;
+      color: var(--clr-gray-black);
+      font: 400 clamp(20px, 6vw, 90px) / clamp(16px, 4vw, 72px) var(--font-russo-one);
+      text-transform: lowercase;
+      white-space: nowrap;
+      position: relative;
+      transform: translate(0, 2px);
+
+      & > button {
+        border-color: var(--clr-gray-black);
+        block-size: auto;
+        inline-size: clamp(24px, 7dvw, 64px);
+        aspect-ratio: 1;
+        padding: clamp(3px, 1dvw, 8px);
+        transform: translateY(3px);
+
+        & > img {
+          filter: brightness(0);
+          block-size: 100%;
+          inline-size: 100%;
+        }
+      }
+
+      &.first {
+        justify-content: flex-start;
+        padding-inline-start: 1rem;
+      }
+
+      &.last {
+        justify-content: flex-end;
+        padding-inline-end: 2rem;
+      }
+    }
+  }
+
+  .panels {
+    inline-size: calc(100vw * var(--num-tabs));
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+
+    .panel {
+      background-color: var(--clr-gray-black);
+      inline-size: 100vw;
+      padding: 2rem 3rem;
+
+      & > * {
+        max-inline-size: var(--max-width);
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+@media (width >= 576px) {
+  .carousel {
+    .tabs .tab {
+      transform: translateY(4px);
+
+      &.first {
+        padding-inline-start: 2rem;
+      }
+    }
+
+    .panels .panel {
+      padding: 3rem 4rem;
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .carousel {
+    .panels .panel {
+      padding: 3rem 6rem;
+    }
+  }
+}
+
+@media (width >= 992px) {
+  .carousel {
+    .panels .panel {
+      padding-block: 4rem;
+    }
+  }
+}
+
+@media (width >= 1300px) {
+  .carousel .tabs .tab {
+    transform: translateY(8px);
+  }
+}

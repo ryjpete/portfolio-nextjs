@@ -143,6 +143,8 @@
     flex-direction: row;
     align-items: start;
     gap: 3rem;
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
 
     .startMid {
       flex-direction: row;

@@ -1,18 +1,28 @@
 @import "../../../styles/colors.css";
 
 .work {
-  background-color: var(--clr-gray-black);
-  padding: 0 3rem;
+  padding: 2rem 0;
+
+  & > div {
+    position: relative;
+  }
 }
 
 @media (width >= 576px) {
   .work {
-    padding-inline: 4rem;
+    padding-block: 3rem;
   }
 }
 
 @media (width >= 768px) {
   .work {
-    padding: 3rem 6rem;
+    padding: 3rem 0;
+  }
+}
+
+@media (width >= 768px) {
+  .work > div:nth-child(2) > div {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
   }
 }

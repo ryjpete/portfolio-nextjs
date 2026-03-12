@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 // import { useState } from "react";
+// import Navigation from "../navigation";
 
 // import { Bars3Icon } from "@heroicons/react/24/solid";
 // import { ArrowLeftIcon } from "@heroicons/react/24/outline";
@@ -10,9 +11,9 @@ import { usePathname } from "next/navigation";
 import { useProject } from "@/context/ProjectContext";
 
 import BreatheEffect from "../breathe-effect";
+
 import IconButton from "../icon-button";
 import Logo from "../logo";
-// import Navigation from "../navigation";
 
 import iconBack from "../../../public/assets/images/icons/icon-back.svg";
 

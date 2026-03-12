@@ -37,7 +37,7 @@
     justify-content: space-between;
     inset-inline: 24px;
 
-    & > div:only-of-type {
+    & > div:last-of-type {
       margin-inline-start: auto;
     }
   }
