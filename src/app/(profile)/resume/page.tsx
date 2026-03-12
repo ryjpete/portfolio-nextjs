@@ -1,32 +1,45 @@
 "use client";
 
+import { useState } from "react";
+
+import Carousel from "@/components/carousel";
 import WorkExperience from "@/components/work-experience";
 
 import styles from "./resume.module.css";
-import TabHolder from "@/components/tab-holder";
+import Education from "@/components/education";
 
 export default function ResumePage() {
-  const arrTabs = [
-    { name: 'Work Experience', }
-    // { name: 'Education', }
-    // { name: 'Tech Stack', }
-  ];
+  const [activeTab, setActiveTab] = useState("Work Experience");
 
-  const tabFrame = (
-    <div className={styles.tabFrame}>
-      {arrTabs.map((tab, index) => (
-        <TabHolder key={index} tab={tab} />
-      ))}
-    </div>
-  );
+  const handleTabClick = (tabName: string) => {
+    setActiveTab(tabName);
+  };
+
+  const arrTabs = [
+    {
+      name: 'Work Experience',
+      onClick: () => setActiveTab("Work Experience"),
+      panel: <WorkExperience />,
+    },
+    {
+      name: 'Education',
+      onClick: () => setActiveTab("Education"),
+      panel: <Education />,
+    },
+    // {
+    //   name: 'Tech Stack',
+    //   onClick: () => setActiveTab("Tech Stack"),
+    //   panel: <p>Tech stack</p>,
+    // },
+  ];
 
   return (
     <section className={styles.work}>
-      {arrTabs && tabFrame}
-
-      <div>
-        <WorkExperience />
-      </div>
+      <Carousel
+        carousel={arrTabs}
+        activeTab={activeTab}
+        onTabClick={(tabname) => handleTabClick(tabname)}
+      />
     </section>
   );
 }
