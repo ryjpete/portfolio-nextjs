@@ -1,4 +1,8 @@
 .workExperience {
   display: flex;
   flex-direction: column;
+
+  & > div:first-child {
+    padding-block-start: 0;
+  }
 }

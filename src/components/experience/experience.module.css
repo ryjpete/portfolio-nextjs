@@ -177,6 +177,10 @@
       .list {
         justify-content: start;
       }
+
+      & > h2 {
+        text-align: start;
+      }
     }
   }
 }
