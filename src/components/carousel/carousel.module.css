@@ -1,6 +1,6 @@
 .carousel {
   min-inline-size: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .tabs {
     display: flex;
@@ -9,6 +9,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     transition: transform 0.3s ease-in-out;
+    overflow-y: hidden;
 
     .tab {
       inline-size: 100vw;
@@ -52,18 +53,23 @@
   }
 
   .panels {
+    background-color: var(--clr-gray-black);
     inline-size: calc(100vw * var(--num-tabs));
-    display: flex;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-start;
 
     .panel {
-      background-color: var(--clr-gray-black);
       inline-size: 100vw;
       padding: 2rem 3rem;
 
       & > * {
         max-inline-size: var(--max-width);
         margin-inline: auto;
+      }
+
+      &:not(.active) {
+        height: 0;
       }
     }
   }
