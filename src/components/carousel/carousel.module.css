@@ -1,5 +1,6 @@
 .carousel {
   min-inline-size: 100vw;
+  overflow-x: hidden;
 
   .tabs {
     display: flex;
