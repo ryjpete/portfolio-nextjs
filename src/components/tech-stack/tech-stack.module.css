@@ -1,0 +1,51 @@
+@import "../experience/experience.module.css";
+
+.techStack {
+  display: flex;
+  flex-direction: column;
+
+  .exp {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &:first-of-type {
+      padding-block-start: 0;
+    }
+  }
+
+  .position {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (width >= 576px) {
+  .techStack .position {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (width >= 768px) {
+  .techStack {
+    .exp {
+      flex-direction: row;
+      gap: 3rem;
+    }
+
+    .position {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+
+@media (width >= 992px) {
+  .techStack {
+    .exp:first-of-type {
+      padding-block-start: 3rem;
+    }
+
+    .position {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
