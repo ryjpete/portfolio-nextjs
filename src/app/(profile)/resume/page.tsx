@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 import Carousel from "@/components/carousel";
+import Education from "@/components/education";
+import TechStack from "@/components/tech-stack";
 import WorkExperience from "@/components/work-experience";
 
 import styles from "./resume.module.css";
-import Education from "@/components/education";
 
 export default function ResumePage() {
   const [activeTab, setActiveTab] = useState("Work Experience");
@@ -26,11 +27,11 @@ export default function ResumePage() {
       onClick: () => setActiveTab("Education"),
       panel: <Education />,
     },
-    // {
-    //   name: 'Tech Stack',
-    //   onClick: () => setActiveTab("Tech Stack"),
-    //   panel: <p>Tech stack</p>,
-    // },
+    {
+      name: 'Tech Stack',
+      onClick: () => setActiveTab("Tech Stack"),
+      panel: <TechStack />,
+    },
   ];
 
   return (
