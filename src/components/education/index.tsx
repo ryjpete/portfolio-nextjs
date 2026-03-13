@@ -18,6 +18,11 @@ interface Experience {
   tech: { name: string; icon: string }[];
 }
 
+interface Tab {
+  title: string;
+  workExperiences: Experience[];
+}
+
 export default function Education() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +31,7 @@ export default function Education() {
     fetch("/api/resume")
       .then((res) => res.json())
       .then((data) => {
-        setExperiences(data.education);
+        setExperiences(data.tabs.find((tab: Tab) => tab.title === "Education")?.education || []);
         setLoading(false);
       });
   }, []);

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+
 import imgBack from "../../../public/assets/images/icons/icon-back.svg";
 import imgGo from "../../../public/assets/images/icons/icon-go.svg";
 
