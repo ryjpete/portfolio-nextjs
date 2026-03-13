@@ -415,7 +415,7 @@ export async function GET() {
 					stack: [
 						{
 							name: "jQuery",
-							icon: "/assets/images/tech/icon-jquery.svg"
+							icon: "/assets/images/tech/icon-jQuery.svg"
 						},
 						{
 							name: "SASS",
