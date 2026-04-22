@@ -8,6 +8,7 @@ interface Project {
   url?: string;
   target?: string;
   client?: string;
+  isActive?: boolean;
   type?: string;
   blurb?: string;
   description?: string;
@@ -16,9 +17,11 @@ interface Project {
     thumb: string;
     imageSet?: string[];
   };
-  techs?: {
-    [category: string]: string[];
-  };
+  techs?: Array<{
+    category: string;
+    isActive?: boolean;
+    items: string[];
+  }>;
 }
 
 interface ProjectContextType {

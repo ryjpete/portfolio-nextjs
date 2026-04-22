@@ -22,7 +22,7 @@ const bgByRoute: Record<string, { color: string; imageOpacity: number }> = {
     imageOpacity: 0.05
   },
   "/projects": {
-    color: "var(--clr-red-ponzu-brown)",
+    color: "var(--clr-green-grass)",
     imageOpacity: 0.05
   },
 };
