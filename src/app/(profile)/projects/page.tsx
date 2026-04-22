@@ -33,7 +33,7 @@ interface Project {
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const { activeProject, setActiveProject } = useProject();
+  const { activeProject } = useProject();
   
   const router = useRouter();
 
@@ -56,7 +56,6 @@ export default function ProjectsPage() {
   }, [activeProject]);
 
   const handleProjectClick = (project: Project) => {
-    setActiveProject(project);
     router.push(`/projects/${project.slug}`);
   };
 
