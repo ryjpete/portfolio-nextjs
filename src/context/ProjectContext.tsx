@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 
-interface Project {
+export interface ProjectCntxt {
   title: string;
   slug: string;
   url?: string;
@@ -25,14 +25,14 @@ interface Project {
 }
 
 interface ProjectContextType {
-	activeProject: Project | null;
-	setActiveProject: (project: Project | null) => void;
+	activeProject: ProjectCntxt | null;
+	setActiveProject: (project: ProjectCntxt | null) => void;
 }
 
 const ProjectContext = createContext<ProjectContextType | null>(null);
 
 export function ProjectProvider({ children }: { children: React.ReactNode }) {
-	const [activeProject, setActiveProject] = useState<Project | null>(null);
+	const [activeProject, setActiveProject] = useState<ProjectCntxt | null>(null);
 
 	return (
 		<ProjectContext.Provider value={{ activeProject, setActiveProject }}>

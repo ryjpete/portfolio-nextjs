@@ -1,6 +1,5 @@
 "use client";
 
-// import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -29,40 +28,11 @@ const bgByRoute: Record<string, { color: string; imageOpacity: number }> = {
 
 export default function AppBackground() {
   const pathname = usePathname();
-  // const [bgImageLoaded, setBgImageLoaded] = useState<string | null>(null);
 
-  // useEffect(() => {
-  //   if (typeof window === "undefined") return;
-
-  //   fetch("/api/hubble-feed")
-  //     .then((res) => res.text())
-  //     .then(async (xmlStr) => {
-  //       const parser = new DOMParser();
-  //       const xml = parser.parseFromString(xmlStr, "application/xml");
-  //       const items = xml.querySelectorAll("item");
-  //       const images = Array.from(items)
-  //         .map((item) => item.querySelector("enclosure")?.getAttribute("url"))
-  //         .filter(Boolean) as string[];
-
-  //       const filteredImages = (await Promise.all(
-  //         images.map((url) =>
-  //           new Promise<string | null>((resolve) => {
-  //             const img = new Image();
-  //             img.onload = () => resolve(img.naturalWidth > 900 ? url : null);
-  //             img.onerror = () => resolve(null);
-  //             img.src = url;
-  //           })
-  //         )
-  //       )).filter(Boolean) as string[];
-
-  //       if (filteredImages.length > 0) {
-  //         const random = filteredImages[Math.floor(Math.random() * filteredImages.length)];
-  //         setBgImageLoaded(random);
-  //       }
-  //     });
-  // }, []);
-
-  const bg = bgByRoute[pathname] ?? { color: "oklch(0.22 0.03 265)", imageOpacity: 0.2 };
+  const bg =
+    bgByRoute[pathname] ??
+    Object.entries(bgByRoute).find(([key]) => key.endsWith("/*") && pathname.startsWith(key.slice(0, -2)))?.[1] ??
+    { color: "var(--clr-green-jade-glass)", imageOpacity: 0.2 };
 
   const lines = (
     <div className={styles.lines} data-page={pathname}>
@@ -76,7 +46,6 @@ export default function AppBackground() {
         {
           "--bg-color": bg.color,
           "--img-opacity": bg.imageOpacity,
-          // "--bg-image": `url(${bgImageLoaded ?? ""})`
           "--bg-image": `url(/assets/images/bgs/galaxy2.png)`
         } as React.CSSProperties
       }

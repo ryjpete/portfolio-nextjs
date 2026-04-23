@@ -1,6 +1,5 @@
 .projectCard {
   appearance: unset;
-  -moz-appearance: unset;
   -webkit-appearance: unset;
   display: flex;
   flex-direction: column;
@@ -45,7 +44,7 @@
       inline-size: 10px;
 
       &::before {
-        background-color: color-mix(in oklab, var(--clr-gray-black) 25%, transparent 100%);
+        background-color: color-mix(in oklab, var(--clr-gray-black) 25%, transparent);
         content: '';
         position: absolute;
         inset: 0;
@@ -85,10 +84,11 @@
             color: var(--clr-green-alien-abduction);
           }
 
-          & > ul {
+          & > div > ul {
             display: flex;
+            flex-direction: row;
             gap: 10px;
-            background-color: color-mix(in oklab, var(--clr-gray-white) 12%, transparent 100%);
+            background-color: color-mix(in oklab, var(--clr-gray-white) 12%, transparent);
             border-radius: 3px;
             padding: 5px 10px;
 
@@ -118,7 +118,7 @@
           align-items: start;
           gap: 4px;
 
-          & > ul {
+          & > div > ul {
             display: flex;
             flex-direction: column;
             gap: 10px;

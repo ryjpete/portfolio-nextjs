@@ -1,18 +1,19 @@
 /* Light mode (default) */
 :root {
   /* Grays */
-  --clr-gray-white: oklch(100% 0 0);
-  --clr-gray-white-edgar: oklch(95% 0 0);
-  --clr-gray-cynical-black: oklch(15% 0 0);
-  --clr-gray-existential-angst: oklch(8% 0 0);
-  --clr-gray-black: oklch(0% 0 0);
+  --clr-gray-white: oklch(1 0 0);
+  --clr-gray-white-edgar: oklch(0.95 0 0);
+  --clr-gray-cynical-black: oklch(0.15 0 0);
+  --clr-gray-existential-angst: oklch(0.08 0 0);
+  --clr-gray-black: oklch(0 0 0);
 
   /* Greens */
   --clr-green-pearl-powder: oklch(0.9932 0.0225 114.93);
-  --clr-green-winds-breath: oklch(90% 0.01 120);
+  --clr-green-winds-breath: oklch(0.9 0.01 120);
   --clr-green-cold-blooded: oklch(0.9269 0.0557 197.62);
   --clr-green-grass: oklch(0.6676 0.1895 138.45);
   --clr-green-alien-abduction: oklch(0.8673 0.2929 142.42);
+  --clr-green-jade-glass: oklch(0.7835 0.1333 197.22);
 
   /* Reds */
   --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
@@ -20,34 +21,6 @@
   --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
 
   /* Violets */
-  --clr-violet-quiet-melody: oklch(54.309% 0.26829 286.452);
+  --clr-violet-quiet-melody: oklch(0.54309 0.26829 286.452);
   --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Grays */
-  --clr-gray-white: oklch(100% 0 0);
-  --clr-gray-white-edgar: oklch(95% 0 0);
-  --clr-gray-cynical-black: oklch(15% 0 0);
-  --clr-gray-existential-angst: oklch(8% 0 0);
-  --clr-gray-black: oklch(0% 0 0);
-
-    /* Greens */
-    --clr-green-pearl-powder: oklch(0.9932 0.0225 114.93);
-    --clr-green-winds-breath: oklch(30% 0.01 120);
-    --clr-green-cold-blooded: oklch(0.9269 0.0557 197.62);
-    --clr-green-grass: oklch(0.6676 0.1895 138.45);
-    --clr-green-alien-abduction: oklch(0.8673 0.2929 142.42);
-
-    /* Reds */
-    --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
-    --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
-    --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
-
-    /* Violets */
-    --clr-violet-quiet-melody: oklch(30% 0.26829 286.452);
-    --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
-  }
 }

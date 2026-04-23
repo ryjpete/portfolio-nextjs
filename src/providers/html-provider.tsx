@@ -4,7 +4,6 @@ import { Russo_One } from "next/font/google";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 
-import "@/app/globals.css";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
