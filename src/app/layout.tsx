@@ -18,18 +18,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const header = <Header />;
-  const appBg = <AppBackground />;
-
   return (
     <Providers>
-      {appBg}
-      {header}
-
+      <AppBackground />
+      <Header />
       {children}
-      {/* <main className="main">
-        {children}
-      </main> */}
     </Providers>
   );
 }
