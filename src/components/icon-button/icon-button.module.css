@@ -6,15 +6,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding: 4px;
 
   &:hover {
-    background-color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent 70%);
+    background-color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent);
     color: var(--clr-gray-black);
   }
 
   @media (width >= 576px) {
-    inset-block-start: 40px;
-    inset-inline-start: 0;
     block-size: 64px;
     inline-size: 64px;
   }
