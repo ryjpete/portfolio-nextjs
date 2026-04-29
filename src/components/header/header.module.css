@@ -1,13 +1,14 @@
 .header {
   position: fixed;
-  inset-inline: 0;
+  inset-block-start: 12px;
+  inset-inline: 12px;
   /* inset: 12px 0 auto 0; */
   /* inset-block-start: 12px; */
   /* inset-inline: 0; */
   z-index: 200;
   display: flex;
   align-items: flex-start;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   /* padding: 0 4dvw; */
   /* inline-size: 100%; */
 

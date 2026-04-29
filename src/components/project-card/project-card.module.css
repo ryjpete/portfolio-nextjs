@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding-block-start: clamp(13px, 2.4dvw, 4rem);
+  /* padding-block-start: clamp(13px, 2.4dvw, 4rem); */
   position: relative;
   block-size: 100%;
 
