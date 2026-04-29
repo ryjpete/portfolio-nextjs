@@ -7,18 +7,18 @@
     padding-inline: 10dvw;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     & > h1 {
-      position: absolute;
-      inset-block-end: 0;
+      /* translate: 8vw 0; */
+      /* position: absolute; */
+      inset-block-end: -2px;
       inset-inline-start: 0;
       rotate: -11.7deg;
-      translate: 8vw -61%;
       text-transform: none;
-      font-size: clamp(1.75rem, 5vw, 10rem);
-      line-height: 1;
+      font-size: clamp(1.5rem, 3vw, 5rem);
       color: var(--clr-gray-black);
+      transform-origin: top left;
     }
 
     & svg {
@@ -32,10 +32,13 @@
     }
 
     .blurb {
+      /* display: none; */
       position: absolute;
-      inset-inline-start: 50%;
+      /* inset-inline-start: 50%; */
+      inset-block-start: -10px;
+      transform-origin: top right;
       rotate: -11.7deg;
-      translate: -50% 10px;
+      /* translate: -50% 10px; */
       inline-size: 100dvw;
       padding-inline: 10dvw;
 
@@ -143,11 +146,11 @@
   .project {
     .header {
       & > h1 {
-        translate: 8vw -70%;
+        inset-block-end: 1px;
       }
 
       .blurb {
-        translate: -50% 0;
+        /* translate: -50% 0; */
       }
     }
   }
@@ -158,14 +161,14 @@
       align-items: flex-end;
 
       & > h1 {
-        translate: 8vw -75%;
+        inset-block-end: 4px;
       }
 
       .blurb {
         padding: 0;
         max-inline-size: 50dvw;
-        inset-inline-start: unset;
-        translate: 0 -30px;
+        inset-inline-start: 40dvw;
+        inset-block-start: -50px;
       }
     }
   }
@@ -178,9 +181,14 @@
         font-size: clamp(3rem, 5vw, 10rem);
       }
 
-      .blurb > h5 {
-        font-size: clamp(1.125rem, 2vw, 3rem);
-        line-height: clamp(1.25rem, 2.4vw, 4rem);
+      .blurb {
+        inset-block-start: -75px;
+        inset-inline-start: 45dvw;
+
+        & > h5 {
+          font-size: clamp(1.125rem, 2vw, 3rem);
+          line-height: clamp(1.25rem, 2.4vw, 4rem);
+        }
       }
     }
 
@@ -196,7 +204,7 @@
   .project {
     .header {
       .blurb {
-        translate: 0 -50px;
+        /* translate: 0 -50px; */
       }
     }
   }

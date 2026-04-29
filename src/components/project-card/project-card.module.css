@@ -4,29 +4,25 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding-block-start: 32px;
+  padding-block-start: clamp(13px, 2.4dvw, 4rem);
   position: relative;
   block-size: 100%;
-  
+
   .header {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 14px;
     display: flex;
     align-items: end;
+    justify-content: space-between;
     gap: 10px;
+    inline-size: calc(100% - 10px);
+    padding-inline-start: 10px;
 
     & > h2 {
       color: var(--clr-gray-black);
-      text-transform: unset;
-    }
-
-    & > img {
-      border: 1px solid var(--clr-gray-white);
-      block-size: 36px;
-      inline-size: 36px;
-      padding: 4px;
-      filter: invert();
+      font-size: 26px;
+      line-height: 1;
+      text-align: start;
+      text-box-trim: trim-both;
+      text-box-edge: cap alphabetic;
     }
   }
 
@@ -61,73 +57,46 @@
       gap: 20px;
       block-size: 100%;
 
-      .contentTop {
-        block-size: 100%;
+      & > img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        filter: grayscale(100%) opacity(50%);
+        transition: filter 0.35s ease-in-out;
+      }
+
+      .details {
+        flex: 1;
         display: flex;
-        gap: 40px;
-
-        & > * {
-          flex: 1;
-        }
-
-        & > p {
-          text-align: end;
-        }
+        align-items: start;
+        justify-content: space-between;
+        gap: 24px;
 
         .intro {
           display: flex;
           flex-direction: column;
           align-items: start;
-          gap: 20px;
+          gap: 12px;
 
-          & > h5 {
-            color: var(--clr-green-alien-abduction);
+          & > p {
+            text-align: start;
+            line-height: clamp(1.25rem, 1.5vw, 1.5rem);
           }
 
-          & > div > ul {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            background-color: color-mix(in oklab, var(--clr-gray-white) 12%, transparent);
-            border-radius: 3px;
-            padding: 5px 10px;
-
-            & > li img {
-              max-block-size: 24px;
-              max-inline-size: 24px;
-            }
+          .blurb {
+            color: color-mix(in oklab, var(--clr-gray-white) 30%, transparent);
+            font-size: clamp(0.4rem, 1vw, 0.75rem);
+            font-weight: 700;
+            line-height: clamp(1rem, 1vw, 0.875rem);
+            text-transform: uppercase;
           }
-        }
-      }
-
-      .contentBtm {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-
-        & > * {
-          flex: 1;
         }
 
         & > img {
-          max-inline-size: 500px;
-        }
-
-        .techs {
-          display: flex;
-          align-items: start;
-          gap: 4px;
-
-          & > div > ul {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            & > li img {
-              max-block-size: 24px;
-              max-inline-size: 24px;
-            }
-          }
+          border: 1px solid var(--clr-gray-white);
+          block-size: 30px;
+          inline-size: 30px;
+          padding: 4px;
+          align-self: flex-end;
         }
       }
     }
@@ -139,12 +108,22 @@
     inline-size: 100%;
 
     &::before {
-      background-color: color-mix(in oklab, var(--clr-gray-black) 40%, transparent 100%);
+      background-color: color-mix(in oklab, var(--clr-gray-black) 40%, transparent);
       content: '';
       position: absolute;
       inset: 0;
-      clip-path: polygon(10px 0, 100% 0,calc(100% - 10px) 100%, 0% 100%);
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0% 100%);
       z-index: 1;
+    }
+  }
+
+  &:hover {
+    .body {
+      .content {
+        & > img {
+          filter: grayscale(0%) opacity(100%);
+        }
+      }
     }
   }
 }

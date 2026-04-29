@@ -13,7 +13,7 @@
     color: var(--clr-gray-black);
   }
 
-  @media (width >= 576px) {
+  @media (width >= 768px) {
     block-size: 64px;
     inline-size: 64px;
   }

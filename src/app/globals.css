@@ -56,6 +56,10 @@ body {
 
   &[data-page="home"] {
     background: var(--background);
+
+    & header {
+      justify-content: center;
+    }
   }
 
   &[data-page="resume"] {

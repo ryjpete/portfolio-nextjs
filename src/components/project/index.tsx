@@ -21,7 +21,7 @@ export default function Project({ slug }: ProjectProps) {
 
 	useEffect(() => {
 		// If there's an active project, don't fetch
-		if (activeProject) return;
+		if (activeProject?.slug === slug) return;
 
 		// If no active project, fetch by slug
 		fetch("/api/projects")
@@ -38,6 +38,12 @@ export default function Project({ slug }: ProjectProps) {
 				}
 			})
 	}, [slug, activeProject, setActiveProject, router]);
+
+	useEffect(() => {
+		return () => {
+			setActiveProject(null);
+		};
+	}, [setActiveProject]);
 
 	const left = (
 		<div className={styles.left}>

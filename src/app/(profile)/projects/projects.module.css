@@ -1,7 +1,8 @@
 .projects {
   padding: 0 3rem;
   display: grid;
-  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: 24px;
 
   .project {
     display: flex;
@@ -81,10 +82,16 @@
 @media (width >= 768px) {
   .projects {
     padding: 3rem 6rem;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
 
     .project {
       gap: 2rem;
     }
   }
 }
+
+/* @media (width >= 1200px) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+} */
