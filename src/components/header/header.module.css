@@ -1,11 +1,16 @@
 .header {
   position: fixed;
-  inset-block-start: 24px;
-  inset-inline: 0;
+  inset-block-start: 12px;
+  inset-inline: 12px;
+  /* inset: 12px 0 auto 0; */
+  /* inset-block-start: 12px; */
+  /* inset-inline: 0; */
   z-index: 200;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* padding: 0 4dvw; */
+  /* inline-size: 100%; */
 
   & > div > a {
     display: flex;
@@ -14,7 +19,7 @@
 
   & :global(.logo) {
     block-size: auto;
-    inline-size: clamp(75px, 25vw, 125px);
+    inline-size: clamp(50px, 15vw, 125px);
   }
 
   .logoScroll {
@@ -22,27 +27,28 @@
   }
 }
 
-.back {
+/* .back {
   position: absolute;
   inset-block-start: 10px;
   inset-inline-start: 24px;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+} */
 
 @media (width >= 576px) {
   .header {
     align-items: start;
     justify-content: space-between;
     inset-inline: 24px;
+    padding: 0;
 
     & > div:last-of-type {
       margin-inline-start: auto;
     }
   }
 
-  .back {
+  /* .back {
     position: relative;
     inset-block-start: 0;
     inset-inline-start: 0;
-  }
+  } */
 }

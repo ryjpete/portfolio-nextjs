@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { useProject } from "@/context/ProjectContext";
-
 import ProjectCard from "@/components/project-card";
 
 import styles from "./projects.module.css";
@@ -12,18 +10,22 @@ import styles from "./projects.module.css";
 interface Project {
   title: string;
   slug: string;
+  client: string;
+  description: string;
+  stack: string[];
+  thumb?: string;
+  imageSet?: string[];
+  specs?: Array<{
+    display: string;
+    label: string;
+  }>;
+
   url?: string;
   target?: string;
-  client?: string;
   isActive?: boolean;
   type?: string;
   blurb?: string;
-  description?: string;
   cats?: string[];
-  images: {
-    thumb: string;
-    imageSet?: string[];
-  };
   techs?: Array<{
     category: string;
     isActive?: boolean;
@@ -33,8 +35,6 @@ interface Project {
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const { activeProject } = useProject();
-  
   const router = useRouter();
 
   useEffect(() => {
@@ -42,18 +42,6 @@ export default function ProjectsPage() {
       .then((res) => res.json())
       .then((data) => setProjects(data.projects));
   }, []);
-
-  useEffect(() => {
-    if (activeProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [activeProject]);
 
   const handleProjectClick = (project: Project) => {
     router.push(`/projects/${project.slug}`);

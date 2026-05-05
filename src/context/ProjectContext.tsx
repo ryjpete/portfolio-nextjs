@@ -5,18 +5,22 @@ import { createContext, useContext, useState } from "react";
 export interface ProjectCntxt {
   title: string;
   slug: string;
+  client: string;
+  description: string;
+  stack: string;
+  thumb?: string;
+  imageSet?: string[];
+  specs?: Array<{
+    display: string;
+    label: string;
+  }>;
+
   url?: string;
   target?: string;
-  client?: string;
   isActive?: boolean;
   type?: string;
   blurb?: string;
-  description?: string;
   cats?: string[];
-  images: {
-    thumb: string;
-    imageSet?: string[];
-  };
   techs?: Array<{
     category: string;
     isActive?: boolean;
