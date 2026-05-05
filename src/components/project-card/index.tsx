@@ -15,6 +15,11 @@ interface ProjectData {
     description: string;
     stack: string[];
     thumb?: string;
+    imageSet?: string[];
+    specs?: Array<{
+      display: string;
+      label: string;
+    }>;
 
     url?: string;
     target?: string;
@@ -22,9 +27,6 @@ interface ProjectData {
     type?: string;
     blurb?: string;
     cats?: string[];
-    images: {
-      imageSet?: string[];
-    };
     techs?: Array<{
       category: string;
       isActive?: boolean;

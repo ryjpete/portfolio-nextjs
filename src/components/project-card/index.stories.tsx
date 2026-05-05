@@ -33,7 +33,13 @@ export const Default: Story = {
       description: "A complete overhaul of my portfolio.",
       stack: ["Next.js", "React", "TypeScript"],
       thumb: "/assets/images/projects/grateful-dev/thumb01.png",
-      images: {},
+      imageSet: [],
+      specs: [
+        {
+          display: "Role",
+          label: "Full Stack Developer"
+        },
+      ],
     },
   },
 };
@@ -46,7 +52,14 @@ export const Placeholder: Story = {
       client: "me",
       description: "A complete overhaul of my portfolio.",
       stack: ["Next.js", "React", "TypeScript"],
-      images: {},
+      thumb: "",
+      imageSet: [],
+      specs: [
+        {
+          display: "Role",
+          label: "Full Stack Developer"
+        },
+      ],
     },
   },
 };

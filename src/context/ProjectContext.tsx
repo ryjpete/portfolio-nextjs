@@ -14,7 +14,7 @@ export interface ProjectCntxt {
     display: string;
     label: string;
   }>;
-  
+
   url?: string;
   target?: string;
   isActive?: boolean;
