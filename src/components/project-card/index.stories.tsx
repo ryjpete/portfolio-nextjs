@@ -29,11 +29,11 @@ export const Default: Story = {
     project: {
       title: "Grateful Dev",
       slug: "grateful-dev",
+      client: "me",
       description: "A complete overhaul of my portfolio.",
-      blurb: "Next.js - React - TypeScript",
-      images: {
-        thumb: "/assets/images/projects/grateful-dev/thumb01.png",
-      },
+      stack: ["Next.js", "React", "TypeScript"],
+      thumb: "/assets/images/projects/grateful-dev/thumb01.png",
+      images: {},
     },
   },
 };
@@ -43,11 +43,10 @@ export const Placeholder: Story = {
     project: {
       title: "Grateful Dev",
       slug: "grateful-dev",
+      client: "me",
       description: "A complete overhaul of my portfolio.",
-      blurb: "Next.js - React - TypeScript",
-      images: {
-        thumb: "",
-      },
+      stack: ["Next.js", "React", "TypeScript"],
+      images: {},
     },
   },
 };

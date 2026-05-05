@@ -229,12 +229,45 @@ export async function GET() {
         slug: "grateful-dev",
         client: "me",
         thumb: "/assets/images/projects/grateful-dev/thumb01.png",
+        imageSet: [
+          "/assets/images/projects/grateful-dev/thumb01.png",
+          "/assets/images/projects/grateful-dev/thumb02.png",
+          "/assets/images/projects/grateful-dev/thumb03.png",
+        ],
         description: "My personal portfolio site, currently and always under active development.",
         stack: "Next.js (App Router) - React 19 - TypeScript - CSS Modules",
-        aspects: [
+        specs: [
+          {
+            label: "Branding",
+            display: "Custom logo and branding, with a focus on a clean, modern aesthetic and a unique visual style.",
+          },
+          {
+            label: "Design",
+            display: "Custom design and branding, with a focus on typography and a unique visual style.",
+          },
+          {
+            label: "Development",
+            display: "Built with Next.js and React, using TypeScript for type safety and CSS Modules for styling.",
+          },
+          {
+            label: "AI Development",
+            display: "AI-assisted development using GitHub Copilot, with a focus on leveraging AI for code generation and problem-solving while maintaining a human-centered approach to design and development.",
+          },
+          {
+            label: "Design System",
+            display: "Custom design system, focusing on accessibility and reusability.",
+          },
+          {
+            label: "Component Documentation",
+            display: "Uses Storybook for documenting and showcasing UI components, with a focus on accessibility and reusability.",
+          },
           {
             label: "Data",
             display: "Served through internal API routes, currently hardcoded, but set up for CMS/database integration.",
+          },
+          {
+            label: "Deployment",
+            display: "Hosted on Vercel with continuous deployment from GitHub.",
           },
         ],
       },
@@ -244,7 +277,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "A platform allowing farm operators and customers to remotely monitor crops via a network of cameras.",
         stack: "Next.js frontend + Node.js/Express backend + PostgreSQL",
-        aspects: [
+        specs: [
           {
             label: "Camera management",
             display: 'Tracks field cameras with configurable image capture rates, and stores snapshots taken during runs',
@@ -273,7 +306,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "Helps farmers/agronomists monitor crop fields by viewing camera-captured images from field cameras, tracking irrigation pivot runs, and analyzing crop health metrics.",
         stack: "React Native - React Navigation - Formik - React Native Paper",
-        aspects: [
+        specs: [
           {
             label: "Farm/Field management",
             display: "Select farms and fields, view associated data",
@@ -310,7 +343,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "A SaaS platform for horse barn management with camera monitoring capabilities.",
         stack: "React - Redux - React Query - Emotion - Styled Components - Node.js/Express - PostgreSQL - Prisma",
-        aspects: [
+        specs: [
           {
             label: "Auth",
             display: "Cookie-based auth with password reset and invite flows",
@@ -335,7 +368,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "An application for managing equestrian facilities, letting barn staff and admins monitor horses, stalls, and barns with integrated IP camera support.",
         stack: "React - Expo - React Navigation - TanStack Query - Formik",
-        aspects: [
+        specs: [
           {
             label: "Manage horses, stalls",
             display: "Add, edit, and archive horses and stalls, assign horses to stalls, and track barn inventory",
@@ -356,7 +389,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "A job/crew management platform for a utility line work company, used by foremen and field crews to track pole work.",
         stack: "React - React Router - Bootstrap - Node.js/Express - PostgreSQL",
-        aspects: [
+        specs: [
           {
             label: "Auth",
             display: "Role-based access for foremen and field crew, with cookie-based auth and password reset",
@@ -377,7 +410,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "An admin platform for running youth horse shows, with a companion mobile-style interface for riders and families.",
         stack: "React - PrimeReact UI - SCSS/CSS Modules - Emotion - Node.js/Express - Prisma - PostgreSQL",
-        aspects: [
+        specs: [
           {
             label: "Multi-tenant",
             display: "Supports multiple shows, each with their own divisions, riders, and horses",
@@ -398,7 +431,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "Judging app built for judges and show officials to manage and score competitors at youth equestrian shows.",
         stack: "React Native - React Navigation - TanStack Query - Formik - JWT-based authentication",
-        aspects: [
+        specs: [
           {
             label: "Auth",
             display: "JWT-based authentication for judges and show officials",
@@ -423,7 +456,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "A platform for equestrian show management, specifically from the rider/member perspective.",
         stack: "React Native - TS - React Navigation - TanStack Query - Formik - JWT-based authentication - React Native Paper",
-        aspects: [
+        specs: [
           {
             label: "Show & class management ",
             display: "Browsing show schedules, registering for classes, viewing class details and live scoring.",
@@ -456,7 +489,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "Real-time AI-powered potato inspection system to count and classify potatoes.",
         stack: "Kivy - KivyMD - Kivy Garden - Python",
-        aspects: [
+        specs: [
           {
             label: "Real-time image capture and processing",
             display: "Captures images of potatoes on a conveyor belt and processes them in real-time for inspection",
@@ -481,7 +514,7 @@ export async function GET() {
         client: "The Main Branch",
         description: "An analytics and reporting dashboard for an AI phone assistant for automotive dealerships",
         stack: "Next.js - React - JS - Chart.js - Auth0 - Snowflake - PrimeReact UI",
-        aspects: [
+        specs: [
           {
             label: "Dashboard",
             display: "KPI stats (call handling rate, booking opportunities, rule-based transfers, etc.)",

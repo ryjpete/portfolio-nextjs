@@ -47,7 +47,7 @@ export async function GET() {
 							"Establish and enforce code quality standards via linting and best practices",
 							"Mentor junior developers and contribute to technical decision-making",
 							"Optimize application performance and ensure cross-browser/device compatibility",
-							"Contribute to progressive web app (PWA) features including manifests, icons, and offline support",
+							// "Contribute to progressive web app (PWA) features including manifests, icons, and offline support",
 						],
 						tech: [
 							{

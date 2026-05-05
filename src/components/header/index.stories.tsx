@@ -8,7 +8,12 @@ const meta = {
   title: "Components/Header",
   component: Index,
   parameters: {
-    layout: "centered"
+    layout: "fullscreen",
+    nextjs: {
+      navigation: {
+        pathname: '/',
+      },
+    },
   },
   decorators: [
     (Story) => (
@@ -23,4 +28,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Home: Story = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: '/',
+      },
+    },
+  },
+};
+
+export const InnerPage: Story = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: '/projects',
+      },
+    },
+  },
+};
