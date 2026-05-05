@@ -1,7 +1,8 @@
 .projects {
   padding: 0 3rem;
   display: grid;
-  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 24px;
 
   .project {
     display: flex;
@@ -77,14 +78,23 @@
     padding-inline: 4rem;
   }
 }
-
 @media (width >= 768px) {
   .projects {
     padding: 3rem 6rem;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
 
     .project {
       gap: 2rem;
     }
+  }
+}
+@media (width >= 992px) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+@media (width >= 1200px) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   }
 }

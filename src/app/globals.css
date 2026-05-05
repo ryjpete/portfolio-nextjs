@@ -45,9 +45,13 @@ body {
   }
 
   .container {
-    padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem);
+    /* padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem); */
+    min-block-size: 100dvh;
     inline-size: 100dvw;
     max-width: none;
+    padding-block-start: 165px;
+    display: flex;
+    flex-direction: column;
 
     & > * {
       flex: 1;
@@ -56,6 +60,10 @@ body {
 
   &[data-page="home"] {
     background: var(--background);
+
+    & header {
+      justify-content: center;
+    }
   }
 
   &[data-page="resume"] {
