@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-      {/* <AppBackground /> */}
+      <AppBackground />
       <Header />
-      {/* {children} */}
+      {children}
     </Providers>
   );
 }

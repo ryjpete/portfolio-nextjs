@@ -22,5 +22,6 @@
 
   /* Violets */
   --clr-violet-quiet-melody: oklch(0.54309 0.26829 286.452);
+  --clr-violet-belladonna: oklch(0.1574 0.0654 351.05);
   --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
 }

@@ -17,18 +17,7 @@ body {
   transition: background-color 0.6s ease-in-out;
   position: relative;
 
-  /* &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: url("@/app/assets/logos/galaxy.jpg");
-    background-size: cover;
-    background-position: center;
-  } */
-
   .container {
-    /* padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem); */
     min-block-size: 100dvh;
     inline-size: 100dvw;
     max-width: none;
@@ -42,28 +31,12 @@ body {
   }
 
   &[data-page="home"] {
-    background: var(--color-bg);
-
     & header {
       justify-content: center;
     }
   }
 
-  &[data-page="resume"] {
-    background: var(--color-accent);
+  &[data-page="resume"] {}
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    &::before {
-      opacity: 0.05;
-    }
-  }
-
-  & button {
-    cursor: pointer;
-  }
+  & button {}
 }

@@ -1,17 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-// import { useState } from "react";
-// import Navigation from "../navigation";
-
-// import { Bars3Icon } from "@heroicons/react/24/solid";
-// import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 
 import { useProject } from "@/context/ProjectContext";
 
 import BreatheEffect from "../breathe-effect";
-
 import IconButton from "../icon-button";
 import Logo from "../logo";
 
@@ -19,50 +13,16 @@ import iconBack from "../../../public/assets/images/icons/icon-back.svg";
 
 import styles from "./header.module.css";
 
+const SPRING = { type: "spring", stiffness: 200, damping: 24, mass: 0.8 } as const;
+
 export default function Header() {
 	const pathname = usePathname();
 	const { activeProject, setActiveProject } = useProject();
-	
-	const headerRef = useRef<HTMLDivElement>(null);
-	const logoRef = useRef<HTMLDivElement>(null);
-	const backRef = useRef<HTMLDivElement>(null);
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const isHome = pathname === "/";
 
-	// const isProjectPage = pathname === "/projects";
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (logoRef.current) {
-				if (window.innerWidth >= 576) {
-					if (window.scrollY > 25) {
-						logoRef.current.style.transform = "scale(0.4)";
-						logoRef.current.style.transformOrigin = "top right";
-
-						if (backRef.current) {
-							backRef.current.style.transform = "scale(0.65)";
-							backRef.current.style.transformOrigin = "top left";
-						}
-					} else {
-						logoRef.current.style.transform = "scale(1)";
-						if (backRef.current) {
-							backRef.current.style.transform = "scale(1)";
-							backRef.current.style.transformOrigin = "top left";
-						}
-					}
-				} else {
-					logoRef.current.style.transform = "scale(1)";
-					if (backRef.current) {
-						backRef.current.style.transform = "scale(1)";
-						backRef.current.style.transformOrigin = "top left";
-					}
-				}
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	const { scrollY } = useScroll();
+	const logoScale = useTransform(scrollY, [0, 80], [1, 0.5]);
+	const backScale = useTransform(scrollY, [0, 80], [1, 0.7]);
 
 	// const toggleTrigger = () => {
 	// 	setIsMenuOpen(!isMenuOpen);
@@ -77,23 +37,46 @@ export default function Header() {
 		window.history.back();
 	};
 
-	// const back = pathname !== "/" && !(isProjectPage && activeProject) && (
-	const back = pathname !== "/" && (
-		<div ref={backRef} className={`${styles.back} ${activeProject ? styles.projectBack : ""}`}>
-			<IconButton
-				onClick={activeProject ? handleCloseProject : handleBack}
-				src={iconBack}
-				ariaLabel="Back"
-			/>
-		</div>
+	const back = (
+		<AnimatePresence>
+			{!isHome && (
+				<motion.div
+					key="back-button"
+					className={`${styles.back} ${activeProject ? styles.projectBack : ""}`}
+					style={{ scale: backScale, originX: 0, originY: 0 }}
+					initial={{ opacity: 0, x: -24 }}
+					animate={{ opacity: 1, x: 0 }}
+					exit={{ opacity: 0, x: -24 }}
+					transition={SPRING}
+				>
+					<IconButton
+						onClick={activeProject ? handleCloseProject : handleBack}
+						src={iconBack}
+						ariaLabel="Back"
+					/>
+				</motion.div>
+			)}
+		</AnimatePresence>
 	);
 
 	const logo = (
-		<BreatheEffect>
-			<div ref={logoRef} className={styles.logoScroll}>
+		<motion.div
+			layoutId="header-logo"
+			layout
+			className={styles.logoWrap}
+			style={{
+				scale: logoScale,
+				originX: isHome ? 0.5 : 1,
+				originY: 0,
+				marginInlineStart: isHome ? "auto" : "auto",
+				marginInlineEnd: isHome ? "auto" : "0",
+			}}
+			transition={SPRING}
+		>
+			<BreatheEffect>
 				<Logo />
-			</div>
-		</BreatheEffect>
+			</BreatheEffect>
+		</motion.div>
 	);
 
 	// const nav = <Navigation isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />;
@@ -112,7 +95,7 @@ export default function Header() {
 	// );
 
 	return (
-		<header ref={headerRef} className={styles.header}>
+		<header className={styles.header}>
 			{back}
 			{logo}
 		</header>
