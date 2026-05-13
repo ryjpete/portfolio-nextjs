@@ -118,8 +118,12 @@ export default function AppBackground() {
             <stop offset="50%"  stopColor="#F50482" />
             <stop offset="100%" stopColor="#C30066" />
           </linearGradient>
+
+          <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="50" floodColor="#000" floodOpacity="0.85" />
+          </filter>
         </defs>
-        <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} />
+        <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} filter="url(#shape-shadow)" />
       </svg>
     </div>
   );

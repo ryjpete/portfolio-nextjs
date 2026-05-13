@@ -1,8 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import LinkList from "@/components/link-list";
 
 import styles from "./home.module.css";
+
+const LINKS = [
+  { label: "Resume",   href: "/resume" },
+  { label: "Projects", href: "/projects" },
+];
 
 export default function HomeContent() {
   return (
@@ -15,6 +20,8 @@ export default function HomeContent() {
         <span>Web Developer</span>
         <span>Creative</span>
       </h1>
+
+      <LinkList links={LINKS} />
     </div>
   );
 }

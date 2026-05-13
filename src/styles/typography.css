@@ -19,6 +19,7 @@ h1 {
   font: 400 var(--font-size-h1)/var(--line-height-h1) var(--font-russo-one);
   color: var(--color-text-heading-h1);
   text-transform: uppercase;
+  margin: 0;
 
   & a {
     color: var(--color-text-link);
