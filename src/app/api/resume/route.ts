@@ -2,15 +2,17 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
 	return NextResponse.json({
-		header: {
-			h1: "Ryan Peterson.",
-			desc: "A Design System Engineer with 20 years bridging the gap between design and development, specializing in building scalable, component-driven UI architectures using React, Next.js, and CSS Modules. I craft robust design systems — from color token pipelines and fluid typography scales to responsive layout patterns — ensuring pixel-perfect Figma-to-code parity across web and mobile platforms. My work lives at the intersection of visual precision and engineering discipline: clean, maintainable TypeScript, living component libraries in Storybook, and micro-interactions that bring interfaces to life.",
-			
-			start: "UI Engineer.",
-			mid: {
-				text: "Frontend Software Dev. React enthusiast. CSS superhero. Overall nerd.",
+		resume: {
+			header: {
+				h1: "Ryan Peterson",
+				desc: "A Design System Engineer with 20 years bridging the gap between design and development, specializing in building scalable, component-driven UI architectures using React, Next.js, and CSS Modules. I craft robust design systems — from color token pipelines and fluid typography scales to responsive layout patterns — ensuring pixel-perfect Figma-to-code parity across web and mobile platforms. My work lives at the intersection of visual precision and engineering discipline: clean, maintainable TypeScript, living component libraries in Storybook, and micro-interactions that bring interfaces to life.",
 			},
-			end: "I'm a versatile UI Engineer that has straddled the line between design and development for 20 years. I've been labeled as a designer, frontend developer, software engineer, etc. No matter the title, I love building clean, organized code that creates parity between beautifully crafted designs and streamlined functional applications. Figma, CSS, and React are my best friends.",
+		},
+		experience: {
+			header: {
+				h1: "Ryan Peterson",
+				title: "Design System Engineer || Senior Frontend",
+			},
 		},
 
 		tabs: [

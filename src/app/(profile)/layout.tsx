@@ -7,7 +7,6 @@ import PageHeader from "@/components/page-header";
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="container">
-      <PageHeader />
       {children}
     </div>
   );

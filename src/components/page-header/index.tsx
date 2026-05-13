@@ -1,82 +1,44 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import styles from "./page-header.module.css";
 
 type PageHeaderContent = {
   header: {
     h1: string;
-    desc: string;
-    start: string;
-    mid: string | { text?: string; list?: string[]};
-    end: string | { text?: string; list?: string[]};
+    title?: string;
+    desc?: string;
   };
 };
 
 export default function PageHeader() {
-  const segment = useSelectedLayoutSegment() ?? "about";
+  const pathname = usePathname();
+  const segments = pathname.split("/").filter(Boolean);
+  const apiRoute = segments[0] ?? "resume";       // e.g. "resume"
+  const dataKey  = segments[segments.length - 1] ?? apiRoute; // e.g. "resume" or "experience"
+
   const [content, setContent] = useState<PageHeaderContent | null>(null);
 
   useEffect(() => {
     const fetchContent = async () => {
-      const res = await fetch(`/api/${segment}`);
+      const res = await fetch(`/api/${apiRoute}`);
       const data = await res.json();
-      setContent(data);
+      setContent(data[dataKey] ?? data[apiRoute] ?? null);
     };
 
     fetchContent();
-  }, [segment]);
-
-  const startMid = (
-    <div className={styles.startMid}>
-      {content?.header?.start && <p>{content.header.start}</p>}
-      {content?.header?.mid && (
-        typeof content.header.mid === "object" ? (
-          <div className={styles.mid}>
-            {content.header.mid.text && <p>{content.header.mid.text}</p>}
-            {content.header.mid.list && (
-              <ul>
-                {content.header.mid.list.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            )}
-          </div>
-        ) : (
-          <p>{content.header.mid}</p>
-        )
-      )}
-    </div>
-  );
-
-  const intro = (
-    <div className={styles.intro}>
-      {startMid}
-
-      {content?.header?.end && (
-        typeof content.header.end === "object" ? (
-          <div className={styles.end}>
-            {content.header.end.text && <p>{content.header.end.text}</p>}
-            {content.header.end.list && (
-              <>
-                {content.header.end.list.map((item, i) => <p key={i} className="sm">{item}</p>)}
-              </>
-            )}
-          </div>
-        ): (
-          <p className="sm">{content.header.end}</p>
-        )
-      )}
-      
-    </div>
-  );
+  }, [apiRoute, dataKey]);
 
   return (
     <div className={styles.pageHeader}>
-      <div className={styles.intro}>
+      <div>
         <h1>{content?.header?.h1}</h1>
+        {content?.header?.title && <p>{content.header.title}</p>}
       </div>
-      {content?.header?.desc && <p>{content.header.desc}</p>}
+      {content?.header?.desc && <p className={styles.desc}>{content.header.desc}</p>}
     </div>
   );
 }
+

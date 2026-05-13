@@ -1,11 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { useSpring, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
-
-import imgLines from "@/app/assets/imgs/lines.svg";
 
 import styles from "./app-background.module.css";
 
@@ -22,6 +19,7 @@ type BgConfig = {
   color: string;
   imageOpacity: number;
   shape?: BgShape;
+  shapeBack?: BgShape;
 };
 
 const SPRING = { stiffness: 120, damping: 18, mass: 1.2 };
@@ -47,13 +45,34 @@ const bgByRoute: Record<string, BgConfig> = {
       fill: "url(#home-gradient)",
     },
   },
+  "/resume/experience": {
+    color: "oklch(0.18 0.02 260)",
+    imageOpacity: 1,
+    shape: {
+      points: [[0, 360], [1000, 300], [1000, 1500], [0, 800]],
+      fill: "url(#home-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#experience-gradient)",
+    },
+  },
   "/projects": {
     color: "var(--clr-green-grass)",
     imageOpacity: 0.05,
+    shapeBack: {
+      points: [[300, 0], [1000, 0], [1000, 1000], [300, 1000]],
+      fill: "oklch(0.6 0.18 40)",
+    },
   },
 };
 
 const FALLBACK_SHAPE: BgShape = {
+  points: [[0, 1000], [1000, 1000], [1000, 1000], [0, 1000]],
+  fill: "transparent",
+};
+
+const FALLBACK_SHAPE_BACK: BgShape = {
   points: [[0, 1000], [1000, 1000], [1000, 1000], [0, 1000]],
   fill: "transparent",
 };
@@ -98,7 +117,9 @@ export default function AppBackground() {
     { color: "var(--clr-green-jade-glass)", imageOpacity: 0.2 };
 
   const activeShape = bg.shape ?? FALLBACK_SHAPE;
+  const activeShapeBack = bg.shapeBack ?? FALLBACK_SHAPE_BACK;
   const d = useShapeSprings(activeShape.points);
+  const dBack = useShapeSprings(activeShapeBack.points);
 
   return (
     <div className={styles.appBg} aria-hidden>
@@ -117,10 +138,17 @@ export default function AppBackground() {
             <stop offset="100%" stopColor="#C30066" />
           </linearGradient>
 
+          <linearGradient id="experience-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor="#BF7D03" />
+            <stop offset="50%"  stopColor="#F5A104" />
+            <stop offset="100%" stopColor="#BF7D03" />
+          </linearGradient>
+
           <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="0" stdDeviation="50" floodColor="#000" floodOpacity="0.85" />
           </filter>
         </defs>
+        <motion.path d={dBack} fill={bg.shapeBack ? activeShapeBack.fill : "transparent"} />
         <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} filter="url(#shape-shadow)" />
       </svg>
     </div>
