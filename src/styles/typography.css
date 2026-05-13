@@ -6,6 +6,7 @@
   --font-size-h3: clamp(1.25rem, 5vw, 1.875rem);
   --font-size-h4: clamp(1.15rem, 5vw, 1.625rem);
   --font-size-h5: clamp(1.15rem, 5vw, 1.25rem);
+  --font-size-p: 16px;
   
   --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
   --line-height-h1: 1;
@@ -13,11 +14,12 @@
   --line-height-h3: 1.5;
   --line-height-h4: 1.5;
   --line-height-h5: 1.5;
+  --line-height-p: 24px;
 }
 
 h1 {
   font: 400 var(--font-size-h1)/var(--line-height-h1) var(--font-russo-one);
-  color: var(--color-text-heading-h1);
+  color: var(--clr-gray-white);
   text-transform: uppercase;
   margin: 0;
 
@@ -52,6 +54,6 @@ h5 {
 
 p,
 li {
-  font: 400 calc(var(--font-size-body) - 0.125rem)/calc(var(--line-height-body) - 0.125rem) var(--font-inter);
+  font: 400 var(--font-size-p)/var(--line-height-p) var(--font-inclusive-sans);
   color: var(--color-text-body);
 }

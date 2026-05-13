@@ -31,8 +31,7 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
     shape: {
-      //        top-left        top-right       bottom-right    bottom-left
-      points: [[0, 850],        [1000, 600],     [1000, 1000],   [0, 1000]],
+      points: [[0, 850], [1000, 600], [1000, 1000], [0, 1000]],
       fill: "url(#home-gradient)",
     },
   },
@@ -41,12 +40,11 @@ const bgByRoute: Record<string, BgConfig> = {
     imageOpacity: 0.05,
   },
   "/resume": {
-    color: "var(--clr-red-himalayan-balsam)",
-    imageOpacity: 0.05,
+    color: "oklch(0.18 0.02 260)",
+    imageOpacity: 1,
     shape: {
-      //        top-left        top-right       bottom-right    bottom-left
-      points: [[430, 110],      [570, 110],      [570, 250],     [430, 250]],
-      fill: "var(--clr-green-grass)",
+      points: [[0, 130], [1000, 130], [1000, 475], [0, 475]],
+      fill: "url(#home-gradient)",
     },
   },
   "/projects": {

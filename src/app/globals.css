@@ -24,6 +24,9 @@ body {
   .container {
     margin-inline: auto;
     max-inline-size: var(--max-width);
+    min-block-size: 100dvh;
+    padding-block: 150px 100px;
+    padding-inline: 130px;
 
     & > * {
       flex: 1;
@@ -36,7 +39,28 @@ body {
     }
   }
 
-  &[data-page="resume"] {}
+  &[data-page="resume"] {
+    .container {
+      display: flex;
+      flex-direction: column;
+
+      & > * {
+        flex: unset;
+      }
+
+      & > nav {
+        padding-block: 80px;
+
+        & > a {
+          color: var(--clr-red-flicker-pink);
+
+          & img {
+            filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
+          }
+        }
+      }
+    }
+  }
 
   & button {}
 }

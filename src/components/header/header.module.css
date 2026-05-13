@@ -4,7 +4,7 @@
   inset-inline: 24px;
   z-index: 200;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 
   & :global(.logo) {

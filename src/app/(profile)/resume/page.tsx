@@ -1,46 +1,14 @@
 "use client";
 
-import { useState } from "react";
-
-import Carousel from "@/components/carousel";
-import Education from "@/components/education";
-import TechStack from "@/components/tech-stack";
-import WorkExperience from "@/components/work-experience";
-
-import styles from "./resume.module.css";
+import LinkList from "@/components/link-list";
 
 export default function ResumePage() {
-  const [activeTab, setActiveTab] = useState("Work Experience");
+  const LINKS = [
+    { label: "Experience", href: "#experience" },
+    { label: "Skills", href: "#skills" },
+    { label: "Education", href: "#education" },
 
-  const handleTabClick = (tabName: string) => {
-    setActiveTab(tabName);
-  };
-
-  const arrTabs = [
-    {
-      name: 'Work Experience',
-      onClick: () => setActiveTab("Work Experience"),
-      panel: <WorkExperience />,
-    },
-    {
-      name: 'Education',
-      onClick: () => setActiveTab("Education"),
-      panel: <Education />,
-    },
-    {
-      name: 'Tech Stack',
-      onClick: () => setActiveTab("Tech Stack"),
-      panel: <TechStack />,
-    },
   ];
 
-  return (
-    <section className={styles.work}>
-      <Carousel
-        carousel={arrTabs}
-        activeTab={activeTab}
-        onTabClick={(tabname) => handleTabClick(tabname)}
-      />
-    </section>
-  );
+  return <LinkList links={LINKS} />;
 }

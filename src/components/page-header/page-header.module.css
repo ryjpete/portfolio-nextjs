@@ -1,0 +1,10 @@
+.pageHeader {
+  padding-block: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  & > p {
+    max-inline-size: 75%;
+  }
+}
