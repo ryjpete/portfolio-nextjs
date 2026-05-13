@@ -1,4 +1,4 @@
-/* Light mode (default) */
+/* Palette primitives — raw color values only, no semantic meaning */
 :root {
   /* Grays */
   --clr-gray-white: oklch(1 0 0);

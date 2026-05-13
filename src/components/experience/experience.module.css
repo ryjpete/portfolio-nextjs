@@ -19,7 +19,7 @@
     position: absolute;
     inset-block-end: 0;
     inset-inline: 0;
-    background-color: var(--clr-red-himalayan-balsam);
+    background-color: var(--color-accent);
     block-size: 2px;
     border-radius: 1px;
   }

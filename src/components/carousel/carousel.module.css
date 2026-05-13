@@ -53,7 +53,7 @@
   }
 
   .panels {
-    background-color: var(--clr-gray-black);
+    background-color: var(--color-bg-surface);
     inline-size: calc(100vw * var(--num-tabs));
     transition: transform 0.3s ease-in-out;
     display: flex;
