@@ -3,6 +3,10 @@
 @import "../styles/semantic.css";
 @import "../styles/typography.css";
 
+html,
+body {
+  min-block-size: 100dvh;
+}
 
 html {
   scroll-behavior: smooth;
@@ -18,12 +22,8 @@ body {
   position: relative;
 
   .container {
-    min-block-size: 100dvh;
-    inline-size: 100dvw;
-    max-width: none;
-    padding-block-start: 165px;
-    display: flex;
-    flex-direction: column;
+    margin-inline: auto;
+    max-inline-size: var(--max-width);
 
     & > * {
       flex: 1;

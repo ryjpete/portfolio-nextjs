@@ -31,8 +31,9 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
     shape: {
-      points: [[100, 100], [300, 100], [300, 300], [100, 300]],
-      fill: "var(--clr-red-bonker-pink)",
+      //        top-left        top-right       bottom-right    bottom-left
+      points: [[0, 850],        [1000, 600],     [1000, 1000],   [0, 1000]],
+      fill: "url(#home-gradient)",
     },
   },
   "/about": {
@@ -43,7 +44,8 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "var(--clr-red-himalayan-balsam)",
     imageOpacity: 0.05,
     shape: {
-      points: [[80, 120], [320, 80], [340, 310], [90, 330]],
+      //        top-left        top-right       bottom-right    bottom-left
+      points: [[430, 110],      [570, 110],      [570, 250],     [430, 250]],
       fill: "var(--clr-green-grass)",
     },
   },
@@ -54,7 +56,7 @@ const bgByRoute: Record<string, BgConfig> = {
 };
 
 const FALLBACK_SHAPE: BgShape = {
-  points: [[100, 100], [300, 100], [300, 300], [100, 300]],
+  points: [[0, 1000], [1000, 1000], [1000, 1000], [0, 1000]],
   fill: "transparent",
 };
 
@@ -100,33 +102,23 @@ export default function AppBackground() {
   const activeShape = bg.shape ?? FALLBACK_SHAPE;
   const d = useShapeSprings(activeShape.points);
 
-  const lines = (
-    <div className={styles.lines} data-page={pathname}>
-      <Image src={imgLines} alt="Decorative lines" width={200} height={100} />
-    </div>
-  );
-
   return (
-    <div
-      className={styles.appBg}
-      style={
-        {
-          "--bg-color": bg.color,
-          "--img-opacity": bg.imageOpacity,
-          "--bg-image": `url(/assets/images/bgs/galaxy2.png)`,
-        } as React.CSSProperties
-      }
-      aria-hidden
-    >
+    <div className={styles.appBg} aria-hidden>
       <div className={styles.appBgColor} />
-      {lines}
       <div className={styles.appBgImage} />
       <svg
         className={styles.appBgShape}
-        viewBox="0 0 400 400"
+        viewBox="0 0 1000 1000"
         xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid meet"
+        preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient id="home-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor="#C30066" />
+            <stop offset="50%"  stopColor="#F50482" />
+            <stop offset="100%" stopColor="#C30066" />
+          </linearGradient>
+        </defs>
         <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} />
       </svg>
     </div>

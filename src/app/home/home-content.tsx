@@ -8,39 +8,12 @@ export default function HomeContent() {
   return (
     <div className={`container ${styles.container}`}>
       <h1>
-        <span>HI. I&rsquo;M </span>
-        <Link
-          href="/about"
-          className={styles.link}
-        >
-          RYAN
-        </Link>
-        <span>.</span>
-        <br />
-        <span>I&rsquo;M a </span>
-        <Link
-          href="/resume"
-          className={styles.link}
-        >
-          UI ENGINEER
-        </Link>
-        <span>.</span>
-        <br />
-        <span>I </span>
-        <Link
-          href="/projects"
-          className={`${styles.build} ${styles.link}`}
-        >
-          BUILD
-          <div className={styles.subs}>
-            <span>CREATE</span>
-            <span>DEVELOP</span>
-            <span>DESIGN</span>
-            <span>WRITE</span>
-            <span>PLAY</span>
-          </div>{" "}
-          <span>THINGS.</span>
-        </Link>
+        <span>Design System Engineer</span>
+        <span>Senior Frontend</span>
+        <span>UI Engineer</span>
+        <span>Frontend Software Dev</span>
+        <span>Web Developer</span>
+        <span>Creative</span>
       </h1>
     </div>
   );
