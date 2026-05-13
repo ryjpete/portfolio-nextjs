@@ -201,7 +201,7 @@ export async function GET() {
 							end: "2013-12-15T00:00:00Z",
 						},
 						responsibilities: [
-							"Member of development team working on a project for a well-known, international company. Responsible for desktop, tablet and mobile styling in Drupal framework, as well as template file adjustments.",
+							"Contributed to the development team building a responsive web experience for a multinational enterprise client, implementing cross-device styling and template customization within the Drupal framework to ensure consistent user experience across desktop, tablet, and mobile platforms",
 						],
 						// tech: [
 						//   {
@@ -221,10 +221,10 @@ export async function GET() {
 							end: "2013-09-15T00:00:00Z",
 						},
 						responsibilities: [
-							"Key role in implementing responsive design and development to applications with ﬁxed-widths and tabled formats",
-							"Client communication and understanding of technical requirements led to retention and production of new custom website built within WordPress",
-							"Successfully integrated payment gateways and a knowledge of ecommerce platforms as sole developer during transition period",
-							"Full-time remote working led to self-starting meetings with superiors as well as colleagues within other departments to gain knowledge and cohesion for projects and deadlines ",
+							"Spearheaded the migration of legacy fixed-width and table-based layouts to modern, mobile-responsive designs across multiple WordPress and Magento client sites, improving mobile user experience and search performance",
+							"Built strong client relationships through clear technical communication and requirements gathering, resulting in repeat business and the successful delivery of custom WordPress solutions tailored to specific business needs",
+							"Served as sole developer during a critical transition period, independently integrating payment gateways (Stripe, PayPal, Authorize.net) and customizing ecommerce experiences across Magento and WooCommerce platforms",
+							"Proactively managed full-time remote collaboration by initiating cross-departmental meetings with leadership, designers, and project managers to ensure alignment on project requirements, timelines, and deliverables",
 						],
 						// tech: [
 						//   {
@@ -245,9 +245,9 @@ export async function GET() {
 							end: "2011-06-15T00:00:00Z",
 						},
 						responsibilities: [
-							"Created stylized mockups for car dealership websites based on a pre-themed structure of template ﬁles",
-							"Incorporated jQuery for DOM manipulation into web applications to alter layouts",
-							"Spearheaded project for WordPress based company podcast; design-to-launch lead for all aspects of application",
+							"Designed and developed custom-branded car dealership websites by extending a templated framework, creating unique visual experiences that aligned with each dealer's brand identity while maintaining code consistency and efficient deployment workflows",
+							"Enhanced user experience through strategic jQuery implementation, creating dynamic layout adjustments, interactive UI components, and DOM-based content manipulation that improved site engagement and responsiveness",
+							"Led the complete lifecycle of a company podcast initiative from concept to production, overseeing design, WordPress integration, audio hosting setup, RSS feed configuration, and launch strategy as the sole technical owner",
 						],
 						// tech: [
 						//   {
@@ -270,10 +270,10 @@ export async function GET() {
 							end: "2010-06-15T00:00:00Z",
 						},
 						responsibilities: [
-							"Key role in revamping structure of websites from table-based to div-based",
-							"Integral part of development team working as liaison with design department",
-							"Filled in as designer on numerous projects due to background in graphics",
-							"Maintained email marketing design and builds for clients",
+							"Played a key role in modernizing legacy Joomla! sites by restructuring table-based layouts into semantic, standards-compliant div-based markup, improving accessibility, SEO performance, and long-term maintainability",
+							"Served as primary technical liaison between development and design teams, translating creative concepts into feasible technical solutions and ensuring design integrity throughout the development process",
+							"Leveraged graphic design background to step into design roles as needed, creating wireframes, mockups, and visual assets that maintained project momentum and reduced external dependencies",
+							"Developed and maintained responsive HTML email campaigns for clients, building cross-client compatible templates and managing deployment through email marketing platforms",
 						],
 						// tech: [
 						//   {
