@@ -6,8 +6,8 @@ import PageHeader from "@/components/page-header";
 export default function ResumePage() {
   const LINKS = [
     { label: "Experience", href: "/resume/experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Education", href: "#education" },
+    { label: "Skills",     href: "/resume/skills" },
+    { label: "Education",  href: "/resume/education" },
   ];
 
   return (

@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-block-size: 100%;
+}
+
+.panels {
+  display: flex;
+  gap: 48px;
+  padding-block: 80px;
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    & > nav {
+      & > a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  & main {
+    flex: 1;
+  }
+  .panel {
+  }
+}

@@ -57,6 +57,30 @@ const bgByRoute: Record<string, BgConfig> = {
       fill: "url(#experience-gradient)",
     },
   },
+  "/resume/skills": {
+    color: "oklch(0.18 0.02 260)",
+    imageOpacity: 1,
+    shape: {
+      points: [[0, 360], [1000, 300], [1000, 1500], [0, 800]],
+      fill: "url(#home-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#experience-gradient)",
+    },
+  },
+  "/resume/education": {
+    color: "oklch(0.18 0.02 260)",
+    imageOpacity: 1,
+    shape: {
+      points: [[0, 360], [1000, 300], [1000, 1500], [0, 800]],
+      fill: "url(#home-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#experience-gradient)",
+    },
+  },
   "/projects": {
     color: "var(--clr-green-grass)",
     imageOpacity: 0.05,

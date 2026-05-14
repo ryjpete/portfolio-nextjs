@@ -14,6 +14,18 @@ export async function GET() {
 				title: "Design System Engineer || Senior Frontend",
 			},
 		},
+		skills: {
+			header: {
+				h1: "Ryan Peterson",
+				title: "Design System Engineer || Senior Frontend",
+			},
+		},
+		education: {
+			header: {
+				h1: "Ryan Peterson",
+				title: "Design System Engineer || Senior Frontend",
+			},
+		},
 
 		tabs: [
 			{
