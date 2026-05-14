@@ -1,0 +1,53 @@
+.resumeItem {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block: 24px;
+  padding-inline: 24px 74px;
+  min-inline-size: 475px;
+  position: relative;
+
+  .grow {
+    position: absolute;
+    inset: 10px 10px auto auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .plc {
+      filter: grayscale(100%) opacity(0.5);
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+
+      & > h3 {
+        font: 400 14px/1 var(--font-russo-one);
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  & > p {
+    font: 400 12px/18px var(--font-inclusive-sans);
+    padding-inline-start: 60px;
+    padding-block-end: 10px;
+    flex: 1;
+  }
+
+  .stack {
+    padding-inline-start: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+    gap: 12px;
+
+    & img {
+      filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
+    }
+  }
+}

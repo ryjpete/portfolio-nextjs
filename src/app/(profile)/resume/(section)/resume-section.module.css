@@ -9,10 +9,15 @@
   display: flex;
   gap: 48px;
   padding-block: 80px;
+  position: relative;
+  left: -130px;
+  inline-size: 100dvw;
 
   .nav {
     display: flex;
     flex-direction: column;
+    min-inline-size: 280px;
+    padding-inline-start: 130px;
 
     & > nav {
       & > a {
@@ -22,7 +27,8 @@
   }
 
   & main {
-    flex: 1;
+    inline-size: 100%;
+    overflow-x: auto;
   }
   .panel {
   }
