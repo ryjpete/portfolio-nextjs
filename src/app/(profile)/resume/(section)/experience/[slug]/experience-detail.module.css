@@ -1,0 +1,119 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: color-mix(in oklab, var(--color-bg) 80%, transparent);
+  z-index: 10;
+}
+
+.detail {
+  background-color: var(--color-bg);
+  border: 1px solid var(--clr-red-vampire);
+  position: fixed;
+  inset: 12px;
+  z-index: 11;
+  padding-block: 150px 100px;
+  padding-inline: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    .plc {
+      filter: grayscale(100%) opacity(0.5);
+    }
+
+    .intro {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .company {
+        font: 700 22px/26px var(--font-inclusive-sans);
+        text-transform: none;
+      }
+
+      .role {
+        font: 400 28px/32px var(--font-inclusive-sans);
+      }
+
+      .companyDesc {
+        margin-block-start: 20px;
+        max-inline-size: 688px;
+      }
+    }
+
+    .tenure {
+      font: 400 16px/1 var(--font-russo-one);
+      text-transform: uppercase;
+    }
+  }
+
+  .content {
+    position: relative;
+    left: -129px;
+    inline-size: calc(100dvw - 28px);
+    background-color: var(--clr-blue-lago);
+    box-shadow: 0 0 50px var(--clr-gray-black);
+    padding: 40px 194px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .roleDesc,
+    .responsibilities li {
+      font: 400 16px/24px var(--font-inclusive-sans);
+    }
+
+    .btm {
+      display: flex;
+      align-items: flex-start;
+
+      .stackBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        inline-size: 230px;
+
+        & > h5 {
+          color: var(--color-bg);
+        }
+
+        .stack {
+          & > img {
+            filter: brightness(0) saturate(100%) invert(10%) sepia(100%) saturate(5000%) hue-rotate(325deg) brightness(15%);
+          }
+        }
+      }
+
+      .responsibilities {
+        flex: 1;
+        list-style-type: disc;
+      }
+    }
+  }
+
+  .responsibilities {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-inline-start: 20px;
+
+    & li {
+      font: 400 13px/20px var(--font-inclusive-sans);
+    }
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+
+    & img {
+      filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
+    }
+  }
+}

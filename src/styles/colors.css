@@ -15,10 +15,14 @@
   --clr-green-alien-abduction: oklch(0.8673 0.2929 142.42);
   --clr-green-jade-glass: oklch(0.7835 0.1333 197.22);
 
+  /* Blues */
+  --clr-blue-lago: oklch(0.7021 0.1179 211.5);
+
   /* Reds */
   --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
   --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
   --clr-red-flicker-pink: oklch(0.629 0.2537 0.19);
+  --clr-red-vampire: oklch(0.5863 0.236 0.15);
   --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
 
   /* Violets */
