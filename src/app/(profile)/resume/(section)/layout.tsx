@@ -7,7 +7,7 @@ import styles from "./resume-section.module.css";
 
 const NAV_LINKS = [
   { label: "Experience", href: "/resume/experience" },
-  // { label: "Skills",     href: "/resume/skills" },
+  { label: "Skills",     href: "/resume/skills" },
   { label: "Education",  href: "/resume/education" },
 ];
 

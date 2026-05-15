@@ -15,9 +15,10 @@
     flex-flow: row wrap;
     justify-content: flex-end;
     gap: 24px 12px;
+    max-inline-size: 400px;
 
     & > img {
-      width: 32px;
+      width: 28px;
       filter: brightness(0) invert(1);
     }
   }
