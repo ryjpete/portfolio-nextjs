@@ -392,6 +392,63 @@ export async function GET() {
 				h1: "Ryan Peterson",
 				title: "Design System Engineer || Senior Frontend",
 			},
+			sklz: [
+				{
+					id: 1,
+					title: "Primary Stack",
+					desc:
+						"My comfort zone. My go-tos. Like mac 'n cheese and Blind Melon. This is my wheelhouse.",
+					items: [
+						"/assets/images/tech/icon-nextjs.svg",
+						"/assets/images/tech/icon-react.svg",
+						"/assets/images/tech/icon-react-native.svg",
+						"/assets/images/tech/icon-css3.svg",
+						"/assets/images/tech/icon-css-modules.svg",
+						"/assets/images/tech/icon-tailwindcss.svg",
+						"/assets/images/tech/icon-html5.svg",
+						"/assets/images/tech/icon-js.svg",
+						"/assets/images/tech/icon-typescript.svg",
+						"/assets/images/tech/icon-figma.svg",
+						"/assets/images/tech/icon-git.svg",
+						"/assets/images/tech/icon-github.svg",
+						"/assets/images/tech/icon-github-copilot.svg",
+						"/assets/images/tech/icon-claude.svg",
+						"/assets/images/tech/icon-json.svg",
+						"/assets/images/tech/icon-primereact.svg",
+						"/assets/images/tech/icon-bootstrap.svg",
+						"/assets/images/tech/icon-storybook.svg",
+						"/assets/images/tech/icon-vercel.svg",
+					],
+				},
+				{
+					id: 2,
+					title: "Backup Squad",
+					desc:
+						"Not used every day, but still in there rattling around and ready to go.",
+					items: [
+						"/assets/images/tech/icon-jquery.svg",
+						"/assets/images/tech/icon-sass.svg",
+						"/assets/images/tech/icon-less.svg",
+						"/assets/images/tech/icon-php.svg",
+						"/assets/images/tech/icon-wordpress.svg",
+						"/assets/images/tech/icon-gatsby.svg",
+						"/assets/images/tech/icon-photoshop.svg",
+					],
+				},
+				{
+					id: 3,
+					title: "Foundation",
+					desc:
+						"The building blocks. Might not be heavily used, but still part of my coding DNA.",
+					items: [
+						"/assets/images/tech/icon-csharp.svg",
+						"/assets/images/tech/icon-umbraco.svg",
+						"/assets/images/tech/icon-magento.svg",
+						"/assets/images/tech/icon-joomla.svg",
+						"/assets/images/tech/icon-drupal.svg",
+					],
+				},
+			]
 		},
 		education: {
 			header: {
