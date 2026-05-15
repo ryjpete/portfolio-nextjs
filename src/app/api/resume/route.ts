@@ -398,6 +398,20 @@ export async function GET() {
 				h1: "Ryan Peterson",
 				title: "Design System Engineer || Senior Frontend",
 			},
+			eds: [
+				{
+					id: 1,
+					company: "Purdue University",
+					logo: "/assets/images/logos/logo-purdue.svg",
+					role: "Computer Graphics Technology",
+					roleDesc:
+						"Specializing in Interactive Multimedia & Design",
+					tenure: {
+						start: "1999-08-15T00:00:00Z",
+						end: "2004-05-15T00:00:00Z",
+					},
+				}
+			]
 		},
 	});
 }

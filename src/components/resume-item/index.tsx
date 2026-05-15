@@ -17,7 +17,7 @@ export default function ResumeItem({
   exp: {
     id: number;
     company: string;
-    route: string;
+    route?: string;
     logo: string;
     role: string;
     roleDesc: string;
@@ -38,13 +38,16 @@ export default function ResumeItem({
       style={{ cursor: onClick ? "pointer" : "default" }}
     >
       <p className={styles.date}>{formatDate(exp.tenure.start)} - {formatDate(exp.tenure.end)}</p>
-      <Image
-        src={imgGrow}
-        alt="grow"
-        className={styles.grow}
-        width={24}
-        height={24}
-      />
+
+      {exp.route && (
+        <Image
+          src={imgGrow}
+          alt="grow"
+          className={styles.grow}
+          width={24}
+          height={24}
+        />
+      )}
 
       <div className={styles.header}>
         <Image

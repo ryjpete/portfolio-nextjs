@@ -10,13 +10,24 @@
   color: var(--clr-violet-belladonna);
   text-decoration: none;
   text-transform: uppercase;
-  /* padding-block: 0.5rem; */
   transition: opacity 0.15s ease;
   display: flex;
   align-items: center;
   gap: 0.5ch;
 
+  & > img {
+    inline-size: 10px;
+  }
+
   &:hover {
     opacity: 0.6;
   }
+
+  &.active {
+    color: var(--clr-gray-white);
+
+    & > img {
+      filter: invert(100%) sepia(100%) grayscale(100%) brightness(200%);
+    }
+  } 
 }
