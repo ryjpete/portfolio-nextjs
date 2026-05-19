@@ -35,6 +35,12 @@ export default function ExperiencePage() {
       });
   }, []);
 
+  // lock body scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflowY = selected ? "hidden" : "";
+    return () => { document.body.style.overflowY = ""; };
+  }, [selected]);
+
   // Push a history entry when modal opens so the back button closes it.
   useEffect(() => {
     if (selected) {

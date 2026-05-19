@@ -1,9 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useTransform } from "framer-motion";
 
 import { useProject } from "@/context/ProjectContext";
+import { useScrollY } from "@/context/ScrollContext";
 
 import BreatheEffect from "../breathe-effect";
 import IconButton from "../icon-button";
@@ -20,7 +21,7 @@ export default function Header() {
 	const { activeProject, setActiveProject } = useProject();
 	const isHome = pathname === "/";
 
-	const { scrollY } = useScroll();
+	const { scrollY } = useScrollY();
 	const logoScale = useTransform(scrollY, [0, 80], [1, 0.5]);
 	const backScale = useTransform(scrollY, [0, 80], [1, 0.7]);
 

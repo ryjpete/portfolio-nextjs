@@ -24,7 +24,7 @@ export default function ResumeItem({
     description: string;
     contact: { url: string };
     position: string[];
-    tenure: { start: string; end: string };
+    tenure: { start?: string; end?: string };
     responsibilities: string[];
     tech: { name: string; icon: string }[];
   };
@@ -37,7 +37,7 @@ export default function ResumeItem({
       className={styles.resumeItem}
       style={{ cursor: onClick ? "pointer" : "default" }}
     >
-      <p className={styles.date}>{formatDate(exp.tenure.start)} - {formatDate(exp.tenure.end)}</p>
+      {exp?.tenure?.start || exp?.tenure?.end ? <p className={styles.date}>{formatDate(exp?.tenure?.start)} - {formatDate(exp?.tenure?.end)}</p> : null}
 
       {exp.route && (
         <Image

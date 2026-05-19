@@ -1,0 +1,121 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: color-mix(in oklab, var(--color-bg) 80%, transparent);
+  z-index: 10;
+}
+
+.detail {
+  background-color: var(--color-bg);
+  border: 1px solid var(--clr-violet-pheromone);
+  position: fixed;
+  inset: 12px;
+  z-index: 11;
+  padding-block: 150px 100px;
+  padding-inline: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow-y: auto;
+
+  .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    .plc {
+      filter: grayscale(100%) opacity(0.5);
+    }
+
+    .intro {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .title {
+        font: 700 22px/26px var(--font-inclusive-sans);
+        text-transform: none;
+      }
+
+      .client {
+        font: 400 16px/1 var(--font-russo-one);
+        text-transform: uppercase;
+        color: var(--clr-violet-belladonna);
+      }
+
+      .desc {
+        margin-block-start: 12px;
+        max-inline-size: 688px;
+      }
+    }
+
+    .link {
+      font: 400 14px/1 var(--font-russo-one);
+      text-transform: uppercase;
+      color: var(--clr-violet-belladonna);
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    left: -129px;
+    inline-size: calc(100dvw - 28px);
+    background-color: var(--clr-blue-lago);
+    background: linear-gradient(66deg, #6FAB52 0%, #87BA6E 50%, #6FAB52 100%);
+    box-shadow: 0 0 50px var(--clr-gray-black);
+    padding: 40px 194px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .stackBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      & > h5 {
+        color: var(--color-bg);
+      }
+
+      .stack {
+        font: 400 14px/20px var(--font-inclusive-sans);
+        color: var(--color-bg);
+
+        & > img {
+          filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(750%) hue-rotate(248deg) brightness(65%);
+        }
+      }
+    }
+
+    .specs {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .specLabel {
+      font: 700 13px/1 var(--font-russo-one);
+      text-transform: uppercase;
+      color: var(--color-bg);
+    }
+
+    .specDisplay {
+      font: 400 14px/22px var(--font-inclusive-sans);
+      color: var(--color-bg);
+    }
+  }
+}

@@ -84,9 +84,49 @@ const bgByRoute: Record<string, BgConfig> = {
   "/projects": {
     color: "var(--clr-green-grass)",
     imageOpacity: 0.05,
+    shape: {
+      points: [[0, 140], [1000, 360], [1000, 1250], [48, 800]],
+      fill: "url(#projects-gradient)",
+    },
     shapeBack: {
-      points: [[300, 0], [1000, 0], [1000, 1000], [300, 1000]],
-      fill: "oklch(0.6 0.18 40)",
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#projects-back-gradient)",
+    },
+  },
+  "/projects/mobile-apps": {
+    color: "var(--clr-green-grass)",
+    imageOpacity: 0.05,
+    shape: {
+      points: [[0, 140], [1000, 360], [1000, 1250], [48, 800]],
+      fill: "url(#projects-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#projects-back-gradient)",
+    },
+  },
+  "/projects/web-apps": {
+    color: "var(--clr-green-grass)",
+    imageOpacity: 0.05,
+    shape: {
+      points: [[0, 140], [1000, 360], [1000, 1250], [48, 800]],
+      fill: "url(#projects-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#projects-back-gradient)",
+    },
+  },
+  "/projects/design": {
+    color: "var(--clr-green-grass)",
+    imageOpacity: 0.05,
+    shape: {
+      points: [[0, 140], [1000, 360], [1000, 1250], [48, 800]],
+      fill: "url(#projects-gradient)",
+    },
+    shapeBack: {
+      points: [[200, 290], [1000, 290], [1000, 1000], [200, 1000]],
+      fill: "url(#projects-back-gradient)",
     },
   },
 };
@@ -166,6 +206,18 @@ export default function AppBackground() {
             <stop offset="0%"   stopColor="#BF7D03" />
             <stop offset="50%"  stopColor="#F5A104" />
             <stop offset="100%" stopColor="#BF7D03" />
+          </linearGradient>
+
+          <linearGradient id="projects-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor="var(--clr-violet-pheromone)" />
+            <stop offset="50%"  stopColor="#9146CE" />
+            <stop offset="100%" stopColor="var(--clr-violet-pheromone)" />
+          </linearGradient>
+
+          <linearGradient id="projects-back-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor="var(--clr-red-alexandria)" />
+            <stop offset="50%"  stopColor="var(--clr-red-apricot)" />
+            <stop offset="100%" stopColor="var(--clr-red-alexandria)" />
           </linearGradient>
 
           <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">

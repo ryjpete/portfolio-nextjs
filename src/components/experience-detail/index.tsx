@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 import imgPlc from "@/app/assets/logos/bolt/logo.svg";
 
 import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
 import { formatDate } from "@/utils/utils";
+import { useScrollY } from "@/context/ScrollContext";
 
 interface Experience {
   id: number;
@@ -29,6 +31,12 @@ export default function ExperienceDetail({
   exp: Experience;
   onClose: () => void;
 }) {
+  const { scrollY } = useScrollY();
+
+  useEffect(() => {
+    return () => { scrollY.set(window.scrollY); };
+  }, [scrollY]);
+
   return (
     <>
       <motion.div
@@ -39,7 +47,11 @@ export default function ExperienceDetail({
         onClick={onClose}
       />
 
-      <motion.div layoutId={`resume-item-${exp.id}`} className={`${styles.detail}`}>
+      <motion.div
+        layoutId={`resume-item-${exp.id}`}
+        className={`${styles.detail}`}
+        onScroll={(e) => scrollY.set((e.target as HTMLElement).scrollTop)}
+      >
         <div className={styles.header}>
           <Image
             src={exp?.logo || imgPlc}

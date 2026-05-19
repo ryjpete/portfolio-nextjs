@@ -16,8 +16,8 @@ type PageHeaderContent = {
 export default function PageHeader() {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
-  const apiRoute = segments[0] ?? "resume";       // e.g. "resume"
-  const dataKey  = segments[segments.length - 1] ?? apiRoute; // e.g. "resume" or "experience"
+  const apiRoute = segments[0] ?? "resume";
+  const dataKey  = segments[segments.length - 1] ?? apiRoute;
 
   const [content, setContent] = useState<PageHeaderContent | null>(null);
 

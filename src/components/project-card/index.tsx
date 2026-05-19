@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import imgGo from "../../../public/assets/images/icons/icon-go.svg";
 import imgPlc from "@/app/icon-512.png";
@@ -8,6 +9,7 @@ import imgPlc from "@/app/icon-512.png";
 import styles from "./project-card.module.css";
 
 interface ProjectData {
+  layoutId?: string;
   project: {
     title: string;
     slug: string;
@@ -36,7 +38,7 @@ interface ProjectData {
   onClick?: () => void;
 }
 
-export default function ProjectCard({ project, onClick }: ProjectData) {
+export default function ProjectCard({ project, onClick, layoutId }: ProjectData) {
   const header = (
     <div className={styles.header}>
       <h2>{project.title}</h2>
@@ -82,7 +84,8 @@ export default function ProjectCard({ project, onClick }: ProjectData) {
   const footer = <div className={styles.footer} />;
 
   return (
-    <button
+    <motion.button
+      layoutId={layoutId}
       type="button"
       className={styles.projectCard}
       onClick={onClick}
@@ -90,6 +93,6 @@ export default function ProjectCard({ project, onClick }: ProjectData) {
       {header}
       {body}
       {footer}
-    </button>
+    </motion.button>
   );
 }

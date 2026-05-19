@@ -469,6 +469,6 @@ export async function GET() {
 					},
 				}
 			]
-		},
+		}
 	});
 }
