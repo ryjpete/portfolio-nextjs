@@ -35,6 +35,12 @@ export default function HtmlProvider({
     const page =
       pathname === "/"
         ? "home"
+        : pathname === "/resume/experience"
+        ? "resume-experience"
+        : pathname === "/resume/skills"
+        ? "resume-skills"
+        : pathname === "/resume/education"
+        ? "resume-education"
         : pathname.startsWith("/resume")
         ? "resume"
         : pathname.startsWith("/skills")

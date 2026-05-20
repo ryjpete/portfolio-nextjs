@@ -89,13 +89,59 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
     shape: {
-      points: [[0, 36], [100, 30], [100, 150], [0, 80]],
+      points: [[0, 16], [100, 14], [100, 150], [0, 90]],
       fill: "url(#home-gradient)",
     },
     shapeBack: {
-      points: [[20, 29], [100, 29], [100, 100], [20, 100]],
+      points: [[5, 13], [100, 13], [100, 100], [5, 100]],
       fill: "url(#experience-gradient)",
     },
+    variants: [
+      {
+        query: "(min-width: 1300px)",
+        shape: {
+          points: [[0, 33], [100, 28], [100, 115], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[14, 26], [100, 26], [100, 100], [14, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+      {
+        query: "(min-width: 992px)",
+        shape: {
+          points: [[0, 30], [100, 26], [100, 115], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[14, 25], [100, 25], [100, 100], [14, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+      {
+        query: "(min-width: 768px)",
+        shape: {
+          points: [[0, 28], [100, 25], [100, 115], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[14, 24], [100, 24], [100, 100], [14, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+      {
+        query: "(min-width: 576px)",
+        shape: {
+          points: [[0, 19], [100, 17], [100, 150], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[14, 17], [100, 17], [100, 100], [14, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+    ],
   },
   "/resume/skills": {
     color: "oklch(0.18 0.02 260)",
@@ -108,6 +154,19 @@ const bgByRoute: Record<string, BgConfig> = {
       points: [[20, 29], [100, 29], [100, 100], [20, 100]],
       fill: "url(#experience-gradient)",
     },
+    variants: [
+      {
+        query: "(max-width: 575px)",
+        shape: {
+          points: [[0, 36], [100, 30], [100, 150], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[20, 29], [100, 29], [100, 100], [20, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+    ],
   },
   "/resume/education": {
     color: "oklch(0.18 0.02 260)",
@@ -120,6 +179,19 @@ const bgByRoute: Record<string, BgConfig> = {
       points: [[20, 29], [100, 29], [100, 100], [20, 100]],
       fill: "url(#experience-gradient)",
     },
+    variants: [
+      {
+        query: "(max-width: 575px)",
+        shape: {
+          points: [[0, 36], [100, 30], [100, 150], [0, 80]],
+          fill: "url(#home-gradient)",
+        },
+        shapeBack: {
+          points: [[20, 29], [100, 29], [100, 100], [20, 100]],
+          fill: "url(#experience-gradient)",
+        },
+      },
+    ],
   },
   "/projects": {
     color: "var(--clr-green-grass)",

@@ -1,23 +1,23 @@
 .layout {
+  flex: 1!important;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  min-block-size: 100%;
+  gap: 48px;
+  block-size: 100vh;
+  overflow-y: hidden;
 }
 
 .panels {
+  flex: 1;
   display: flex;
-  gap: 48px;
-  padding-block: 80px;
+  flex-direction: column;
+  gap: 36px;
   position: relative;
-  left: -130px;
-  inline-size: 100dvw;
+  overflow: hidden;
 
   .nav {
     display: flex;
     flex-direction: column;
-    min-inline-size: 300px;
-    padding-inline-start: 130px;
 
     & > nav {
       & > a {
@@ -27,10 +27,49 @@
   }
 
   & main {
-    inline-size: 100%;
-    overflow-x: auto;
-    padding-block-start: 14px;
+    flex: 1;
+    overflow-y: auto;
   }
-  .panel {
+}
+
+@media (min-width: 576px) {
+  .layout {
+    gap: 64px;
+  }
+
+  .panels {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .layout {
+    padding-inline: 64px;
+    gap: 90px;
+    overflow-x: hidden;
+  }
+
+  .panels {
+    flex: unset;
+    left: -64px;
+    inline-size: 100vw;
+
+    .nav {
+      min-inline-size: 200px;
+    }
+
+    & main {
+      overflow-x: auto;
+      overflow-y: unset;
+    }
+  }
+}
+@media (min-width: 1300px) {
+  .layout {
+    inline-size: 100dvw;
+    overflow: hidden;
+    block-size: unset;
+    flex: unset!important;
+    gap: 120px;
+    padding-inline: 6dvw;
   }
 }

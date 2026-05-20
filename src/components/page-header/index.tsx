@@ -37,7 +37,7 @@ export default function PageHeader() {
     <div className={cssPageHeader} data-bg-anchor>
       <div>
         <h1>{content?.header?.h1}</h1>
-        {content?.header?.title && <p>{content.header.title}</p>}
+        {content?.header?.title && <p className={styles.title}>{content.header.title}</p>}
       </div>
       {content?.header?.desc && <p className={styles.desc}>{content.header.desc}</p>}
     </div>

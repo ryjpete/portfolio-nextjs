@@ -27,6 +27,7 @@ body {
     min-block-size: 100dvh;
     padding-block: 90px;
     padding-inline: 50px;
+    inline-size: 100%;
 
     & > * {
       flex: 1;
@@ -39,7 +40,10 @@ body {
     }
   }
 
-  &[data-page="resume"] {
+  &[data-page="resume"],
+  &[data-page="resume-experience"],
+  &[data-page="resume-skills"],
+  &[data-page="resume-education"] {
     .container {
       display: flex;
       flex-direction: column;
@@ -66,6 +70,14 @@ body {
     }
   }
 
+  &[data-page="resume-experience"] {
+    .container {
+      block-size: 100dvh;
+      overflow: hidden;
+      padding-block-end: 0;
+    }
+  }
+
   & button {}
 }
 
@@ -75,14 +87,33 @@ body {
       padding-block: 120px 100px;
       padding-inline: 64px;
     }
+
+    /* &[data-page="resume-experience"] {
+      .container {
+        padding-inline-end: 0;
+      }
+    } */
   }
-  
 }
 @media (min-width: 768px) {
   body {
     .container {
       padding-block-start: 200px;
     }
+
+    &[data-page="resume-experience"] {
+      .container {
+        padding-inline: 0;
+      }
+    }
   }
-  
+}
+@media (min-width: 1300px) {
+  body {
+    &[data-page="resume-experience"] {
+      .container {
+        max-width: unset;
+      }
+    }
+  }
 }
