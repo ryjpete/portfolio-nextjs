@@ -1,14 +1,17 @@
 :root {
   /* Fluid typography using clamp() */
-  --font-size-body: clamp(0.65rem, 5vw, 1rem);
-  --font-size-h1: 64px;
+  /* --font-size-body: clamp(0.65rem, 5vw, 1rem); */
+  --font-size-body: clamp(10px, 2vw, 16px);
+  /* --font-size-h1: 64px; */
+  --font-size-h1: clamp(10px, 5vw, 64px);
   --font-size-h2: clamp(1.75rem, 5vw, 2.5rem);
   --font-size-h3: clamp(1.25rem, 5vw, 1.875rem);
   --font-size-h4: clamp(1.15rem, 5vw, 1.625rem);
   --font-size-h5: clamp(1.15rem, 5vw, 1.25rem);
   --font-size-p: 16px;
   
-  --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
+  /* --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem); */
+  --line-height-body: 2;
   --line-height-h1: 1;
   --line-height-h2: 1;
   --line-height-h3: 1.5;

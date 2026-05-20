@@ -12,7 +12,7 @@ const LINKS = [
 export default function HomeContent() {
   return (
     <div className={`container ${styles.container}`}>
-      <h1>
+      <h1 data-bg-anchor>
         <span>Design System Engineer</span>
         <span>Senior Frontend</span>
         <span>UI Engineer</span>

@@ -31,8 +31,10 @@ export default function PageHeader() {
     fetchContent();
   }, [apiRoute, dataKey]);
 
+  const cssPageHeader = `pageHeader ${styles.pageHeader}`;
+
   return (
-    <div className={styles.pageHeader}>
+    <div className={cssPageHeader} data-bg-anchor>
       <div>
         <h1>{content?.header?.h1}</h1>
         {content?.header?.title && <p>{content.header.title}</p>}

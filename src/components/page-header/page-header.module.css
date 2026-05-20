@@ -4,9 +4,9 @@
   flex-direction: column;
   gap: 30px;
 
-  & > p {
+  /* & > p {
     max-inline-size: 75%;
-  }
+  } */
 }
 
 .title {
@@ -18,5 +18,17 @@
 .desc {
   font: 400 var(--font-size-body) / var(--line-height-body) var(--font-inter);
   color: var(--color-text-body);
-  max-inline-size: 75%;
+  /* max-inline-size: 75%; */
+}
+
+@media (min-width: 576px) {
+  .pageHeader {
+    & > p {
+      max-inline-size: 75%;
+    }
+  }
+
+  .desc {
+    max-inline-size: 75%;
+  }
 }

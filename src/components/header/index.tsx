@@ -10,7 +10,8 @@ import BreatheEffect from "../breathe-effect";
 import IconButton from "../icon-button";
 import Logo from "../logo";
 
-import iconBack from "../../../public/assets/images/icons/icon-back.svg";
+// import iconBack from "../../../public/assets/images/icons/icon-back.svg";
+import iconBack from "@/app/assets/go.svg";
 
 import styles from "./header.module.css";
 

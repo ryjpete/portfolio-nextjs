@@ -25,8 +25,8 @@ body {
     margin-inline: auto;
     max-inline-size: var(--max-width);
     min-block-size: 100dvh;
-    padding-block: 150px 100px;
-    padding-inline: 130px;
+    padding-block: 90px;
+    padding-inline: 50px;
 
     & > * {
       flex: 1;
@@ -48,6 +48,10 @@ body {
         flex: unset;
       }
 
+      & .pageHeader {
+        padding-block: 0;
+      }
+
       & > nav {
         padding-block: 80px;
 
@@ -63,4 +67,22 @@ body {
   }
 
   & button {}
+}
+
+@media (min-width: 576px) {
+  body {
+    .container {
+      padding-block: 120px 100px;
+      padding-inline: 64px;
+    }
+  }
+  
+}
+@media (min-width: 768px) {
+  body {
+    .container {
+      padding-block-start: 200px;
+    }
+  }
+  
 }
