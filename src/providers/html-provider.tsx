@@ -1,7 +1,6 @@
 "use client";
 
-import { Russo_One } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Russo_One, Inter, Inclusive_Sans } from "next/font/google";
 import Head from "next/head";
 
 import { usePathname } from "next/navigation";
@@ -19,6 +18,12 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const inclusiveSans = Inclusive_Sans({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inclusive-sans",
+  subsets: ["latin"],
+});
+
 export default function HtmlProvider({
   children,
 }: Readonly<{
@@ -30,6 +35,12 @@ export default function HtmlProvider({
     const page =
       pathname === "/"
         ? "home"
+        : pathname === "/resume/experience"
+        ? "resume-experience"
+        : pathname === "/resume/skills"
+        ? "resume-skills"
+        : pathname === "/resume/education"
+        ? "resume-education"
         : pathname.startsWith("/resume")
         ? "resume"
         : pathname.startsWith("/skills")
@@ -49,7 +60,7 @@ export default function HtmlProvider({
         <meta name="apple-mobile-web-app-title" content="Grateful Dev" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
       </Head>
-      <body className={`${russoOne.variable} ${inter.variable} antialiased`}>
+      <body className={`${russoOne.variable} ${inter.variable} ${inclusiveSans.variable} antialiased`}>
         {children}
       </body>
     </html>

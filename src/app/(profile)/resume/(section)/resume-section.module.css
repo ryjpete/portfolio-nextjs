@@ -1,0 +1,81 @@
+.layout {
+  flex: 1!important;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  block-size: 100vh;
+  overflow-y: hidden;
+
+  & :global(.pageHeader) {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
+    inline-size: 100dvw;
+  }
+}
+
+.panels {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+  overflow: hidden;
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    & > nav {
+      & > a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  & main {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .layout {
+    gap: 64px;
+  }
+
+  .panels {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .layout {
+    padding-inline: 64px;
+    gap: 90px;
+    overflow-x: hidden;
+  }
+
+  .panels {
+    flex: unset;
+    left: -64px;
+    inline-size: 100vw;
+
+    .nav {
+      min-inline-size: 200px;
+    }
+
+    & main {
+      overflow-x: auto;
+      overflow-y: unset;
+    }
+  }
+}
+@media (min-width: 1300px) {
+  .layout {
+    inline-size: 100dvw;
+    overflow: hidden;
+    block-size: unset;
+    flex: unset!important;
+    gap: 120px;
+    padding-inline: 6dvw;
+  }
+}

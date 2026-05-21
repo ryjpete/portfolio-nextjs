@@ -1,25 +1,12 @@
 @import "tailwindcss";
-@import "../styles/typography.css";
 @import "../styles/colors.css";
+@import "../styles/semantic.css";
+@import "../styles/typography.css";
 
-/* Light mode (default) */
-:root {
-  --background: var(--clr-violet-binary-black);
-  --foreground: oklch(95% 0 0);
-
-  --max-width: 1500px;
+html,
+body {
+  min-block-size: 100dvh;
 }
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--clr-violet-binary-black);
-    --foreground: oklch(95% 0 0);
-
-  --max-width: 1500px;
-  }
-}
-
 
 html {
   scroll-behavior: smooth;
@@ -27,31 +14,20 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: var(--font-inter);
   overflow-x: hidden;
   transition: background-color 0.6s ease-in-out;
   position: relative;
 
-  &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: url("@/app/assets/logos/galaxy.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
   .container {
-    /* padding-block: clamp(12rem, 23vw, 16rem) clamp(4rem, 5vw, 6rem); */
+    margin-inline: auto;
+    max-inline-size: var(--max-width);
     min-block-size: 100dvh;
-    inline-size: 100dvw;
-    max-width: none;
-    padding-block-start: 165px;
-    display: flex;
-    flex-direction: column;
+    padding-block: 90px;
+    padding-inline: 50px;
+    inline-size: 100%;
 
     & > * {
       flex: 1;
@@ -59,28 +35,89 @@ body {
   }
 
   &[data-page="home"] {
-    background: var(--background);
-
     & header {
       justify-content: center;
     }
   }
 
-  &[data-page="resume"] {
-    background: var(--clr-red-himalayan-balsam);
-
+  &[data-page="resume"],
+  &[data-page="resume-experience"],
+  &[data-page="resume-skills"],
+  &[data-page="resume-education"],
+  &[data-page="default"] {
     .container {
       display: flex;
       flex-direction: column;
-      gap: 0;
-    }
 
-    &::before {
-      opacity: 0.05;
+      & > * {
+        flex: unset;
+      }
+
+      & .pageHeader {
+        padding-block: 0;
+      }
+
+      & > nav {
+        padding-block: 80px;
+
+        & > a {
+          color: var(--clr-red-flicker-pink);
+
+          & img {
+            filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
+          }
+        }
+      }
     }
   }
 
-  & button {
-    cursor: pointer;
+  &[data-page="resume-experience"],
+  &[data-page="resume-skills"],
+  &[data-page="resume-education"],
+  &[data-page="default"] {
+    .container {
+      block-size: 100dvh;
+      overflow: hidden;
+      padding-block-end: 0;
+    }
+  }
+
+  & button {}
+}
+
+@media (min-width: 576px) {
+  body {
+    .container {
+      padding-block: 120px 100px;
+      padding-inline: 64px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  body {
+    .container {
+      padding-block-start: 200px;
+    }
+
+    &[data-page="resume-experience"],
+    &[data-page="resume-skills"],
+    &[data-page="resume-education"],
+    &[data-page="default"] {
+      .container {
+        padding-inline: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1300px) {
+  body {
+    &[data-page="resume-experience"],
+    &[data-page="resume-skills"],
+    &[data-page="resume-education"],
+    &[data-page="default"] {
+      .container {
+        max-width: unset;
+      }
+    }
   }
 }

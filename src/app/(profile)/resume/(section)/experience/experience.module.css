@@ -1,0 +1,13 @@
+.experiences {
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px 32px; */
+  gap: 48px;
+  padding-block-start: 12px;
+}
+
+@media (min-width: 768px) {
+  .experiences {
+    flex-direction: row;
+  }
+}

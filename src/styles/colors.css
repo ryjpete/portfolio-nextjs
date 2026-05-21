@@ -1,4 +1,4 @@
-/* Light mode (default) */
+/* Palette primitives — raw color values only, no semantic meaning */
 :root {
   /* Grays */
   --clr-gray-white: oklch(1 0 0);
@@ -15,12 +15,22 @@
   --clr-green-alien-abduction: oklch(0.8673 0.2929 142.42);
   --clr-green-jade-glass: oklch(0.7835 0.1333 197.22);
 
+  /* Blues */
+  --clr-blue-lago: oklch(0.7021 0.1179 211.5);
+
   /* Reds */
   --clr-red-himalayan-balsam: oklch(0.795 0.1436 348.2);
+  --clr-red-apricot: oklch(0.8445 0.0857 37.62);
+  --clr-red-alexandria: oklch(0.7655 0.1427 37.81);
   --clr-red-bonker-pink: oklch(0.6573 0.2016 9.52);
+  --clr-red-flicker-pink: oklch(0.629 0.2537 0.19);
+  --clr-red-vampire: oklch(0.5863 0.236 0.15);
   --clr-red-ponzu-brown: oklch(0.1635 0.0653 11.22);
 
   /* Violets */
+  --clr-violet-pheromone: oklch(0.4945 0.2128 303.63);
+  --clr-violet-morado: oklch(0.5539 0.2034 306.12);
   --clr-violet-quiet-melody: oklch(0.54309 0.26829 286.452);
+  --clr-violet-belladonna: oklch(0.1574 0.0654 351.05);
   --clr-violet-binary-black: oklch(0.0472 0.0217 328.36);
 }

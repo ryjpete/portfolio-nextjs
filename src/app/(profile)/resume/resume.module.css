@@ -1,28 +1,3 @@
-@import "../../../styles/colors.css";
-
-.work {
-  padding: 2rem 0;
-
-  & > div {
-    position: relative;
-  }
-}
-
-@media (width >= 576px) {
-  .work {
-    padding-block: 3rem;
-  }
-}
-
-@media (width >= 768px) {
-  .work {
-    padding: 3rem 0;
-  }
-}
-
-@media (width >= 768px) {
-  .work > div:nth-child(2) > div {
-    max-inline-size: var(--max-width);
-    margin-inline: auto;
-  }
+.desc {
+  max-inline-size: 75%;
 }
