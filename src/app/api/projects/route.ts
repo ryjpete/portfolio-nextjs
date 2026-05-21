@@ -279,22 +279,22 @@ export async function GET() {
     },
     "mobile-apps": {
       header: {
-        h1: "Mobile Apps",
-        title: "Mobile projects I've built.",
+        h1: "Projects",
+        title: "Selected projects I've lent my talents to.",
       },
       items: PROJECTS,
     },
     "web-apps": {
       header: {
-        h1: "Web Apps",
-        title: "Web projects I've built.",
+        h1: "Projects",
+        title: "Selected projects I've lent my talents to.",
       },
       items: PROJECTS,
     },
     design: {
       header: {
-        h1: "Design",
-        title: "Design work I've led or contributed to.",
+        h1: "Projects",
+        title: "Selected projects I've lent my talents to.",
       },
       items: PROJECTS,
     },

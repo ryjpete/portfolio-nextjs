@@ -1,25 +1,44 @@
 .skillsContainer {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  padding-inline-end: 130px;
+  gap: 48px;
 }
 
 .skillsSection {
   display: flex;
-  justify-content: space-between;
-  gap: 32px;
+  flex-direction: column;
+  gap: 24px;
 
   .icons {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
     gap: 24px 12px;
     max-inline-size: 400px;
 
     & > img {
-      width: 28px;
+      width: 16px;
       filter: brightness(0) invert(1);
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .skillsContainer {
+    padding-inline-end: 130px;
+    gap: 64px;
+
+    .skillsSection {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 32px;
+
+      .icons {
+        justify-content: flex-end;
+
+        & > img {
+          width: 28px;
+        }
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ interface Project {
   id: number;
   company: string;
   route?: string;
-  logo: string;
+  logo?: string;
   name: string;
   desc?: string;
   detailedDesc?: string;
@@ -63,7 +63,7 @@ export default function ProjectDetail({
         <div className={styles.content}>
           {project.detailedDesc && (
             <div className={styles.detailedDesc}>
-              <h5>a little bit more...</h5>
+              {/* <h5>a little bit more...</h5> */}
               <p className={styles.roleDesc}>{project.detailedDesc}</p>
             </div>
           )}
@@ -94,17 +94,17 @@ export default function ProjectDetail({
               </div>
             )}
 
-            <div className={styles.highlights}>
+            {/* <div className={styles.highlights}> */}
               {project.highlights ? (
-                <ul>
+                <ul className={styles.highlights}>
                   {project.highlights.map((h, index) => (
                     <li key={index}>
-                      <h5>{h.label}</h5> {h.entry}
+                      <strong>{h.label}:</strong> {h.entry}
                     </li>
                   ))}
                 </ul>
               ) : "No highlights available."}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </motion.div>

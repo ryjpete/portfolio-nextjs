@@ -43,7 +43,8 @@ body {
   &[data-page="resume"],
   &[data-page="resume-experience"],
   &[data-page="resume-skills"],
-  &[data-page="resume-education"] {
+  &[data-page="resume-education"],
+  &[data-page="default"] {
     .container {
       display: flex;
       flex-direction: column;
@@ -70,7 +71,10 @@ body {
     }
   }
 
-  &[data-page="resume-experience"] {
+  &[data-page="resume-experience"],
+  &[data-page="resume-skills"],
+  &[data-page="resume-education"],
+  &[data-page="default"] {
     .container {
       block-size: 100dvh;
       overflow: hidden;
@@ -87,12 +91,6 @@ body {
       padding-block: 120px 100px;
       padding-inline: 64px;
     }
-
-    /* &[data-page="resume-experience"] {
-      .container {
-        padding-inline-end: 0;
-      }
-    } */
   }
 }
 @media (min-width: 768px) {
@@ -101,7 +99,10 @@ body {
       padding-block-start: 200px;
     }
 
-    &[data-page="resume-experience"] {
+    &[data-page="resume-experience"],
+    &[data-page="resume-skills"],
+    &[data-page="resume-education"],
+    &[data-page="default"] {
       .container {
         padding-inline: 0;
       }
@@ -110,7 +111,10 @@ body {
 }
 @media (min-width: 1300px) {
   body {
-    &[data-page="resume-experience"] {
+    &[data-page="resume-experience"],
+    &[data-page="resume-skills"],
+    &[data-page="resume-education"],
+    &[data-page="default"] {
       .container {
         max-width: unset;
       }

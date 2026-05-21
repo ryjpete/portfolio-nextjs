@@ -2,10 +2,8 @@
   background-color: var(--color-bg);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-block: 24px;
-  padding-inline: 24px 74px;
-  min-inline-size: 475px;
+  gap: 18px;
+  padding: 12px;
   position: relative;
 
   .grow {
@@ -15,6 +13,7 @@
 
   .header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 
@@ -29,10 +28,13 @@
     .intro {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 12px;
 
       .title {
         font: 400 14px/1 var(--font-russo-one);
         text-transform: uppercase;
+        text-align: center;
       }
 
       .client {
@@ -58,13 +60,39 @@
   }
 
   .stack {
-    padding-inline-start: 60px;
     display: flex;
     flex-wrap: wrap;
-    gap: 18px 28px;
+    gap: 12px 24px;
 
     & img {
       filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(750%) hue-rotate(248deg) brightness(65%);
+      inline-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .projectItem {
+    padding-block: 24px;
+    padding-inline: 24px 74px;
+    min-inline-size: 450px;
+    inline-size: 450px;
+
+    .header {
+      flex-direction: row;
+
+      .intro {
+        align-items: flex-start;
+        gap: 2px;
+      }
+    }
+
+    .stack {
+      padding-inline-start: 60px;
+
+      & img {
+        inline-size: 16px;
+      }
     }
   }
 }

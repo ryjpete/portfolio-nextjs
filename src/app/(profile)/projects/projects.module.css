@@ -47,9 +47,10 @@
 }
  */
 .projects {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-block-start: 12px;
 
   & > div > img {
     filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(750%) hue-rotate(248deg) brightness(65%);
@@ -58,4 +59,10 @@
 
 .desc {
   max-inline-size: 75%;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    flex-direction: row;
+  }
 }

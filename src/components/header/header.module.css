@@ -29,6 +29,9 @@
 
 @media (min-width: 576px) {
   .header {
+    inset-block-start: 24px;
+    inset-inline: 24px;
+
     & :global(.logo) {
       inline-size: 65px;
     }
