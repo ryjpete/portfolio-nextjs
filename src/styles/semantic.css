@@ -1,0 +1,25 @@
+:root {
+  /* Backgrounds */
+  --color-bg: var(--clr-violet-belladonna);
+  --color-bg-surface: var(--clr-gray-black);
+
+  /* Text */
+  --color-fg: var(--clr-gray-white-edgar);
+  --color-text-heading: var(--clr-gray-white);
+  --color-text-heading-h1: oklch(1 0 0 / 0.7);
+  --color-text-body: var(--clr-gray-white);
+  --color-text-link: var(--clr-gray-white);
+  --color-text-link-hover: var(--clr-gray-cynical-black);
+
+  /* Accent */
+  --color-accent: var(--clr-red-himalayan-balsam);
+
+  /* Layout */
+  --max-width: 1500px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark mode overrides */
+  }
+}

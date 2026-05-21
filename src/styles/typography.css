@@ -1,52 +1,33 @@
-/* Light mode (default) */
 :root {
-  --h1: oklch(100% 0 0 / 0.7);
-  --h2: oklch(100% 0 0);
-  --h3: oklch(100% 0 0);
-  --h4: oklch(100% 0 0);
-  --h5: oklch(100% 0 0);
-  --p: oklch(100% 0 0);
-  --a: oklch(100% 0 0);
-  --aHover: oklch(4% 0 0);
-
   /* Fluid typography using clamp() */
-  --font-size-body: clamp(0.65rem, 5vw, 1rem);
-  --font-size-h1: 10vw;
+  /* --font-size-body: clamp(0.65rem, 5vw, 1rem); */
+  --font-size-body: clamp(10px, 2vw, 16px);
+  /* --font-size-h1: 64px; */
+  --font-size-h1: clamp(10px, 5vw, 64px);
   --font-size-h2: clamp(1.75rem, 5vw, 2.5rem);
   --font-size-h3: clamp(1.25rem, 5vw, 1.875rem);
   --font-size-h4: clamp(1.15rem, 5vw, 1.625rem);
   --font-size-h5: clamp(1.15rem, 5vw, 1.25rem);
+  --font-size-p: clamp(10px, 2vw, 16px);
   
-  --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem);
-  --line-height-h1: 9vw;
+  /* --line-height-body: clamp(1.5rem, 1.5rem, 1.5rem); */
+  --line-height-body: 2;
+  --line-height-h1: 1;
   --line-height-h2: 1;
   --line-height-h3: 1.5;
   --line-height-h4: 1.5;
   --line-height-h5: 1.5;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --h1: oklch(100% 0 0 / 0.7);
-    --h2: oklch(100% 0 0);
-    --h3: oklch(100% 0 0);
-    --h4: oklch(100% 0 0);
-    --h5: oklch(100% 0 0);
-    --p: oklch(100% 0 0);
-    --a: oklch(100% 0 0);
-    --aHover: oklch(4% 0 0);
-  }
+  --line-height-p: 1.5;
 }
 
 h1 {
   font: 400 var(--font-size-h1)/var(--line-height-h1) var(--font-russo-one);
-  color: var(--h1);
-  /* text-shadow: 0 0 2.4rem color-mix(in srgb, var(--clr-gray-black) 50%, var(--clr-gray-white) 50%); */
+  color: var(--clr-gray-white);
   text-transform: uppercase;
+  margin: 0;
 
   & a {
-    color: var(--a);
+    color: var(--color-text-link);
     font-weight: inherit;
     text-decoration: none;
   }
@@ -54,28 +35,28 @@ h1 {
 
 h2 {
   font: 400 var(--font-size-h2)/var(--line-height-h2) var(--font-russo-one);
-  color: var(--h2);
+  color: var(--color-text-heading);
   text-transform: uppercase;
 }
 
 h3 {
   font: 900 var(--font-size-h3)/var(--line-height-h3) var(--font-inter);
-  color: var(--h3);
+  color: var(--color-text-heading);
 }
 
 h4 {
   font: 900 var(--font-size-h4)/var(--line-height-h4) var(--font-inter);
-  color: var(--h4);
+  color: var(--color-text-heading);
 }
 
 h5 {
   font: 400 var(--font-size-h5)/var(--line-height-h5) var(--font-russo-one);
-  color: var(--h5);
+  color: var(--color-text-heading);
   text-transform: uppercase;
 }
 
 p,
 li {
-  font: 400 calc(var(--font-size-body) - 0.125rem)/calc(var(--line-height-body) - 0.125rem) var(--font-inter);
-  color: var(--p);
+  font: 400 var(--font-size-p)/var(--line-height-p) var(--font-inclusive-sans);
+  color: var(--color-text-body);
 }

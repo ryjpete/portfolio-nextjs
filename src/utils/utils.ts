@@ -1,7 +1,9 @@
-export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  const month = date.toLocaleString("en-US", { month: "short" });
-  const year = date.getFullYear().toString().slice(-2);
+export function formatDate(date: string | undefined): string {
+  if (!date) return "";
+  
+  const dateObj = new Date(date);
+  const month = dateObj.toLocaleString("en-US", { month: "short" });
+  const year = dateObj.getFullYear().toString().slice(-2);
   return `${month} '${year}`;
 }
 

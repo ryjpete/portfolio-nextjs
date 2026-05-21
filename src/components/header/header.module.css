@@ -2,53 +2,50 @@
   position: fixed;
   inset-block-start: 12px;
   inset-inline: 12px;
-  /* inset: 12px 0 auto 0; */
-  /* inset-block-start: 12px; */
-  /* inset-inline: 0; */
   z-index: 200;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  /* padding: 0 4dvw; */
-  /* inline-size: 100%; */
 
-  & > div > a {
-    display: flex;
-    margin-inline: auto;
+  & button {
+    border-width: 1px;
+    border-color: color-mix(in oklab, var(--clr-gray-white) 25%, transparent);
+    padding: 0;
+    block-size: 28px;
+    inline-size: 28px;
+
+    & img {
+      filter: brightness(20%) saturate(100%) invert(35%);
+      inline-size: auto;
+      transform: rotate(-180deg);
+    }
   }
 
   & :global(.logo) {
     block-size: auto;
-    inline-size: clamp(50px, 15vw, 125px);
-  }
-
-  .logoScroll {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    inline-size: 35px;
   }
 }
 
-/* .back {
-  position: absolute;
-  inset-block-start: 10px;
-  inset-inline-start: 24px;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-} */
-
-@media (width >= 576px) {
+@media (min-width: 576px) {
   .header {
-    align-items: start;
-    justify-content: space-between;
+    inset-block-start: 24px;
     inset-inline: 24px;
-    padding: 0;
 
-    & > div:last-of-type {
-      margin-inline-start: auto;
+    & :global(.logo) {
+      inline-size: 65px;
+    }
+
+    & button {
+      block-size: 32px;
+      inline-size: 32px;
     }
   }
-
-  /* .back {
-    position: relative;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-  } */
+}
+@media (min-width: 992px) {
+  .header {
+    & :global(.logo) {
+      inline-size: 100px;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import { ProjectProvider } from "@/context/ProjectContext";
+import { ScrollProvider } from "@/context/ScrollContext";
 
 import HtmlProvider from "./html-provider";
 
@@ -11,9 +12,11 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <HtmlProvider>
-      <ProjectProvider>
-        {children}
-      </ProjectProvider>
+      <ScrollProvider>
+        <ProjectProvider>
+          {children}
+        </ProjectProvider>
+      </ScrollProvider>
     </HtmlProvider>
   );
 }

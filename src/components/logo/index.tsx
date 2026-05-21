@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "@/app/assets/logos/logo.svg";
+import logo from "@/app/assets/logos/bolt/logo.svg";
 
 export default function Logo() {
 
