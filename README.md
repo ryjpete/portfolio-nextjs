@@ -4,13 +4,15 @@ My personal portfolio site built with Next.js and TypeScript.
 
 ## Tech Stack
 
-- **Next.js 15** (App Router)
-- **React 19+**
+- **Next.js 16** (App Router)
+- **React 19**
 - **TypeScript**
 - **CSS Modules**
 - **Tailwind CSS 4** (base/reset utility)
-- **ESLint, TurboPack, Vercel**
+- **Framer Motion** — animations
+- **ESLint, Vercel**
 - **Storybook 10+** (nextjs-vite) — component development & testing
+- **Vitest + Playwright** — Storybook visual/interaction tests
 - **HeroIcons** — icon library
 
 ## Getting Started
@@ -36,7 +38,7 @@ npm run lint     # Run ESLint
 ```bash
 npm run storybook        # Start Storybook at localhost:6006
 npm run build-storybook  # Build Storybook for deployment
-npm run test             # Run vitest Storybook visual tests
+npx vitest               # Run Storybook visual tests via Vitest + Playwright
 ```
 
 ## Project Structure
@@ -44,18 +46,20 @@ npm run test             # Run vitest Storybook visual tests
 ```
 src/
   app/
-    api/         # Backend API routes
-    (profile)/   # Profile layout group with sub-routes
+    api/          # Backend API routes
+    (profile)/    # Profile layout group with sub-routes
       about/
       projects/
       resume/
+    (project)/    # Project detail layout group
+      projects/[slug]/
     home/
     skills/
-    layout.tsx   # Root layout with providers
+    layout.tsx    # Root layout with providers
     page.tsx
   components/    # Reusable UI components
   config/        # Site-wide configuration (navigation, etc.)
-  context/       # React context providers (ProjectContext)
+  context/       # React context providers (ProjectContext, ScrollContext)
   hooks/         # Custom React hooks
   providers/     # App-level providers
   styles/        # Global styles, color tokens, typography
@@ -71,10 +75,7 @@ public/
 - Project modal with URL routing and ProjectContext integration
 - Resume page pulling from static API route
 - Component-driven development with Storybook integration
-
-<!-- ## Testing
-
-- Storybook visual & interaction testing -->
+- Storybook visual & interaction testing via Vitest + Playwright
 
 ## Deployment
 
