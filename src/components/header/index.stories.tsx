@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import { ProjectProvider } from '@/context/ProjectContext';
+import { ScrollProvider } from '@/context/ScrollContext';
 
-import Index from './index';
+import Header from './index';
 
 const meta = {
   title: "Components/Header",
-  component: Index,
+  component: Header,
   parameters: {
     layout: "fullscreen",
     nextjs: {
@@ -17,32 +18,36 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <ProjectProvider>
-        <Story />
-      </ProjectProvider>
+      <ScrollProvider>
+        <ProjectProvider>
+          <Story />
+        </ProjectProvider>
+      </ScrollProvider>
     ),
   ],
   tags: ["autodocs"],
-} satisfies Meta<typeof Index>;
+} satisfies Meta<typeof Header>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Home: Story = {
-  parameters: {
-    nextjs: {
-      navigation: {
-        pathname: '/',
-      },
-    },
-  },
-};
+export const Home: Story = {};
 
 export const InnerPage: Story = {
   parameters: {
     nextjs: {
       navigation: {
         pathname: '/projects',
+      },
+    },
+  },
+};
+
+export const Resume: Story = {
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: '/resume',
       },
     },
   },

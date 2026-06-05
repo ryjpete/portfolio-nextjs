@@ -26,12 +26,12 @@
 .appBgShape {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   pointer-events: none;
 }
 
-/* Optional accessibility */
+/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .appBgColor,
   .appBgImage {
@@ -41,12 +41,12 @@
 
 .lines {
   position: absolute;
-  inset: 0 0 auto;
+  inset-block-start: 0;
+  inset-inline: 0;
   z-index: 1;
-  block-size: auto;
-  inline-size: 100%;
   display: flex;
   justify-content: flex-start;
+  inline-size: 100%;
   pointer-events: none;
   opacity: 0.15;
 

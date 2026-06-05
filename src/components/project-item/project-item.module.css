@@ -54,7 +54,6 @@
 
   .description {
     font: 400 12px/18px var(--font-inclusive-sans);
-    padding-inline-start: 60px;
     padding-block-end: 10px;
     flex: 1;
   }
@@ -85,6 +84,10 @@
         align-items: flex-start;
         gap: 2px;
       }
+    }
+
+    .description {
+      padding-inline-start: 60px;
     }
 
     .stack {

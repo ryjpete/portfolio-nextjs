@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { fn } from "storybook/test";
+import { fn } from 'storybook/test';
 
 import Index from './index';
 
@@ -12,7 +12,7 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    onClick: fn(),
+    onClick: { action: "clicked" },
     src: { control: "text" },
     ariaLabel: { control: "text" }
   },
