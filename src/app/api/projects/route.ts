@@ -114,66 +114,64 @@ const PROJECTS = [
     // thumb: "/assets/images/projects/grateful-dev/thumb01.png",
     // cats: ["Branding", "Design", "Copywriting", "Development", "Deployment"],
   },
-  // {
-  //   id: 2,
-  //   company: "The Main Branch",
-  //   route: "./projects/ai-cattle-monitoring",
-  //   logo: "/assets/images/logo-tmb.svg",
-  //   name: "Livestock Management Platform",
-  //   desc:
-  //     "Livestock and live intelligence meet.",
-  //   detailedDesc:
-  //     "This project involved designing and building a system of field-mounted sensors to monitor cattle health and behavior, with AI algorithms analyzing the data to provide insights and alerts to farm operators. The system was built using Next.js App Router, Node.js, and PostgreSQL. The project also involved custom hardware integration for the sensors, as well as a focus on scalability and reliability for deployment in remote agricultural settings.",
-  //     // "This is a livestock monitoring platform consisting of a React Native mobile app and a Node.js/Express backend. The mobile app supports producer and vet user roles, providing features like real-time pen/cattle monitoring, live feeds, map views, and vet-to-producer chat. It uses React Query for data fetching, Socket.IO for real-time updates, and GPS location tracking. The admin side includes a separate React web client alongside end-to-end Playwright tests.",
-  //     // "A livestock monitoring platform with a React Native mobile app for producers and vets — featuring real-time pen/cattle monitoring, live feeds, map views, and in-app chat. Backed by a Node.js/Express API with Socket.IO for real-time updates, React Query for data fetching, and GPS tracking, plus a React web admin client and end-to-end Playwright tests.",
-  //   roleDesc:
-  //     "Primarily frontend development on this project, I played a key role in building and maintaining the web application interface using Next.js and React, translating requirements into responsive, functional UI while collaborating with backend and hardware teams.",
-  //   highlights: [
-  //     {
-  //       id: 0,
-  //       label: "Branding",
-  //       entry:
-  //         "Custom logo and branding, with a focus on a clean, modern aesthetic and a unique visual style."
-  //     }
-  //   ],
-  //   tech: [
-  //     {
-  //       name: "Next.js",
-  //       icon: "/assets/images/tech/icon-nextjs.svg",
-  //     },
-  //     {
-  //       name: "React",
-  //       icon: "/assets/images/tech/icon-react.svg",
-  //     },
-  //     {
-  //       name: "React Native",
-  //       icon: "/assets/images/tech/icon-react-native.svg",
-  //     },
-  //     {
-  //       name: "TypeScript",
-  //       icon: "/assets/images/tech/icon-typescript.svg",
-  //     },
-  //     {
-  //       name: "CSS Modules",
-  //       icon: "/assets/images/tech/icon-css-modules.svg",
-  //     },
-  //     {
-  //       name: "Figma",
-  //       icon: "/assets/images/tech/icon-figma.svg",
-  //     },
-  //     {
-  //       name: "Git",
-  //       icon: "/assets/images/tech/icon-git.svg",
-  //     },
-  //     {
-  //       name: "GitHub",
-  //       icon: "/assets/images/tech/icon-github.svg",
-  //     },
-  //   ],
-  //   cats: [
-  //     "Web",
-  //   ],
-  // },
+  {
+    id: 2,
+    company: "The Main Branch",
+    route: "./projects/ai-cattle-monitoring",
+    logo: "/assets/images/logo-tmb.svg",
+    name: "Livestock Management Platform",
+    desc:
+      "Livestock and live intelligence meet.",
+    detailedDesc:
+      "Cattle health monitoring and management platform spanning a web portal and mobile app (iOS & Android) for agricultural producers, veterinarians, and administrators. Supports multiple user roles with distinct portals — producers manage pens and monitor herd health in real time with live camera feeds, vets conduct remote consultations and track cattle history via an integrated chat system, and admins oversee customers, locations, and system users. Mobile app features biometric login, GPS-based location services, push notifications, live camera streaming, IoT device management, and background automation.",
+    roleDesc:
+      "Served as the primary styling engineer on a collaborative team across both the React web portal and React Native mobile app, owning the design system, visual consistency, and component styling across the producer, vet, and admin portals. Built and organized the reusable component library for both platforms, established cross-platform style conventions, and maintained frontend file structure throughout the project.",
+    // highlights: [
+    //   {
+    //     id: 0,
+    //     label: "Branding",
+    //     entry:
+    //       "Custom logo and branding, with a focus on a clean, modern aesthetic and a unique visual style."
+    //   }
+    // ],
+    tech: [
+      {
+        name: "Next.js",
+        icon: "/assets/images/tech/icon-nextjs.svg",
+      },
+      {
+        name: "React",
+        icon: "/assets/images/tech/icon-react.svg",
+      },
+      {
+        name: "React Native",
+        icon: "/assets/images/tech/icon-react-native.svg",
+      },
+      {
+        name: "TypeScript",
+        icon: "/assets/images/tech/icon-typescript.svg",
+      },
+      {
+        name: "CSS Modules",
+        icon: "/assets/images/tech/icon-css-modules.svg",
+      },
+      {
+        name: "Figma",
+        icon: "/assets/images/tech/icon-figma.svg",
+      },
+      {
+        name: "Git",
+        icon: "/assets/images/tech/icon-git.svg",
+      },
+      {
+        name: "GitHub",
+        icon: "/assets/images/tech/icon-github.svg",
+      },
+    ],
+    cats: [
+      "Web",
+    ],
+  },
   // {
   //   id: 3,
   //   company: "The Main Branch",

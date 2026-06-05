@@ -29,7 +29,7 @@ body {
     margin-inline: auto;
     max-inline-size: var(--max-width);
     min-block-size: 100dvh;
-    padding-block: 90px;
+    padding-block: 90px 0;
     padding-inline: 50px;
     inline-size: 100%;
 
@@ -41,6 +41,10 @@ body {
   &[data-page="home"] {
     & header {
       justify-content: center;
+
+      .logo {
+        inline-size: 75px;
+      }
     }
   }
 
@@ -80,8 +84,8 @@ body {
   &[data-page="resume-education"],
   &[data-page="default"] {
     .container {
-      block-size: 100dvh;
-      overflow: hidden;
+      /* block-size: 100dvh; */
+      /* overflow: hidden; */
       padding-block-end: 0;
     }
   }

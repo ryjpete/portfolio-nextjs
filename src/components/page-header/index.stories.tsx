@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import Index from './index';
+import PageHeader from './index';
 
 const meta = {
-  title: "Components/Logo",
-  component: Index,
+  title: "Components/Page Header",
+  component: PageHeader,
   parameters: {
     layout: "centered",
     nextjs: {
       navigation: {
-        pathname: "/",
+        pathname: "/resume",
       },
     },
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Index>;
+} satisfies Meta<typeof PageHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

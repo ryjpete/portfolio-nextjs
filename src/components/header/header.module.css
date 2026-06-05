@@ -23,7 +23,7 @@
 
   & :global(.logo) {
     block-size: auto;
-    inline-size: 35px;
+    inline-size: 45px;
   }
 }
 
@@ -42,6 +42,7 @@
     }
   }
 }
+
 @media (min-width: 992px) {
   .header {
     & :global(.logo) {
