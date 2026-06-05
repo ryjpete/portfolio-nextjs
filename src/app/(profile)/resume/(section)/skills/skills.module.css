@@ -22,7 +22,7 @@
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .skillsContainer {
     padding-inline-end: 130px;
     gap: 64px;

@@ -103,7 +103,7 @@ export default function ProjectDetail({
                     </li>
                   ))}
                 </ul>
-              ) : "No highlights available."}
+              ) : null}
             {/* </div> */}
           </div>
         </div>

@@ -4,6 +4,7 @@ body .container {
   align-items: flex-start;
   gap: 48px;
   padding-block-start: 140px;
+  padding-inline: 24px;
 
   & h1 {
     font-size: clamp(10px, 5vw, 64px);

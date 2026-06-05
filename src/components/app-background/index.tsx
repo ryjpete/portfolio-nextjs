@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useSpring, useTransform, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import styles from "./app-background.module.css";
 
@@ -33,6 +33,80 @@ type BgConfig = {
 };
 
 const SPRING = { stiffness: 120, damping: 18, mass: 1.2 };
+
+const RESUME_SECTION_BG: BgConfig = {
+  color: "oklch(0.18 0.02 260)",
+  imageOpacity: 1,
+  shape: {
+    points: [[0, 11], [100, -18], [100, 250], [0, 85]],
+    fill: "url(#home-gradient)",
+  },
+  shapeBack: {
+    points: [[3, 7], [100, 7], [100, 100], [3, 100]],
+    fill: "url(#experience-gradient)",
+  },
+  variants: [
+    {
+      query: "(min-width: 768px)",
+      shape: {
+        points: [[0, 37], [100, 33], [100, 115], [0, 80]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[8, 32], [100, 32], [100, 100], [8, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+    {
+      query: "(min-width: 576px)",
+      shape: {
+        points: [[0, 14], [100, -10], [100, 125], [0, 90]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[4, 10], [100, 10], [100, 100], [4, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+  ],
+};
+
+const PROJECTS_BG: BgConfig = {
+  color: "var(--clr-green-grass)",
+  imageOpacity: 0.05,
+  shape: {
+    points: [[0, 10], [100, 0], [100, 125], [10, 90]],
+    fill: "url(#projects-gradient)",
+  },
+  shapeBack: {
+    points: [[10, 16], [100, 18], [100, 100], [20, 100]],
+    fill: "url(#projects-back-gradient)",
+  },
+  variants: [
+    {
+      query: "(min-width: 768px)",
+      shape: {
+        points: [[0, 37], [100, 33], [100, 115], [0, 80]],
+        fill: "url(#projects-gradient)",
+      },
+      shapeBack: {
+        points: [[8, 32], [100, 32], [100, 100], [8, 100]],
+        fill: "url(#projects-back-gradient)",
+      },
+    },
+    {
+      query: "(min-width: 576px)",
+      shape: {
+        points: [[0, 14], [100, 0], [100, 125], [0, 90]],
+        fill: "url(#projects-gradient)",
+      },
+      shapeBack: {
+        points: [[10, 22], [100, 22], [100, 100], [14, 100]],
+        fill: "url(#projects-back-gradient)",
+      },
+    },
+  ],
+};
 
 const bgByRoute: Record<string, BgConfig> = {
   "/": {
@@ -73,290 +147,14 @@ const bgByRoute: Record<string, BgConfig> = {
       points: [[10, 0], [100, 0], [100, 100], [0, 100]],
       fill: "url(#home-gradient)",
     },
-    // variants: [
-    //   {
-    //     query: "(min-width: 576px)",
-    //     anchorOffsets: [
-    //       [-25, -5],   // top-left
-    //       [25, -5],   // top-right
-    //       [25, 5],   // bottom-right
-    //       [-25, 5],   // bottom-left
-    //     ],
-    //   },
-    // ],
   },
-  "/resume/experience": {
-    color: "oklch(0.18 0.02 260)",
-    imageOpacity: 1,
-    shape: {
-      points: [[0, 16], [100, 14], [100, 150], [0, 90]],
-      fill: "url(#home-gradient)",
-    },
-    shapeBack: {
-      points: [[5, 13], [100, 13], [100, 100], [5, 100]],
-      fill: "url(#experience-gradient)",
-    },
-    variants: [
-      {
-        query: "(min-width: 1300px)",
-        shape: {
-          points: [[0, 33], [100, 28], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 26], [100, 26], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 992px)",
-        shape: {
-          points: [[0, 30], [100, 26], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 25], [100, 25], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 768px)",
-        shape: {
-          points: [[0, 28], [100, 25], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 24], [100, 24], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 576px)",
-        shape: {
-          points: [[0, 19], [100, 17], [100, 150], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 17], [100, 17], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-    ],
-  },
-  "/resume/skills": {
-    color: "oklch(0.18 0.02 260)",
-    imageOpacity: 1,
-    shape: {
-      points: [[0, 16], [100, 14], [100, 150], [0, 90]],
-      fill: "url(#home-gradient)",
-    },
-    shapeBack: {
-      points: [[5, 13], [100, 13], [100, 100], [5, 100]],
-      fill: "url(#experience-gradient)",
-    },
-    variants: [
-      {
-        query: "(min-width: 1300px)",
-        shape: {
-          points: [[0, 33], [100, 28], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 26], [100, 26], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 992px)",
-        shape: {
-          points: [[0, 30], [100, 26], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 25], [100, 25], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 768px)",
-        shape: {
-          points: [[0, 28], [100, 25], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 24], [100, 24], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 576px)",
-        shape: {
-          points: [[0, 19], [100, 17], [100, 150], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 17], [100, 17], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-    ],
-  },
-  "/resume/education": {
-    color: "oklch(0.18 0.02 260)",
-    imageOpacity: 1,
-    shape: {
-      points: [[0, 16], [100, 14], [100, 150], [0, 90]],
-      fill: "url(#home-gradient)",
-    },
-    shapeBack: {
-      points: [[5, 13], [100, 13], [100, 100], [5, 100]],
-      fill: "url(#experience-gradient)",
-    },
-    variants: [
-      {
-        query: "(min-width: 1300px)",
-        shape: {
-          points: [[0, 33], [100, 28], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 26], [100, 26], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 992px)",
-        shape: {
-          points: [[0, 30], [100, 26], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 25], [100, 25], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 768px)",
-        shape: {
-          points: [[0, 28], [100, 25], [100, 115], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 24], [100, 24], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-      {
-        query: "(min-width: 576px)",
-        shape: {
-          points: [[0, 19], [100, 17], [100, 150], [0, 80]],
-          fill: "url(#home-gradient)",
-        },
-        shapeBack: {
-          points: [[14, 17], [100, 17], [100, 100], [14, 100]],
-          fill: "url(#experience-gradient)",
-        },
-      },
-    ],
-  },
-  // "/resume/skills": {
-  //   color: "oklch(0.18 0.02 260)",
-  //   imageOpacity: 1,
-  //   shape: {
-  //     points: [[0, 36], [100, 30], [100, 150], [0, 80]],
-  //     fill: "url(#home-gradient)",
-  //   },
-  //   shapeBack: {
-  //     points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-  //     fill: "url(#experience-gradient)",
-  //   },
-  //   variants: [
-  //     {
-  //       query: "(max-width: 575px)",
-  //       shape: {
-  //         points: [[0, 36], [100, 30], [100, 150], [0, 80]],
-  //         fill: "url(#home-gradient)",
-  //       },
-  //       shapeBack: {
-  //         points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-  //         fill: "url(#experience-gradient)",
-  //       },
-  //     },
-  //   ],
-  // },
-  // "/resume/education": {
-  //   color: "oklch(0.18 0.02 260)",
-  //   imageOpacity: 1,
-  //   shape: {
-  //     points: [[0, 36], [100, 30], [100, 150], [0, 80]],
-  //     fill: "url(#home-gradient)",
-  //   },
-  //   shapeBack: {
-  //     points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-  //     fill: "url(#experience-gradient)",
-  //   },
-  //   variants: [
-  //     {
-  //       query: "(max-width: 575px)",
-  //       shape: {
-  //         points: [[0, 36], [100, 30], [100, 150], [0, 80]],
-  //         fill: "url(#home-gradient)",
-  //       },
-  //       shapeBack: {
-  //         points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-  //         fill: "url(#experience-gradient)",
-  //       },
-  //     },
-  //   ],
-  // },
-  "/projects": {
-    color: "var(--clr-green-grass)",
-    imageOpacity: 0.05,
-    shape: {
-      points: [[0, 14], [100, 36], [100, 125], [4.8, 80]],
-      fill: "url(#projects-gradient)",
-    },
-    shapeBack: {
-      points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-      fill: "url(#projects-back-gradient)",
-    },
-  },
-  "/projects/mobile-apps": {
-    color: "var(--clr-green-grass)",
-    imageOpacity: 0.05,
-    shape: {
-      points: [[0, 14], [100, 36], [100, 125], [4.8, 80]],
-      fill: "url(#projects-gradient)",
-    },
-    shapeBack: {
-      points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-      fill: "url(#projects-back-gradient)",
-    },
-  },
-  "/projects/web-apps": {
-    color: "var(--clr-green-grass)",
-    imageOpacity: 0.05,
-    shape: {
-      points: [[0, 14], [100, 36], [100, 125], [4.8, 80]],
-      fill: "url(#projects-gradient)",
-    },
-    shapeBack: {
-      points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-      fill: "url(#projects-back-gradient)",
-    },
-  },
-  "/projects/design": {
-    color: "var(--clr-green-grass)",
-    imageOpacity: 0.05,
-    shape: {
-      points: [[0, 14], [100, 36], [100, 125], [4.8, 80]],
-      fill: "url(#projects-gradient)",
-    },
-    shapeBack: {
-      points: [[20, 29], [100, 29], [100, 100], [20, 100]],
-      fill: "url(#projects-back-gradient)",
-    },
-  },
+  "/resume/experience": RESUME_SECTION_BG,
+  "/resume/skills": RESUME_SECTION_BG,
+  "/resume/education": RESUME_SECTION_BG,
+  "/projects": PROJECTS_BG,
+  "/projects/mobile-apps": PROJECTS_BG,
+  "/projects/web-apps": PROJECTS_BG,
+  "/projects/design": PROJECTS_BG,
 };
 
 const FALLBACK_SHAPE: BgShape = {

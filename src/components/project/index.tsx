@@ -47,59 +47,6 @@ export default function Project({ slug }: ProjectProps) {
 		};
 	}, [setActiveProject]);
 
-	// const left = (
-	// 	<div className={styles.left}>
-	// 		<h5>
-	// 			Project Status:{" "}
-	// 			{activeProject?.isActive ? (
-	// 				<span className={styles.active}>Active</span>
-	// 			) : (
-	// 				<span className={styles.inactive}>Inactive</span>
-	// 			)}
-	// 		</h5>
-
-	// 		{activeProject?.cats && (
-	// 			<div className={styles.roles}>
-	// 				<h5>Project Roles</h5>
-	// 				<Categories showCatItemTitle={true} />
-	// 			</div>
-	// 		)}
-	// 	</div>
-	// );
-
-	// const right = (
-	// 	<div className={styles.right}>
-	// 		{activeProject?.images?.imageSet && (
-	// 			<div className={styles.imageSet}>
-	// 				{activeProject.images.imageSet.map((src, index) => (
-	// 					<Image
-	// 						key={src}
-	// 						src={src}
-	// 						alt={`${activeProject.title} screenshot ${index + 1}`}
-	// 						width={800}
-	// 						height={600}
-	// 						className={styles.image}
-	// 					/>
-	// 				))}
-	// 			</div>
-	// 		)}
-
-	// 		{activeProject?.techs && (
-	// 			<div className={styles.techs}>
-	// 				{activeProject.techs.map(({ category, items }) => (
-	// 					<Categories
-	// 						key={category}
-	// 						project={{ cats: items }}
-	// 						showCatTitle={true}
-	// 						catTitle={category}
-	// 						showCatItemTitle={true}
-	// 					/>
-	// 				))}
-	// 			</div>
-	// 		)}
-	// 	</div>
-	// );
-
 	const project = (
 		<div className={styles.project}>
 			<div className={styles.header}>

@@ -3,7 +3,7 @@
   flex-direction: column;
   /* gap: 24px 32px; */
   gap: 48px;
-  padding-block-start: 12px;
+  padding-block: 12px 64px;
 }
 
 @media (min-width: 768px) {
