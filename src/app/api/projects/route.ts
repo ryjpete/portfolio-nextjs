@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { iconCssModules, iconFigma, iconGit, iconNextJs, iconReact, iconReactNative, iconStorybook, iconTypeScript, iconVercel } from "../resume/icons";
+
 const PROJECTS = [
   {
     id: 1,
@@ -66,39 +68,40 @@ const PROJECTS = [
     tech: [
       {
         name: "Next.js",
-        icon: "/assets/images/tech/icon-nextjs.svg",
+        svg: iconNextJs,
       },
       {
         name: "React",
-        icon: "/assets/images/tech/icon-react.svg",
+        svg: iconReact,
       },
       {
         name: "TypeScript",
-        icon: "/assets/images/tech/icon-typescript.svg",
+        svg: iconTypeScript,
       },
       {
         name: "CSS Modules",
-        icon: "/assets/images/tech/icon-css-modules.svg",
+        svg: iconCssModules,
       },
       {
         name: "Figma",
-        icon: "/assets/images/tech/icon-figma.svg",
+        svg: iconFigma,
       },
       {
         name: "Storybook",
-        icon: "/assets/images/tech/icon-storybook.svg",
+        svg: iconStorybook,
       },
       {
         name: "Git",
-        icon: "/assets/images/tech/icon-git.svg",
+        // icon: "/assets/images/tech/icon-git.svg",
+        svg: iconGit,
       },
-      {
-        name: "GitHub",
-        icon: "/assets/images/tech/icon-github.svg",
-      },
+        // {
+        //   name: "GitHub",
+        //   icon: "/assets/images/tech/icon-github.svg",
+        // },
       {
         name: "Vercel",
-        icon: "/assets/images/tech/icon-vercel.svg",
+        svg: iconVercel,
       },
     ],
     cats: [
@@ -137,36 +140,44 @@ const PROJECTS = [
     tech: [
       {
         name: "Next.js",
-        icon: "/assets/images/tech/icon-nextjs.svg",
+        // icon: "/assets/images/tech/icon-nextjs.svg",
+        svg: iconNextJs,
       },
       {
         name: "React",
-        icon: "/assets/images/tech/icon-react.svg",
+        // icon: "/assets/images/tech/icon-react.svg",
+        svg: iconReact,
       },
       {
         name: "React Native",
-        icon: "/assets/images/tech/icon-react-native.svg",
+        // icon: "/assets/images/tech/icon-react-native.svg",
+        svg: iconReactNative,
       },
       {
         name: "TypeScript",
-        icon: "/assets/images/tech/icon-typescript.svg",
+        // icon: "/assets/images/tech/icon-typescript.svg",
+        svg: iconTypeScript,
       },
       {
         name: "CSS Modules",
-        icon: "/assets/images/tech/icon-css-modules.svg",
+        // icon: "/assets/images/tech/icon-css-modules.svg",
+        svg: iconCssModules,
       },
       {
         name: "Figma",
-        icon: "/assets/images/tech/icon-figma.svg",
+        // icon: "/assets/images/tech/icon-figma.svg",
+        svg: iconFigma,
       },
       {
         name: "Git",
-        icon: "/assets/images/tech/icon-git.svg",
+        // icon: "/assets/images/tech/icon-git.svg",
+        svg: iconGit,
       },
-      {
-        name: "GitHub",
-        icon: "/assets/images/tech/icon-github.svg",
-      },
+      // {
+      //   name: "GitHub",
+      //   // icon: "/assets/images/tech/icon-github.svg",
+      //   svg: iconGitHub,
+      // },
     ],
     cats: [
       "Web",

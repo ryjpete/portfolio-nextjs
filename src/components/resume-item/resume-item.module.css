@@ -29,8 +29,10 @@
     align-items: center;
     gap: 10px;
 
-    .plc {
-      filter: grayscale(100%) opacity(0.5);
+    & svg {
+      block-size: 50px;
+      inline-size: 50px;
+      opacity: 0.25;
     }
 
     .intro {
@@ -66,11 +68,17 @@
   .stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 24px;
+    /* gap: 12px 24px; */
+    gap: 12px;
 
-    & img {
-      filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
-      inline-size: 12px;
+    & svg {
+      block-size: 18px;
+      inline-size: 18px;
+      color: var(--clr-red-flicker-pink);
+
+      & path {
+        fill: var(--clr-red-flicker-pink);
+      }
     }
   }
 }
@@ -104,8 +112,8 @@
     .stack {
       padding-inline-start: 60px;
 
-      & img {
-        inline-size: 16px;
+      & svg {
+        inline-size: 32px;
       }
     }
   }

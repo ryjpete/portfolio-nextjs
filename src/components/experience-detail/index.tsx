@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import imgPlc from "@/app/assets/logos/bolt/logo.svg";
 
-import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
+import styles from "./experience-detail.module.css";
 import { formatDate } from "@/utils/utils";
 import { useScrollY } from "@/context/ScrollContext";
 
@@ -21,7 +21,7 @@ interface Experience {
   position: string[];
   tenure: { start: string; end: string };
   responsibilities: string[];
-  tech: { name: string; icon: string }[];
+  tech: { name: string; icon?: string; svg?: string }[];
 }
 
 export default function ExperienceDetail({
@@ -56,7 +56,7 @@ export default function ExperienceDetail({
           <Image
             src={exp?.logo || imgPlc}
             alt={exp.company}
-            className={exp?.logo ? styles.companyLogo : styles.plc}
+            className={!exp?.logo ? styles.plc : ""}
             width={50}
             height={50}
           />
@@ -77,14 +77,11 @@ export default function ExperienceDetail({
                 <h5>Tech Stack</h5>
                 <div className={styles.stack}>
                   {exp.tech.map((tech) => (
-                    <Image
-                      key={tech.name}
-                      src={tech.icon}
-                      alt={tech.name}
-                      title={tech.name}
-                      width={24}
-                      height={24}
-                    />
+                    tech.svg
+                      ? <span key={tech.name} dangerouslySetInnerHTML={{ __html: tech.svg }} />
+                      : tech.icon
+                        ? <Image key={tech.name} src={tech.icon} alt={tech.name} title={tech.name} width={24} height={24} />
+                        : null
                   ))}
                 </div>
               </div>

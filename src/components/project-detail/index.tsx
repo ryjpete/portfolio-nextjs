@@ -5,23 +5,10 @@ import { motion } from "framer-motion";
 
 import imgPlc from "@/app/icon-512.png";
 
-// import styles from "./project-detail.module.css";
-import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
+import styles from "./project-detail.module.css";
+// import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
 
-interface Project {
-  id: number;
-  company: string;
-  route?: string;
-  logo?: string;
-  name: string;
-  desc?: string;
-  detailedDesc?: string;
-  roleDesc?: string;
-  tech: { name: string; icon: string }[];
-  cats?: string[];
-  slug?: string;
-  highlights?: { label: string; entry: string }[];
-}
+import { type Project } from "@/components/project-item";
 
 export default function ProjectDetail({
   project,
@@ -81,14 +68,11 @@ export default function ProjectDetail({
                 <h5>Tech Stack</h5>
                 <div className={styles.stack}>
                   {project.tech.map((t) => (
-                    <Image
-                      key={t.name}
-                      src={t.icon}
-                      alt={t.name}
-                      title={t.name}
-                      width={24}
-                      height={24}
-                    />
+                    t.svg
+                      ? <span key={t.name} title={t.name} dangerouslySetInnerHTML={{ __html: t.svg }} />
+                      : t.icon
+                        ? <Image key={t.name} src={t.icon} alt={t.name} title={t.name} width={24} height={24} />
+                        : null
                   ))}
                 </div>
               </div>
