@@ -86,11 +86,11 @@ const PROJECTS_BG: BgConfig = {
     {
       query: "(min-width: 768px)",
       shape: {
-        points: [[0, 37], [100, 33], [100, 115], [0, 80]],
+        points: [[0, 25], [100, 28], [100, 85], [0, 115]],
         fill: "url(#projects-gradient)",
       },
       shapeBack: {
-        points: [[8, 32], [100, 32], [100, 100], [8, 100]],
+        points: [[8, 24], [100, 24], [100, 100], [8, 100]],
         fill: "url(#projects-back-gradient)",
       },
     },
@@ -324,9 +324,9 @@ export default function AppBackground() {
             <stop offset="100%" stopColor="var(--clr-red-alexandria)" />
           </linearGradient>
 
-          <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          {/* <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="0" stdDeviation="50" floodColor="#000" floodOpacity="0.85" />
-          </filter>
+          </filter> */}
         </defs>
         <motion.path d={dBack} fill={bg.shapeBack ? activeShapeBack.fill : "transparent"} />
         <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} filter="url(#shape-shadow)" />
