@@ -47,6 +47,28 @@ const RESUME_SECTION_BG: BgConfig = {
   },
   variants: [
     {
+      query: "(min-width: 1100px)",
+      shape: {
+        points: [[0, 34], [100, 20], [100, 115], [0, 74]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[20, 27], [100, 27], [100, 100], [20, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+    {
+      query: "(min-width: 992px)",
+      shape: {
+        points: [[0, 30], [100, 22], [100, 115], [0, 80]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[22, 25], [100, 25], [100, 100], [22, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+    {
       query: "(min-width: 768px)",
       shape: {
         points: [[0, 28], [100, 25], [100, 115], [0, 80]],
@@ -75,11 +97,11 @@ const PROJECTS_BG: BgConfig = {
   color: "var(--clr-green-grass)",
   imageOpacity: 0.05,
   shape: {
-    points: [[0, 10], [100, 0], [100, 125], [10, 90]],
+    points: [[0, 8], [100, -5], [100, 125], [0, 90]],
     fill: "url(#projects-gradient)",
   },
   shapeBack: {
-    points: [[10, 16], [100, 18], [100, 100], [20, 100]],
+    points: [[3, 6], [100, 6], [100, 100], [3, 100]],
     fill: "url(#projects-back-gradient)",
   },
   variants: [
@@ -120,7 +142,6 @@ const bgByRoute: Record<string, BgConfig> = {
     },
     variants: [
       {
-        // query: "(max-width: 575px)",
         query: "(min-width: 575px)",
         shape: {
           points: [[0, 25], [100, 20], [100, 100], [0, 100]],

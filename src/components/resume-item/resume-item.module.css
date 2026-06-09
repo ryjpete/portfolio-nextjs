@@ -1,5 +1,6 @@
 .resumeItem {
   background-color: var(--color-bg);
+  box-shadow: -6px 10px 0 1px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -68,7 +69,6 @@
   .stack {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 12px 24px; */
     gap: 12px;
 
     & svg {
@@ -88,6 +88,7 @@
     padding-block: 24px;
     padding-inline: 24px 74px;
     min-inline-size: 450px;
+    inline-size: 450px;
 
     .date {
       flex: unset;

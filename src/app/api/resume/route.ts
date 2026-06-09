@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { iconBootstrap, iconCss3, iconDrupal, iconFigma, iconGit, iconHtml5, iconJavaScript, iconJoomla, iconJquery, iconJson, iconLess, iconMagento, iconNextJs, iconPhotoshop, iconPhp, iconPrimeReact, iconPython, iconReact, iconReactNative, iconSass, iconTypeScript, iconUmbraco, iconWordPress } from "./icons";
+import { iconBootstrap, iconClaude, iconCSharp, iconCss3, iconCssModules, iconDrupal, iconFigma, iconGatsby, iconGit, iconGitHub, iconGitHubCoPilot, iconHtml5, iconJavaScript, iconJoomla, iconJquery, iconJson, iconLess, iconMagento, iconNextJs, iconPhotoshop, iconPhp, iconPrimeReact, iconPython, iconReact, iconReactNative, iconSass, iconStorybook, iconTailwindCss, iconTypeScript, iconUmbraco, iconVercel, iconWordPress } from "./icons";
 
 export async function GET() {
 
@@ -405,26 +405,26 @@ export async function GET() {
 					title: "Primary Stack",
 					desc:
 						"My comfort zone. My go-tos. Like mac 'n cheese and Blind Melon. This is my wheelhouse.",
-					items: [
-						"/assets/images/tech/icon-nextjs.svg",
-						"/assets/images/tech/icon-react.svg",
-						"/assets/images/tech/icon-react-native.svg",
-						"/assets/images/tech/icon-css3.svg",
-						"/assets/images/tech/icon-css-modules.svg",
-						"/assets/images/tech/icon-tailwindcss.svg",
-						"/assets/images/tech/icon-html5.svg",
-						"/assets/images/tech/icon-js.svg",
-						"/assets/images/tech/icon-typescript.svg",
-						"/assets/images/tech/icon-figma.svg",
-						"/assets/images/tech/icon-git.svg",
-						"/assets/images/tech/icon-github.svg",
-						"/assets/images/tech/icon-github-copilot.svg",
-						"/assets/images/tech/icon-claude.svg",
-						"/assets/images/tech/icon-json.svg",
-						"/assets/images/tech/icon-primereact.svg",
-						"/assets/images/tech/icon-bootstrap.svg",
-						"/assets/images/tech/icon-storybook.svg",
-						"/assets/images/tech/icon-vercel.svg",
+					tech: [
+						{ name: "Next.js", svg: iconNextJs },
+						{ name: "React", svg: iconReact },
+						{ name: "React Native", svg: iconReactNative },
+						{ name: "CSS3", svg: iconCss3 },
+						{ name: "CSS Modules", svg: iconCssModules },
+						{ name: "Tailwind CSS", svg: iconTailwindCss },
+						{ name: "HTML5", svg: iconHtml5 },
+						{ name: "JavaScript", svg: iconJavaScript },
+						{ name: "TypeScript", svg: iconTypeScript },
+						{ name: "Figma", svg: iconFigma },
+						{ name: "Git", svg: iconGit },
+						{ name: "GitHub", svg: iconGitHub },
+						{ name: "GitHub Copilot", svg: iconGitHubCoPilot },
+						{ name: "Claude", svg: iconClaude },
+						{ name: "JSON", svg: iconJson },
+						{ name: "PrimeReact", svg: iconPrimeReact },
+						{ name: "Bootstrap", svg: iconBootstrap },
+						{ name: "Storybook", svg: iconStorybook },
+						{ name: "Vercel", svg: iconVercel },
 					],
 				},
 				{
@@ -432,14 +432,14 @@ export async function GET() {
 					title: "Backup Squad",
 					desc:
 						"Not used every day, but still in there rattling around and ready to go.",
-					items: [
-						"/assets/images/tech/icon-jquery.svg",
-						"/assets/images/tech/icon-sass.svg",
-						"/assets/images/tech/icon-less.svg",
-						"/assets/images/tech/icon-php.svg",
-						"/assets/images/tech/icon-wordpress.svg",
-						"/assets/images/tech/icon-gatsby.svg",
-						"/assets/images/tech/icon-photoshop.svg",
+					tech: [
+						{ name: "jQuery", svg: iconJquery },
+						{ name: "Sass", svg: iconSass },
+						{ name: "Less", svg: iconLess },
+						{ name: "PHP", svg: iconPhp },
+						{ name: "WordPress", svg: iconWordPress },
+						{ name: "Gatsby", svg: iconGatsby },
+						{ name: "Photoshop", svg: iconPhotoshop },
 					],
 				},
 				{
@@ -447,12 +447,12 @@ export async function GET() {
 					title: "Foundation",
 					desc:
 						"The building blocks. Might not be heavily used, but still part of my coding DNA.",
-					items: [
-						"/assets/images/tech/icon-csharp.svg",
-						"/assets/images/tech/icon-umbraco.svg",
-						"/assets/images/tech/icon-magento.svg",
-						"/assets/images/tech/icon-joomla.svg",
-						"/assets/images/tech/icon-drupal.svg",
+					tech: [
+						{ name: "C#", svg: iconCSharp },
+						{ name: "Umbraco", svg: iconUmbraco },
+						{ name: "Magento", svg: iconMagento },
+						{ name: "Joomla", svg: iconJoomla },
+						{ name: "Drupal", svg: iconDrupal },
 					],
 				},
 			]

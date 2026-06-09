@@ -70,17 +70,13 @@
     flex: 1;
     position: relative;
     left: -36px;
-    /* inline-size: 100dvw; */
-    /* inline-size: calc(100dvw + 72px); */
     inline-size: calc(100% + 72px);
     background-color: var(--clr-blue-lago);
     box-shadow: 0 0 50px var(--clr-gray-black);
-    /* padding: 40px 36px; */
     padding: 40px 36px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    /* overflow-y: auto; */
 
     & > * {
       max-inline-size: calc(var(--max-width) - 130px);
@@ -99,16 +95,8 @@
       .stack {
         font: 400 14px/20px var(--font-inclusive-sans);
         color: var(--color-bg);
-
-        /* & > img {
-          filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(750%) hue-rotate(248deg) brightness(65%);
-        } */
       }
     }
-    
-    /* .detailedDesc h5 {
-      color: var(--color-bg);
-    } */
 
     .btm {
       display: flex;
@@ -122,23 +110,14 @@
         display: flex;
         flex-direction: column;
         gap: 0;
-        /* inline-size: 230px; */
         inline-size: 100%;
-        /* border: 1px solid color-mix(in oklab, var(--clr-gray-black) 5%, transparent); */
 
         & > h5 {
-          /* background-color: color-mix(in oklab, var(--clr-gray-black) 5%, transparent); */
           color: var(--color-bg);
           padding: 0 4px;
         }
 
         .stack {
-          /* padding-inline: 12px; */
-
-          /* & > span {
-            flex: 1;
-          } */
-
           & > img {
             filter: brightness(0) saturate(100%) invert(10%) sepia(100%) saturate(5000%) hue-rotate(325deg) brightness(15%);
             width: 16px;
@@ -173,7 +152,6 @@
 
   .stack {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(calc(33% - 1px), 1fr)); */
     grid-template-columns: repeat(auto-fill, minmax(calc(20% - 1px), 1fr));
     gap: 1px;
 
@@ -186,8 +164,6 @@
     }
 
     & svg {
-      /* block-size: 32px;
-      inline-size: 32px; */
       block-size: 24px;
       inline-size: 24px;
 
@@ -227,10 +203,6 @@
 
     .header {
       flex-direction: row;
-    }
-
-    .content {
-      /* padding-inline: 100px; */
     }
   }
 }
