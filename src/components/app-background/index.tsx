@@ -162,10 +162,6 @@ const bgByRoute: Record<string, BgConfig> = {
       },
     ],
   },
-  "/about": {
-    color: "var(--clr-red-bonker-pink)",
-    imageOpacity: 0.05,
-  },
   "/resume": {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
