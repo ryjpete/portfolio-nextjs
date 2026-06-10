@@ -43,7 +43,7 @@ export default function ProjectDetail({
           <div className={styles.intro}>
             <h2 className={styles.company}>{project.company}</h2>
             <p className={styles.role}>{project.name}</p>
-            {project.desc && <p className={styles.desc}>{project.desc}</p>}
+            {/* {project.desc && <p className={styles.desc}>{project.desc}</p>} */}
           </div>
         </div>
 
@@ -56,12 +56,6 @@ export default function ProjectDetail({
               </div>
             )}
 
-            {project.roleDesc && (
-              <div className={styles.detailedDesc}>
-                <h5>my role</h5>
-                <p className={styles.roleDesc}>{project.roleDesc}</p>
-              </div>
-            )}
 
             <div className={styles.btm}>
               {project.tech?.length > 0 && (
@@ -79,7 +73,14 @@ export default function ProjectDetail({
                 </div>
               )}
 
-              {/* <div className={styles.highlights}> */}
+              <div className={styles.btmR}>
+                {project.roleDesc && (
+                  <div className={styles.detailedDesc}>
+                    <h5>my role</h5>
+                    <p className={styles.roleDesc}>{project.roleDesc}</p>
+                  </div>
+                )}
+
                 {project.highlights ? (
                   <ul className={styles.highlights}>
                     {project.highlights.map((h, index) => (
@@ -89,7 +90,7 @@ export default function ProjectDetail({
                     ))}
                   </ul>
                 ) : null}
-              {/* </div> */}
+              </div>
             </div>
           </div>
         </div>
