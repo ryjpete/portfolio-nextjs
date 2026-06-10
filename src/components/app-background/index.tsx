@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useSpring, useTransform, motion } from "framer-motion";
 
@@ -47,13 +47,35 @@ const RESUME_SECTION_BG: BgConfig = {
   },
   variants: [
     {
-      query: "(min-width: 768px)",
+      query: "(min-width: 1100px)",
       shape: {
-        points: [[0, 37], [100, 33], [100, 115], [0, 80]],
+        points: [[0, 34], [100, 20], [100, 115], [0, 74]],
         fill: "url(#home-gradient)",
       },
       shapeBack: {
-        points: [[8, 32], [100, 32], [100, 100], [8, 100]],
+        points: [[20, 27], [100, 27], [100, 100], [20, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+    {
+      query: "(min-width: 992px)",
+      shape: {
+        points: [[0, 30], [100, 22], [100, 115], [0, 80]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[22, 25], [100, 25], [100, 100], [22, 100]],
+        fill: "url(#experience-gradient)",
+      },
+    },
+    {
+      query: "(min-width: 768px)",
+      shape: {
+        points: [[0, 28], [100, 25], [100, 115], [0, 80]],
+        fill: "url(#home-gradient)",
+      },
+      shapeBack: {
+        points: [[8, 24], [100, 24], [100, 100], [8, 100]],
         fill: "url(#experience-gradient)",
       },
     },
@@ -75,34 +97,45 @@ const PROJECTS_BG: BgConfig = {
   color: "var(--clr-green-grass)",
   imageOpacity: 0.05,
   shape: {
-    points: [[0, 10], [100, 0], [100, 125], [10, 90]],
+    points: [[0, 5], [100, 7], [100, 100], [6, 100]],
     fill: "url(#projects-gradient)",
   },
   shapeBack: {
-    points: [[10, 16], [100, 18], [100, 100], [20, 100]],
-    fill: "url(#projects-back-gradient)",
+    points: [[3, 6], [100, 6], [100, 100], [3, 100]],
+    fill: "var(--clr-red-alexandria)",
   },
   variants: [
     {
-      query: "(min-width: 768px)",
+      query: "(min-width: 992px)",
       shape: {
-        points: [[0, 37], [100, 33], [100, 115], [0, 80]],
+        points: [[0, 12], [100, 28], [100, 125], [6, 80]],
         fill: "url(#projects-gradient)",
       },
       shapeBack: {
-        points: [[8, 32], [100, 32], [100, 100], [8, 100]],
-        fill: "url(#projects-back-gradient)",
+        points: [[16, 24], [100, 24], [100, 100], [16, 100]],
+        fill: "var(--clr-red-alexandria)",
+      },
+    },
+    {
+      query: "(min-width: 768px)",
+      shape: {
+        points: [[0, 8], [100, 24], [100, 125], [6, 90]],
+        fill: "url(#projects-gradient)",
+      },
+      shapeBack: {
+        points: [[10, 20], [100, 20], [100, 100], [10, 100]],
+        fill: "var(--clr-red-alexandria)",
       },
     },
     {
       query: "(min-width: 576px)",
       shape: {
-        points: [[0, 14], [100, 0], [100, 125], [0, 90]],
+        points: [[0, 8], [100, 12], [100, 125], [6, 90]],
         fill: "url(#projects-gradient)",
       },
       shapeBack: {
-        points: [[10, 22], [100, 22], [100, 100], [14, 100]],
-        fill: "url(#projects-back-gradient)",
+        points: [[10, 10], [100, 10], [100, 100], [10, 100]],
+        fill: "var(--clr-red-alexandria)",
       },
     },
   ],
@@ -120,7 +153,6 @@ const bgByRoute: Record<string, BgConfig> = {
     },
     variants: [
       {
-        // query: "(max-width: 575px)",
         query: "(min-width: 575px)",
         shape: {
           points: [[0, 25], [100, 20], [100, 100], [0, 100]],
@@ -178,16 +210,17 @@ function useShapeSprings(targetPoints: [Point, Point, Point, Point]) {
   const p3x = useSpring(targetPoints[3][0], SPRING);
   const p3y = useSpring(targetPoints[3][1], SPRING);
 
+  const [x0, y0] = targetPoints[0];
+  const [x1, y1] = targetPoints[1];
+  const [x2, y2] = targetPoints[2];
+  const [x3, y3] = targetPoints[3];
+
   useEffect(() => {
-    p0x.set(targetPoints[0][0]);
-    p0y.set(targetPoints[0][1]);
-    p1x.set(targetPoints[1][0]);
-    p1y.set(targetPoints[1][1]);
-    p2x.set(targetPoints[2][0]);
-    p2y.set(targetPoints[2][1]);
-    p3x.set(targetPoints[3][0]);
-    p3y.set(targetPoints[3][1]);
-  }, [targetPoints, p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y]);
+    p0x.set(x0); p0y.set(y0);
+    p1x.set(x1); p1y.set(y1);
+    p2x.set(x2); p2y.set(y2);
+    p3x.set(x3); p3y.set(y3);
+  }, [x0, y0, x1, y1, x2, y2, x3, y3, p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y]);
 
   const d = useTransform(
     [p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y],
@@ -201,10 +234,13 @@ function useShapeSprings(targetPoints: [Point, Point, Point, Point]) {
 export default function AppBackground() {
   const pathname = usePathname();
 
-  const bg =
-    bgByRoute[pathname] ??
-    Object.entries(bgByRoute).find(([key]) => key.endsWith("/*") && pathname.startsWith(key.slice(0, -2)))?.[1] ??
-    { color: "var(--clr-green-jade-glass)", imageOpacity: 0.2 };
+  const bg = useMemo(
+    () =>
+      bgByRoute[pathname] ??
+      Object.entries(bgByRoute).find(([key]) => key.endsWith("/*") && pathname.startsWith(key.slice(0, -2)))?.[1] ??
+      { color: "var(--clr-green-jade-glass)", imageOpacity: 0.2 },
+    [pathname]
+  );
 
   const [anchorRect, setAnchorRect] = useState<{ top: number; right: number; bottom: number; left: number } | null>(null);
 
@@ -243,10 +279,16 @@ export default function AppBackground() {
     return () => mqs.forEach(mq => mq.removeEventListener("change", update));
   }, [bg.variants]);
 
-  const baseShape = activeVariant?.shape ?? bg.shape ?? FALLBACK_SHAPE;
-  const offsets = activeVariant?.anchorOffsets ?? bg.anchorOffsets ?? [];
-  const getOffset = (i: number): [number, number] => offsets[i] ?? [0, 0];
-  const activeShape: BgShape = (() => {
+  const baseShape = useMemo(
+    () => activeVariant?.shape ?? bg.shape ?? FALLBACK_SHAPE,
+    [activeVariant, bg.shape]
+  );
+  const offsets = useMemo(
+    () => activeVariant?.anchorOffsets ?? bg.anchorOffsets ?? [],
+    [activeVariant, bg.anchorOffsets]
+  );
+  const activeShape = useMemo((): BgShape => {
+    const getOffset = (i: number): [number, number] => offsets[i] ?? [0, 0];
     if (!anchorRect || !bg.anchor) return baseShape;
     if (bg.anchor === "box") {
       const { top, right, bottom, left } = anchorRect;
@@ -270,8 +312,11 @@ export default function AppBackground() {
         baseShape.points[3],
       ],
     };
-  })();
-  const activeShapeBack = activeVariant?.shapeBack ?? bg.shapeBack ?? FALLBACK_SHAPE_BACK;
+  }, [anchorRect, bg.anchor, baseShape, offsets]);
+  const activeShapeBack = useMemo(
+    () => activeVariant?.shapeBack ?? bg.shapeBack ?? FALLBACK_SHAPE_BACK,
+    [activeVariant, bg.shapeBack]
+  );
   const d = useShapeSprings(activeShape.points);
   const dBack = useShapeSprings(activeShapeBack.points);
 
@@ -311,9 +356,9 @@ export default function AppBackground() {
             <stop offset="100%" stopColor="var(--clr-red-alexandria)" />
           </linearGradient>
 
-          <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
+          {/* <filter id="shape-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="0" stdDeviation="50" floodColor="#000" floodOpacity="0.85" />
-          </filter>
+          </filter> */}
         </defs>
         <motion.path d={dBack} fill={bg.shapeBack ? activeShapeBack.fill : "transparent"} />
         <motion.path d={d} fill={bg.shape ? activeShape.fill : "transparent"} filter="url(#shape-shadow)" />

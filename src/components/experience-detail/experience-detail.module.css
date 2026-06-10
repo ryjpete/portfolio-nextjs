@@ -70,22 +70,32 @@
     flex: 1;
     position: relative;
     left: -36px;
-    inline-size: 100dvw;
+    inline-size: calc(100% + 72px);
     background-color: var(--clr-blue-lago);
     box-shadow: 0 0 50px var(--clr-gray-black);
     padding: 40px 36px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    /* overflow-y: auto; */
 
     & > * {
-      max-inline-size: var(--max-width);
+      max-inline-size: calc(var(--max-width) - 130px);
       margin-inline: auto;
     }
-    
-    .detailedDesc h5 {
-      color: var(--color-bg);
+
+    .stackBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      & > h5 {
+        color: var(--color-bg);
+      }
+
+      .stack {
+        font: 400 14px/20px var(--font-inclusive-sans);
+        color: var(--color-bg);
+      }
     }
 
     .btm {
@@ -93,17 +103,18 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 24px;
-      margin: 0;
+      margin: 0 auto;
 
       .stackBlock {
         order: 1;
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        inline-size: 230px;
+        gap: 0;
+        inline-size: 100%;
 
         & > h5 {
           color: var(--color-bg);
+          padding: 0 4px;
         }
 
         .stack {
@@ -140,19 +151,43 @@
   }
 
   .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(20% - 1px), 1fr));
+    gap: 1px;
 
-    & img {
-      filter: brightness(0) saturate(100%) invert(14%) sepia(75%) saturate(4463%) hue-rotate(313deg) brightness(90%);
+    & > span {
+      background-color: color-mix(in oklab, var(--clr-gray-black) 10%, transparent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1;
+    }
+
+    & svg {
+      block-size: 24px;
+      inline-size: 24px;
+
+      & path {
+        fill: var(--clr-gray-black);
+      }
     }
   }
 }
 
+@media (min-width: 420px) {
+  .detail {
+    .stack {
+      grid-template-columns: repeat(auto-fill, minmax(calc(16% - 1px), 1fr));
+    }
+  }
+}
 @media (min-width: 576px) {
   .detail {
     padding-block-start: 100px;
+
+    .stack {
+      grid-template-columns: repeat(auto-fill, minmax(calc(12% - 1px), 1fr));
+    }
 
     .header {
       & > img {
@@ -169,10 +204,13 @@
     .header {
       flex-direction: row;
     }
+  }
+}
+@media (min-width: 992px) {
+  .detail {
+    padding-block-start: 150px;
 
     .content {
-      padding-inline: 100px;
-
       .btm {
         flex-direction: row;
 
@@ -182,10 +220,9 @@
         }
       }
     }
-  }
-}
-@media (min-width: 992px) {
-  .detail {
-    padding-block-start: 150px;
+
+    .stack {
+      grid-template-columns: repeat(auto-fill, minmax(calc(33% - 1px), 1fr));
+    }
   }
 }

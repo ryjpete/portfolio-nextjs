@@ -5,23 +5,10 @@ import { motion } from "framer-motion";
 
 import imgPlc from "@/app/icon-512.png";
 
-// import styles from "./project-detail.module.css";
-import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
+import styles from "./project-detail.module.css";
+// import styles from "@/app/(profile)/resume/(section)/experience/[slug]/experience-detail.module.css";
 
-interface Project {
-  id: number;
-  company: string;
-  route?: string;
-  logo?: string;
-  name: string;
-  desc?: string;
-  detailedDesc?: string;
-  roleDesc?: string;
-  tech: { name: string; icon: string }[];
-  cats?: string[];
-  slug?: string;
-  highlights?: { label: string; entry: string }[];
-}
+import { type Project } from "@/components/project-item";
 
 export default function ProjectDetail({
   project,
@@ -61,50 +48,49 @@ export default function ProjectDetail({
         </div>
 
         <div className={styles.content}>
-          {project.detailedDesc && (
-            <div className={styles.detailedDesc}>
-              {/* <h5>a little bit more...</h5> */}
-              <p className={styles.roleDesc}>{project.detailedDesc}</p>
-            </div>
-          )}
-
-          {project.roleDesc && (
-            <div className={styles.detailedDesc}>
-              <h5>my role</h5>
-              <p className={styles.roleDesc}>{project.roleDesc}</p>
-            </div>
-          )}
-
-          <div className={styles.btm}>
-            {project.tech?.length > 0 && (
-              <div className={styles.stackBlock}>
-                <h5>Tech Stack</h5>
-                <div className={styles.stack}>
-                  {project.tech.map((t) => (
-                    <Image
-                      key={t.name}
-                      src={t.icon}
-                      alt={t.name}
-                      title={t.name}
-                      width={24}
-                      height={24}
-                    />
-                  ))}
-                </div>
+          <div className={styles.frame}>
+            {project.detailedDesc && (
+              <div className={styles.detailedDesc}>
+                {/* <h5>a little bit more...</h5> */}
+                <p className={styles.roleDesc}>{project.detailedDesc}</p>
               </div>
             )}
 
-            {/* <div className={styles.highlights}> */}
-              {project.highlights ? (
-                <ul className={styles.highlights}>
-                  {project.highlights.map((h, index) => (
-                    <li key={index}>
-                      <strong>{h.label}:</strong> {h.entry}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            {/* </div> */}
+            {project.roleDesc && (
+              <div className={styles.detailedDesc}>
+                <h5>my role</h5>
+                <p className={styles.roleDesc}>{project.roleDesc}</p>
+              </div>
+            )}
+
+            <div className={styles.btm}>
+              {project.tech?.length > 0 && (
+                <div className={styles.stackBlock}>
+                  <h5>Tech Stack</h5>
+                  <div className={styles.stack}>
+                    {project.tech.map((t) => (
+                      t.svg
+                        ? <span key={t.name} title={t.name} dangerouslySetInnerHTML={{ __html: t.svg }} />
+                        : t.icon
+                          ? <Image key={t.name} src={t.icon} alt={t.name} title={t.name} width={24} height={24} />
+                          : null
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* <div className={styles.highlights}> */}
+                {project.highlights ? (
+                  <ul className={styles.highlights}>
+                    {project.highlights.map((h, index) => (
+                      <li key={index}>
+                        <strong>{h.label}:</strong> {h.entry}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              {/* </div> */}
+            </div>
           </div>
         </div>
       </motion.div>
