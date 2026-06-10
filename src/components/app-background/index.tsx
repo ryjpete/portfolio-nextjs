@@ -146,9 +146,10 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
     anchor: "top-edge",
-    anchorOffsets: [[0, 12], [0, -2]],
+    // anchorOffsets: [[0, 12], [0, -2]],
+    anchorOffsets: [[0, 10], [0, -2]],
     shape: {
-      points: [[0, 85], [100, 60], [100, 100], [0, 100]],
+      points: [[0, 50], [100, 45], [100, 100], [0, 100]],
       fill: "url(#home-gradient)",
     },
     variants: [
@@ -169,14 +170,9 @@ const bgByRoute: Record<string, BgConfig> = {
     color: "oklch(0.18 0.02 260)",
     imageOpacity: 1,
     anchor: "box",
-    anchorOffsets: [
-      [-25, -2.5],   // top-left
-      [25, -2.5],   // top-right
-      [25, 3],   // bottom-right
-      [-25, 3],   // bottom-left
-    ],
+    anchorOffsets: [[-25, -1.75], [25, -1.75], [25, 1.75], [-25, 1.75]],
     shape: {
-      points: [[10, 0], [100, 0], [100, 100], [0, 100]],
+      points: [[13, 0], [100, 0], [100, 100], [0, 100]],
       fill: "url(#home-gradient)",
     },
   },
