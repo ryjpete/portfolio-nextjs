@@ -41,10 +41,11 @@ body {
   &[data-page="home"] {
     & header {
       justify-content: center;
+      padding-block-start: 36px;
 
-      /* .logo {
+      .logo {
         inline-size: 75px;
-      } */
+      }
     }
   }
 
@@ -66,8 +67,6 @@ body {
       }
 
       & > nav {
-        padding-block: 80px;
-
         & > a {
           color: var(--clr-red-flicker-pink);
 
@@ -79,18 +78,20 @@ body {
     }
   }
 
+  &[data-page="resume"] {
+    .container {
+      gap: 48px;
+    }
+  }
+
   &[data-page="resume-experience"],
   &[data-page="resume-skills"],
   &[data-page="resume-education"],
   &[data-page="default"] {
     .container {
-      /* block-size: 100dvh; */
-      /* overflow: hidden; */
       padding-block-end: 0;
     }
   }
-
-  & button {}
 }
 
 @media (min-width: 576px) {
@@ -107,6 +108,15 @@ body {
       padding-block-start: 200px;
     }
 
+    &[data-page="home"] {
+      header {
+        padding-block-start: 0;
+
+        .logo {
+          inline-size: 100px;
+        }
+      }
+    }
     &[data-page="resume-experience"],
     &[data-page="resume-skills"],
     &[data-page="resume-education"],

@@ -3,7 +3,7 @@ body .container {
   flex-direction: column;
   align-items: flex-start;
   gap: 48px;
-  padding-block-start: 140px;
+  padding-block-start: 185px;
   padding-inline: 24px;
 
   & h1 {
