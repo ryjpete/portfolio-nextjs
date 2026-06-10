@@ -23,10 +23,6 @@ export const Home: Story = {
   parameters: { nextjs: { navigation: { pathname: '/' } } },
 };
 
-export const About: Story = {
-  parameters: { nextjs: { navigation: { pathname: '/about' } } },
-};
-
 export const Resume: Story = {
   parameters: { nextjs: { navigation: { pathname: '/resume' } } },
 };
@@ -35,6 +31,26 @@ export const ResumeExperience: Story = {
   parameters: { nextjs: { navigation: { pathname: '/resume/experience' } } },
 };
 
+export const ResumeSkills: Story = {
+  parameters: { nextjs: { navigation: { pathname: '/resume/skills' } } },
+};
+
+export const ResumeEducation: Story = {
+  parameters: { nextjs: { navigation: { pathname: '/resume/education' } } },
+};
+
 export const Projects: Story = {
   parameters: { nextjs: { navigation: { pathname: '/projects' } } },
+};
+
+export const ProjectsWebApps: Story = {
+  parameters: { nextjs: { navigation: { pathname: '/projects/web-apps' } } },
+};
+
+export const ProjectsMobileApps: Story = {
+  parameters: { nextjs: { navigation: { pathname: '/projects/mobile-apps' } } },
+};
+
+export const ProjectsDesign: Story = {
+  parameters: { nextjs: { navigation: { pathname: '/projects/design' } } },
 };

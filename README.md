@@ -4,16 +4,18 @@ My personal portfolio site built with Next.js and TypeScript.
 
 ## Tech Stack
 
-- **Next.js 16** (App Router)
-- **React 19**
-- **TypeScript**
+- **Next.js 16.1.4** (App Router)
+- **React 19.2.3**
+- **TypeScript 5**
 - **CSS Modules**
-- **Tailwind CSS 4** (base/reset utility)
-- **Framer Motion** — animations
-- **ESLint, Vercel**
-- **Storybook 10+** (nextjs-vite) — component development & testing
-- **Vitest + Playwright** — Storybook visual/interaction tests
-- **HeroIcons** — icon library
+- **Tailwind CSS 4** (base/reset via PostCSS)
+- **Framer Motion 12** — animations
+- **HeroIcons 2** — icon library
+- **ESLint 9** with Next.js config
+- **Storybook 10** (`nextjs-vite`) — component development
+- **Vitest 4 + Playwright** — Storybook visual/interaction tests
+- **Chromatic** — visual regression testing
+- **Vercel** — deployment
 
 ## Getting Started
 
@@ -41,41 +43,32 @@ npm run build-storybook  # Build Storybook for deployment
 npx vitest               # Run Storybook visual tests via Vitest + Playwright
 ```
 
-## Project Structure
+## Pages & Routes
 
-```
-src/
-  app/
-    api/          # Backend API routes
-    (profile)/    # Profile layout group with sub-routes
-      about/
-      projects/
-      resume/
-    (project)/    # Project detail layout group
-      projects/[slug]/
-    home/
-    skills/
-    layout.tsx    # Root layout with providers
-    page.tsx
-  components/    # Reusable UI components
-  config/        # Site-wide configuration (navigation, etc.)
-  context/       # React context providers (ProjectContext, ScrollContext)
-  hooks/         # Custom React hooks
-  providers/     # App-level providers
-  styles/        # Global styles, color tokens, typography
-  utils/
-public/
-  assets/        # Static images and media
-.storybook/      # Storybook configuration & preview settings
-```
+| Route | Description |
+|---|---|
+| `/` | Home — animated title cycling through role names, links to Resume and Projects |
+| `/resume` | Resume index with links to Experience, Skills, Education |
+| `/resume/experience` | Work experience list with detail modal (parallel route) |
+| `/resume/skills` | Skills section |
+| `/resume/education` | Education section |
+| `/projects` | All projects; filter by Web Apps, Mobile Apps, Design |
+| `/projects/[slug]` | Dynamic project detail page |
+| `/skills` | Skills page grouped by proficiency level |
+| `/about` | About page (in progress) |
 
 ## Features
 
-- Scroll-shrinking header logo with smooth animations
-- Project modal with URL routing and ProjectContext integration
-- Resume page pulling from static API route
-- Component-driven development with Storybook integration
-- Storybook visual & interaction testing via Vitest + Playwright
+- Scroll-driven header: logo scales down as the user scrolls, using `useTransform` from Framer Motion
+- Back navigation in header with animated context-aware button
+- `ScrollContext` shares a single `MotionValue<number>` across the component tree without re-renders
+- `ProjectContext` tracks the active project for modal/detail routing
+- Resume experience detail rendered as a parallel route (`@modal`)
+- Projects filterable by category with `all`, `web-apps`, `mobile-apps`, `design`
+- Internal API routes serve all data (projects, resume, skills, about)
+- Hubble feed proxy route — forwards ESA RSS XML for nebulae imagery
+- Component-driven development with Storybook; a11y and docs addons enabled
+- Storybook visual & interaction testing via Vitest + Playwright + Chromatic
 
 ## Deployment
 
