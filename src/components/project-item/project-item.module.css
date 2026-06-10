@@ -58,22 +58,12 @@
 
   & > p {
     font: 400 12px/18px var(--font-inclusive-sans);
-    /* padding-inline-start: 60px;
-    padding-block-end: 10px; */
     flex: 1;
   }
-
-  /* .type {
-    font: 400 12px/1 var(--font-russo-one);
-    color: var(--clr-violet-belladonna);
-    text-transform: uppercase;
-    padding-inline-start: 60px;
-  } */
 
   .stack {
     display: flex;
     flex-wrap: wrap;
-    /* gap: 12px 24px; */
     gap: 12px;
 
     & svg {
@@ -94,6 +84,7 @@
     padding-block: 24px;
     padding-inline: 24px 74px;
     min-inline-size: 450px;
+    inline-size: 450px;
 
     .header {
       flex-direction: row;
@@ -114,10 +105,6 @@
       & svg {
         inline-size: 32px;
       }
-
-      /* & img {
-        inline-size: 16px;
-      } */
     }
   }
 }

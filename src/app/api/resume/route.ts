@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { iconBootstrap, iconClaude, iconCSharp, iconCss3, iconCssModules, iconDrupal, iconFigma, iconGatsby, iconGit, iconGitHub, iconGitHubCoPilot, iconHtml5, iconJavaScript, iconJoomla, iconJquery, iconJson, iconLess, iconMagento, iconNextJs, iconPhotoshop, iconPhp, iconPrimeReact, iconPython, iconReact, iconReactNative, iconSass, iconStorybook, iconTailwindCss, iconTypeScript, iconUmbraco, iconVercel, iconWordPress } from "./icons";
+import { iconBootstrap, iconClaude, iconCSharp, iconCss3, iconDrupal, iconFigma, iconGatsby, iconGit, iconGitHub, iconGitHubCoPilot, iconHtml5, iconJavaScript, iconJoomla, iconJquery, iconJson, iconLess, iconMagento, iconNextJs, iconPhotoshop, iconPhp, iconPrimeReact, iconPython, iconReact, iconReactNative, iconSass, iconStorybook, iconTailwindCss, iconTypeScript, iconUmbraco, iconVercel, iconWordPress } from "./icons";
 
 export async function GET() {
 
@@ -410,7 +410,7 @@ export async function GET() {
 						{ name: "React", svg: iconReact },
 						{ name: "React Native", svg: iconReactNative },
 						{ name: "CSS3", svg: iconCss3 },
-						{ name: "CSS Modules", svg: iconCssModules },
+						// { name: "CSS Modules", svg: iconCssModules },
 						{ name: "Tailwind CSS", svg: iconTailwindCss },
 						{ name: "HTML5", svg: iconHtml5 },
 						{ name: "JavaScript", svg: iconJavaScript },

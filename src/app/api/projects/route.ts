@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { iconCssModules, iconFigma, iconGit, iconNextJs, iconReact, iconReactNative, iconStorybook, iconTypeScript, iconVercel } from "../resume/icons";
+import { iconFigma, iconGit, iconNextJs, iconReact, iconReactNative, iconStorybook, iconTypeScript, iconVercel } from "../resume/icons";
 
 const PROJECTS = [
   {
@@ -78,10 +78,10 @@ const PROJECTS = [
         name: "TypeScript",
         svg: iconTypeScript,
       },
-      {
-        name: "CSS Modules",
-        svg: iconCssModules,
-      },
+      // {
+      //   name: "CSS Modules",
+      //   svg: iconCssModules,
+      // },
       {
         name: "Figma",
         svg: iconFigma,
@@ -158,11 +158,11 @@ const PROJECTS = [
         // icon: "/assets/images/tech/icon-typescript.svg",
         svg: iconTypeScript,
       },
-      {
-        name: "CSS Modules",
-        // icon: "/assets/images/tech/icon-css-modules.svg",
-        svg: iconCssModules,
-      },
+      // {
+      //   name: "CSS Modules",
+      //   // icon: "/assets/images/tech/icon-css-modules.svg",
+      //   svg: iconCssModules,
+      // },
       {
         name: "Figma",
         // icon: "/assets/images/tech/icon-figma.svg",

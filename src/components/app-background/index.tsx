@@ -97,34 +97,45 @@ const PROJECTS_BG: BgConfig = {
   color: "var(--clr-green-grass)",
   imageOpacity: 0.05,
   shape: {
-    points: [[0, 8], [100, -5], [100, 125], [0, 90]],
+    points: [[0, 5], [100, 7], [100, 100], [6, 100]],
     fill: "url(#projects-gradient)",
   },
   shapeBack: {
     points: [[3, 6], [100, 6], [100, 100], [3, 100]],
-    fill: "url(#projects-back-gradient)",
+    fill: "var(--clr-red-alexandria)",
   },
   variants: [
     {
-      query: "(min-width: 768px)",
+      query: "(min-width: 992px)",
       shape: {
-        points: [[0, 25], [100, 28], [100, 85], [0, 115]],
+        points: [[0, 12], [100, 28], [100, 125], [6, 80]],
         fill: "url(#projects-gradient)",
       },
       shapeBack: {
-        points: [[8, 24], [100, 24], [100, 100], [8, 100]],
-        fill: "url(#projects-back-gradient)",
+        points: [[16, 24], [100, 24], [100, 100], [16, 100]],
+        fill: "var(--clr-red-alexandria)",
+      },
+    },
+    {
+      query: "(min-width: 768px)",
+      shape: {
+        points: [[0, 8], [100, 24], [100, 125], [6, 90]],
+        fill: "url(#projects-gradient)",
+      },
+      shapeBack: {
+        points: [[10, 20], [100, 20], [100, 100], [10, 100]],
+        fill: "var(--clr-red-alexandria)",
       },
     },
     {
       query: "(min-width: 576px)",
       shape: {
-        points: [[0, 14], [100, 0], [100, 125], [0, 90]],
+        points: [[0, 8], [100, 12], [100, 125], [6, 90]],
         fill: "url(#projects-gradient)",
       },
       shapeBack: {
-        points: [[10, 22], [100, 22], [100, 100], [14, 100]],
-        fill: "url(#projects-back-gradient)",
+        points: [[10, 10], [100, 10], [100, 100], [10, 100]],
+        fill: "var(--clr-red-alexandria)",
       },
     },
   ],
