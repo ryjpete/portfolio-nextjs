@@ -10,6 +10,7 @@ interface Skill {
   title: string;
   desc: string;
   items: string[];
+  tech: { name: string; icon?: string; svg?: string }[];
 }
 
 export default function SkillsPage() {
@@ -33,14 +34,12 @@ export default function SkillsPage() {
           </div>
 
           <div className={styles.icons}>
-            {skill.items.map((item, idx) => (
-              <Image
-                key={idx}
-                src={item}
-                alt={item}
-                width={50}
-                height={50}
-              />
+            {skill.tech.map((tech) => (
+              tech.svg
+                ? <span key={tech.name} dangerouslySetInnerHTML={{ __html: tech.svg }} />
+                : tech.icon
+                  ? <Image key={tech.name} src={tech.icon} alt={tech.name} title={tech.name} width={24} height={24} />
+                  : null
             ))}
           </div>
         </div>

@@ -10,33 +10,56 @@
   gap: 24px;
 
   .icons {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 24px 12px;
-    max-inline-size: 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(20% - 1px), 1fr));
+    gap: 1px;
+    
+    & > span {
+      background-color: color-mix(in oklab, var(--clr-gray-black) 10%, transparent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1;
+    }
 
-    & > img {
-      width: 16px;
-      filter: brightness(0) invert(1);
+    & svg {
+      block-size: 16px;
+      inline-size: 16px;
+
+      & path {
+        fill: var(--clr-gray-white);
+      }
+    }
+  }
+}
+
+@media (min-width: 420px) {
+  .skillsSection {
+    .icons {
+      & svg {
+        block-size: 18px;
+        inline-size: 18px;
+      }
     }
   }
 }
 
 @media (min-width: 768px) {
   .skillsContainer {
-    padding-inline-end: 130px;
+    flex-direction: row;
+    padding-inline-end: 75px;
     gap: 64px;
 
     .skillsSection {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 32px;
+      min-inline-size: 450px;
+      inline-size: 450px;
 
       .icons {
         justify-content: flex-end;
 
-        & > img {
-          width: 28px;
+        & svg {
+          block-size: 24px;
+          inline-size: 24px;
         }
       }
     }

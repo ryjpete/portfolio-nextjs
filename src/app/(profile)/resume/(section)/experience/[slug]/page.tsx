@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import imgPlc from "@/app/assets/logos/bolt/logo.svg";
 
-import styles from "./experience-detail.module.css";
+import styles from "@/components/experience-detail/experience-detail.module.css";
 
 interface Experience {
   id: number;

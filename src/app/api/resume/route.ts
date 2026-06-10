@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 
+import { iconBootstrap, iconClaude, iconCSharp, iconCss3, iconDrupal, iconFigma, iconGatsby, iconGit, iconGitHub, iconGitHubCoPilot, iconHtml5, iconJavaScript, iconJoomla, iconJquery, iconJson, iconLess, iconMagento, iconNextJs, iconPhotoshop, iconPhp, iconPrimeReact, iconPython, iconReact, iconReactNative, iconSass, iconStorybook, iconTailwindCss, iconTypeScript, iconUmbraco, iconVercel, iconWordPress } from "./icons";
+
 export async function GET() {
+
 	return NextResponse.json({
 		resume: {
 			header: {
@@ -48,60 +51,60 @@ export async function GET() {
 					tech: [
 						{
 							name: "React",
-							icon: "/assets/images/icon-react.svg",
+							svg: iconReact,
 						},
 						{
 							name: "React Native",
-							icon: "/assets/images/icon-react-native.svg",
+							svg: iconReactNative,
 						},
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "JavaScript",
-							icon: "/assets/images/icon-js.svg",
+							svg: iconJavaScript,
 						},
 						{
 							name: "TypeScript",
-							icon: "/assets/images/icon-typescript.svg",
+							svg: iconTypeScript,
 						},
 						{
 							name: "Bootstrap",
-							icon: "/assets/images/icon-bootstrap.svg",
+							svg: iconBootstrap,
 						},
 						{
 							name: "PrimeReact",
-							icon: "/assets/images/icon-primereact.svg",
+							svg: iconPrimeReact,
 						},
 						{
 							name: "Figma",
-							icon: "/assets/images/icon-figma.svg",
+							svg: iconFigma,
 						},
 						{
 							name: "Git",
-							icon: "/assets/images/icon-github.svg",
+							svg: iconGit,
 						},
 						{
 							name: "HTML5",
-							icon: "/assets/images/icon-html5.svg",
+							svg: iconHtml5,
 						},
 						{
 							name: "JSON",
-							icon: "/assets/images/icon-json.svg",
+							svg: iconJson,
 						},
 						{
 							name: "Next.js",
-							icon: "/assets/images/icon-nextjs.svg",
+							svg: iconNextJs,
 						},
 						{
 							name: "Python",
-							icon: "/assets/images/icon-python.svg",
+							svg: iconPython,
 						},
-						{
-							name: "SASS",
-							icon: "/assets/images/icon-sass.svg",
-						},
+							{
+								name: "SASS",
+								svg: iconSass,
+							},
 					],
 				},
 				{
@@ -132,55 +135,55 @@ export async function GET() {
 					tech: [
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "WordPress",
-							icon: "/assets/images/icon-wordpress.svg",
+							svg: iconWordPress,
 						},
 						{
 							name: "PHP",
-							icon: "/assets/images/icon-php.svg",
+							svg: iconPhp,
 						},
 						{
 							name: "jQuery",
-							icon: "/assets/images/icon-jQuery.svg",
+							svg: iconJquery,
 						},
 						{
 							name: "JavaScript",
-							icon: "/assets/images/icon-js.svg",
+							svg: iconJavaScript,
 						},
 						{
 							name: "Bootstrap",
-							icon: "/assets/images/icon-bootstrap.svg",
+							svg: iconBootstrap,
 						},
 						{
 							name: "Photoshop",
-							icon: "/assets/images/icon-photoshop.svg",
+							svg: iconPhotoshop,
 						},
 						{
 							name: "Figma",
-							icon: "/assets/images/icon-figma.svg",
+							svg: iconFigma,
 						},
 						{
 							name: "HTML5",
-							icon: "/assets/images/icon-html5.svg",
+							svg: iconHtml5,
 						},
 						{
 							name: "JSON",
-							icon: "/assets/images/icon-json.svg",
+							svg: iconJson,
 						},
 						{
 							name: "SASS",
-							icon: "/assets/images/icon-sass.svg",
+							svg: iconSass,
 						},
 						{
 							name: "LESS",
-							icon: "/assets/images/icon-less.svg",
+							svg: iconLess,
 						},
 						{
 							name: "Umbraco",
-							icon: "/assets/images/icon-umbraco.svg",
+							svg: iconUmbraco,
 						},
 					],
 				},
@@ -203,19 +206,19 @@ export async function GET() {
 					tech: [
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "Drupal",
-							icon: "/assets/images/tech/icon-drupal.svg",
+							svg: iconDrupal,
 						},
 						{
 							name: "PHP",
-							icon: "/assets/images/icon-php.svg",
+							svg: iconPhp,
 						},
 						{
 							name: "jQuery",
-							icon: "/assets/images/icon-jQuery.svg",
+							svg: iconJquery,
 						},
 					]
 				},
@@ -241,23 +244,23 @@ export async function GET() {
 					tech: [
 						{
 							name: "CSS3",
-							icon: "/assets/images/tech/icon-css3.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "Magento",
-							icon: "/assets/images/tech/icon-magento.svg",
+							svg: iconMagento,
 						},
 						{
 							name: "PHP",
-							icon: "/assets/images/tech/icon-php.svg",
+							svg: iconPhp,
 						},
 						{
 							name: "jQuery",
-							icon: "/assets/images/tech/icon-jQuery.svg",
+							svg: iconJquery,
 						},
 						{
 							name: "WordPress",
-							icon: "/assets/images/tech/icon-wordpress.svg",
+							svg: iconWordPress,
 						},
 					]
 				},
@@ -283,23 +286,23 @@ export async function GET() {
 					tech: [
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "WordPress",
-							icon: "/assets/images/icon-wordpress.svg",
+							svg: iconWordPress,
 						},
 						{
 							name: "PHP",
-							icon: "/assets/images/icon-php.svg",
+							svg: iconPhp,
 						},
 						{
 							name: "jQuery",
-							icon: "/assets/images/icon-jQuery.svg",
+							svg: iconJquery,
 						},
 						{
 							name: "Photoshop",
-							icon: "/assets/images/icon-photoshop.svg",
+							svg: iconPhotoshop,
 						},
 					],
 				},
@@ -328,23 +331,27 @@ export async function GET() {
 					tech: [
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "WordPress",
-							icon: "/assets/images/icon-wordpress.svg",
+							svg: iconWordPress,
 						},
 						{
 							name: "PHP",
-							icon: "/assets/images/icon-php.svg",
+							svg: iconPhp,
 						},
 						{
 							name: "jQuery",
-							icon: "/assets/images/icon-jQuery.svg",
+							svg: iconJquery,
 						},
 						{
 							name: "Photoshop",
-							icon: "/assets/images/icon-photoshop.svg",
+							svg: iconPhotoshop,
+						},
+						{
+							name: "Joomla",
+							svg: iconJoomla,
 						},
 					],
 				},
@@ -373,15 +380,15 @@ export async function GET() {
 					tech: [
 						{
 							name: "Photoshop",
-							icon: "/assets/images/icon-photoshop.svg",
+							svg: iconPhotoshop,
 						},
 						{
 							name: "CSS3",
-							icon: "/assets/images/icon-css.svg",
+							svg: iconCss3,
 						},
 						{
 							name: "HTML",
-							icon: "/assets/images/tech/icon-html5.svg",
+							svg: iconHtml5,
 						},
 					],
 				},
@@ -398,26 +405,26 @@ export async function GET() {
 					title: "Primary Stack",
 					desc:
 						"My comfort zone. My go-tos. Like mac 'n cheese and Blind Melon. This is my wheelhouse.",
-					items: [
-						"/assets/images/tech/icon-nextjs.svg",
-						"/assets/images/tech/icon-react.svg",
-						"/assets/images/tech/icon-react-native.svg",
-						"/assets/images/tech/icon-css3.svg",
-						"/assets/images/tech/icon-css-modules.svg",
-						"/assets/images/tech/icon-tailwindcss.svg",
-						"/assets/images/tech/icon-html5.svg",
-						"/assets/images/tech/icon-js.svg",
-						"/assets/images/tech/icon-typescript.svg",
-						"/assets/images/tech/icon-figma.svg",
-						"/assets/images/tech/icon-git.svg",
-						"/assets/images/tech/icon-github.svg",
-						"/assets/images/tech/icon-github-copilot.svg",
-						"/assets/images/tech/icon-claude.svg",
-						"/assets/images/tech/icon-json.svg",
-						"/assets/images/tech/icon-primereact.svg",
-						"/assets/images/tech/icon-bootstrap.svg",
-						"/assets/images/tech/icon-storybook.svg",
-						"/assets/images/tech/icon-vercel.svg",
+					tech: [
+						{ name: "Next.js", svg: iconNextJs },
+						{ name: "React", svg: iconReact },
+						{ name: "React Native", svg: iconReactNative },
+						{ name: "CSS3", svg: iconCss3 },
+						// { name: "CSS Modules", svg: iconCssModules },
+						{ name: "Tailwind CSS", svg: iconTailwindCss },
+						{ name: "HTML5", svg: iconHtml5 },
+						{ name: "JavaScript", svg: iconJavaScript },
+						{ name: "TypeScript", svg: iconTypeScript },
+						{ name: "Figma", svg: iconFigma },
+						{ name: "Git", svg: iconGit },
+						{ name: "GitHub", svg: iconGitHub },
+						{ name: "GitHub Copilot", svg: iconGitHubCoPilot },
+						{ name: "Claude", svg: iconClaude },
+						{ name: "JSON", svg: iconJson },
+						{ name: "PrimeReact", svg: iconPrimeReact },
+						{ name: "Bootstrap", svg: iconBootstrap },
+						{ name: "Storybook", svg: iconStorybook },
+						{ name: "Vercel", svg: iconVercel },
 					],
 				},
 				{
@@ -425,14 +432,14 @@ export async function GET() {
 					title: "Backup Squad",
 					desc:
 						"Not used every day, but still in there rattling around and ready to go.",
-					items: [
-						"/assets/images/tech/icon-jquery.svg",
-						"/assets/images/tech/icon-sass.svg",
-						"/assets/images/tech/icon-less.svg",
-						"/assets/images/tech/icon-php.svg",
-						"/assets/images/tech/icon-wordpress.svg",
-						"/assets/images/tech/icon-gatsby.svg",
-						"/assets/images/tech/icon-photoshop.svg",
+					tech: [
+						{ name: "jQuery", svg: iconJquery },
+						{ name: "Sass", svg: iconSass },
+						{ name: "Less", svg: iconLess },
+						{ name: "PHP", svg: iconPhp },
+						{ name: "WordPress", svg: iconWordPress },
+						{ name: "Gatsby", svg: iconGatsby },
+						{ name: "Photoshop", svg: iconPhotoshop },
 					],
 				},
 				{
@@ -440,12 +447,12 @@ export async function GET() {
 					title: "Foundation",
 					desc:
 						"The building blocks. Might not be heavily used, but still part of my coding DNA.",
-					items: [
-						"/assets/images/tech/icon-csharp.svg",
-						"/assets/images/tech/icon-umbraco.svg",
-						"/assets/images/tech/icon-magento.svg",
-						"/assets/images/tech/icon-joomla.svg",
-						"/assets/images/tech/icon-drupal.svg",
+					tech: [
+						{ name: "C#", svg: iconCSharp },
+						{ name: "Umbraco", svg: iconUmbraco },
+						{ name: "Magento", svg: iconMagento },
+						{ name: "Joomla", svg: iconJoomla },
+						{ name: "Drupal", svg: iconDrupal },
 					],
 				},
 			]

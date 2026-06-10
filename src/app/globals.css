@@ -42,9 +42,9 @@ body {
     & header {
       justify-content: center;
 
-      .logo {
+      /* .logo {
         inline-size: 75px;
-      }
+      } */
     }
   }
 
