@@ -46,8 +46,3 @@ body .container {
     padding-block-start: 180px;
   }
 }
-@media (min-width: 768px) {
-  body .container {
-    padding-block-start: 300px;
-  }
-}

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-import imgPlc from "@/app/assets/logos/bolt/logo.svg";
+import imgPlc from "@/app/(portfolio)/assets/logos/bolt/logo.svg";
 
 import styles from "@/components/experience-detail/experience-detail.module.css";
 
