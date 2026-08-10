@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-import imgPlc from "@/app/assets/logos/bolt/logo.svg";
+import imgPlc from "@/app/(portfolio)/assets/logos/bolt/logo.svg";
 
 import styles from "./experience-detail.module.css";
 import { formatDate } from "@/utils/utils";

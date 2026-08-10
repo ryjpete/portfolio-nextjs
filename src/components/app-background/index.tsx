@@ -154,7 +154,7 @@ const bgByRoute: Record<string, BgConfig> = {
     },
     variants: [
       {
-        query: "(min-width: 575px)",
+        query: "(min-width: 576px)",
         shape: {
           points: [[0, 25], [100, 20], [100, 100], [0, 100]],
           fill: "url(#home-gradient)",
