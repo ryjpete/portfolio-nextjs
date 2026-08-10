@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 
 import { Providers } from "@/providers/providers";
 
-import AppBackground from "@/components/app-background";
-import Header from "@/components/header";
-
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,8 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-      <AppBackground />
-      <Header />
       {children}
     </Providers>
   );
