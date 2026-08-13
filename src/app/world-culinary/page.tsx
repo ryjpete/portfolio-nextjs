@@ -11,6 +11,47 @@ import { DishModal } from "./components/DishModal";
 import { ComingSoonSection } from "./components/ComingSoonSection";
 import { BySpiceSection } from "./components/BySpiceSection";
 
+function NoteTooltip({ label, tip }: { label: string; tip: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <span
+      style={{ position: "relative", display: "inline" }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onClick={() => setOpen((v) => !v)}
+    >
+      <span style={{ borderBottom: "1px dotted #C97A3D", color: "#C97A3D", cursor: "help" }}>{label}</span>
+      {open && (
+        <span style={{
+          position: "absolute", bottom: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)",
+          background: "#141C18", border: "1px solid #35443D", borderRadius: 4,
+          padding: "6px 10px", fontSize: 12, color: "#EDE6D6", lineHeight: 1.5,
+          whiteSpace: "nowrap", zIndex: 10, pointerEvents: "none",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.4)", fontStyle: "normal", fontWeight: "normal",
+        }}>
+          {tip}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function renderNote(text: string) {
+  // supports **bold**, *italic*, [label]{tooltip}, *[label]*{tip}, **[label]**{tip}
+  const parts = text.split(/(\*\*\[[^\]]+\]\*\*\{[^}]+\}|\*\[[^\]]+\]\*\{[^}]+\}|\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\{[^}]+\})/g);
+  return parts.map((part, i) => {
+    const boldTooltip = part.match(/^\*\*\[([^\]]+)\]\*\*\{([^}]+)\}$/);
+    if (boldTooltip) return <strong key={i}><NoteTooltip label={boldTooltip[1]} tip={boldTooltip[2]} /></strong>;
+    const italicTooltip = part.match(/^\*\[([^\]]+)\]\*\{([^}]+)\}$/);
+    if (italicTooltip) return <em key={i}><NoteTooltip label={italicTooltip[1]} tip={italicTooltip[2]} /></em>;
+    if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith("*") && part.endsWith("*")) return <em key={i}>{part.slice(1, -1)}</em>;
+    const tooltip = part.match(/^\[([^\]]+)\]\{([^}]+)\}$/);
+    if (tooltip) return <NoteTooltip key={i} label={tooltip[1]} tip={tooltip[2]} />;
+    return part;
+  });
+}
+
 export default function CuisineAtlas() {
   const [section, setSection] = useState(null);
   const [region, setRegion] = useState(null);
@@ -136,7 +177,7 @@ export default function CuisineAtlas() {
             <span style={styles.crumbCountry}>{title}</span>
             {isAtRegionRoot && <p style={styles.crumbPlain}>Pick a region to begin browsing</p>}
             {!country && node && node.overview && <p style={styles.overviewText}>{node.overview}</p>}
-            {country && dish && dish.cuisineNote && <p style={styles.overviewText}>{dish.cuisineNote}</p>}
+            {country && dish && dish.cuisineNote && <p style={styles.overviewText}>{renderNote(dish.cuisineNote)}</p>}
           </div>
 
           {!region && (

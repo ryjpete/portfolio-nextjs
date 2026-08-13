@@ -84,12 +84,12 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
         <div style={styles.titleBlock}>
           <span style={styles.crumbCountry}>Alphabetical</span>
         </div>
-        <div style={styles.regionGrid}>
+        <div style={styles.spiceLetterGrid}>
           {SPICE_LETTERS.map((letter) => (
             <button
               key={letter}
               onClick={() => setSelectedLetter(letter)}
-              style={{ ...styles.regionCard, borderColor: accent }}
+              style={{ ...styles.spiceLetterCard, borderColor: accent }}
               className="country-btn"
             >
               <div style={styles.regionName}>{letter}</div>
@@ -163,22 +163,6 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
         ) : (
           <p style={styles.modalBodyMuted}>Not catalogued yet.</p>
         )}
-        <div style={{ ...styles.recHeader, marginTop: 22 }} className="stamp">
-          Used in {places.length} place{places.length === 1 ? "" : "s"}
-        </div>
-        <ul style={styles.dishList}>
-          {places
-            .slice()
-            .sort((a, b) => a.country.localeCompare(b.country))
-            .map((p, i) => (
-              <li key={i} style={styles.recDish}>
-                <button className="dish-link" onClick={() => onNavigateToPlace(p)}>
-                  {p.country}
-                  <span style={styles.spiceListCount}>{p.region}{p.path.length ? ` · ${p.path[p.path.length - 1]}` : ""}</span>
-                </button>
-              </li>
-            ))}
-        </ul>
       </div>
     </div>
   );

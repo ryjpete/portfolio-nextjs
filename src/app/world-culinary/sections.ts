@@ -6,6 +6,6 @@ export const SECTIONS = [
 
 export const SPICE_CATEGORIES = [
   { key: "alphabetical", label: "Alphabetical", desc: "Every spice and seasoning in the catalogue, A to Z.", ready: true },
-  { key: "texture", label: "Performance & Texture", desc: "Group by how a spice behaves in cooking — ground vs. whole, thickening, heat-stable, etc.", ready: false },
-  { key: "flavor", label: "Flavor Profile", desc: "Group by taste character — warm, floral, citrusy, smoky, and so on.", ready: false },
+  { key: "flavor", label: "Flavor Profile & Culinary Use", desc: "Group by taste character — warm, floral, citrusy, smoky, and so on, and how each spice is used in cooking.", ready: false },
+  { key: "texture", label: "Plant Source", desc: "Group by the part of the plant from which the spice is derived — root, bark, seed, leaf, etc.", ready: false },
 ];
