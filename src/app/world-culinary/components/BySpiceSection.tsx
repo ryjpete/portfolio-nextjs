@@ -22,7 +22,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!category) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
           </div>
@@ -53,7 +53,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!catMeta.ready) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -74,7 +74,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!selectedLetter) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -103,7 +103,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!selectedSpice) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -130,7 +130,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   const info = SPICE_INFO[selectedSpice];
   return (
     <div>
-      <div style={styles.crumbTrail}>
+      <div style={styles.crumbTrail} className="wc-bleed">
         <div style={styles.crumbRow}>
           <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
           <span style={styles.crumbSep}>›</span>
