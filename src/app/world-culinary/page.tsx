@@ -2,22 +2,91 @@
 // @ts-nocheck
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SEED, REGION_ORDER } from "./data/seed";
 import { resolveNode, countCountries, ALL_PLACES, samePath } from "./lib";
 import { SECTIONS } from "./sections";
-import { styles } from "./styles";
+// import { styles } from "./styles";
+import styles from "./world-culinary.module.css";
 import { DishModal } from "./components/DishModal";
 import { ComingSoonSection } from "./components/ComingSoonSection";
 import { BySpiceSection } from "./components/BySpiceSection";
+import Image from "next/image";
+import sageIcon from "./images/sage_icon.png";
+import globeIcon from "./images/globe.png";
+// import Flag from "react-flagpack";
+// import "react-flagpack/dist/style.css";
 
-export default function CuisineAtlas() {
-  const [section, setSection] = useState(null);
-  const [region, setRegion] = useState(null);
-  const [path, setPath] = useState([]);
-  const [country, setCountry] = useState(null);
+function NoteTooltip({ label, tip }: { label: string; tip: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <span
+      style={{ position: "relative", display: "inline" }}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onClick={() => setOpen((v) => !v)}
+    >
+      <span style={{ borderBottom: "1px dotted #C97A3D", color: "#C97A3D", cursor: "help" }}>{label}</span>
+      {open && (
+        <span style={{
+          position: "absolute", bottom: "calc(100% + 6px)", left: "50%", transform: "translateX(-50%)",
+          background: "#FFFFFF", border: "1px solid #E8E2D8", borderRadius: 4,
+          padding: "6px 10px", fontSize: 12, color: "#2C2C2C", lineHeight: 1.5,
+          whiteSpace: "nowrap", zIndex: 10, pointerEvents: "none",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)", fontStyle: "normal", fontWeight: "normal",
+        }}>
+          {tip}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function renderNote(text: string) {
+  // supports **bold**, *italic*, [label]{tooltip}, *[label]*{tip}, **[label]**{tip}
+  const parts = text.split(/(\*\*\[[^\]]+\]\*\*\{[^}]+\}|\*\[[^\]]+\]\*\{[^}]+\}|\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\{[^}]+\})/g);
+  return parts.map((part, i) => {
+    const boldTooltip = part.match(/^\*\*\[([^\]]+)\]\*\*\{([^}]+)\}$/);
+    if (boldTooltip) return <strong key={i}><NoteTooltip label={boldTooltip[1]} tip={boldTooltip[2]} /></strong>;
+    const italicTooltip = part.match(/^\*\[([^\]]+)\]\*\{([^}]+)\}$/);
+    if (italicTooltip) return <em key={i}><NoteTooltip label={italicTooltip[1]} tip={italicTooltip[2]} /></em>;
+    if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith("*") && part.endsWith("*")) return <em key={i}>{part.slice(1, -1)}</em>;
+    const tooltip = part.match(/^\[([^\]]+)\]\{([^}]+)\}$/);
+    if (tooltip) return <NoteTooltip key={i} label={tooltip[1]} tip={tooltip[2]} />;
+    return part;
+  });
+}
+
+export default function Page() {
+  return <Suspense><CuisineAtlas /></Suspense>;
+}
+
+function CuisineAtlas() {
+  const params = useSearchParams();
+  const section = params.get("s");
+  const region = params.get("r");
+  const path = params.get("p") ? params.get("p").split("/") : [];
+  const country = params.get("c");
+  // const [section, setSection] = useState(null);
+  // const [region, setRegion] = useState(null);
+  // const [path, setPath] = useState([]);
+  // const [country, setCountry] = useState(null);
   const [areaIndex, setAreaIndex] = useState(0);
   const [selectedDish, setSelectedDish] = useState(null);
+
+  const router = useRouter();
+
+  function nav(s?: string, r?: string, p?: string[], c?: string) {
+    const q = new URLSearchParams();
+    if (s) q.set("s", s);
+    if (r) q.set("r", r);
+    if (p && p.length > 0) q.set("p", p.join("/"));
+    if (c) q.set("c", c);
+    const qs = q.toString();
+    router.push(`/world-culinary${qs ? "?" + qs : ""}`);
+  }
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setAreaIndex(0); }, [country]);
@@ -30,24 +99,17 @@ export default function CuisineAtlas() {
   const currentIndex = ALL_PLACES.findIndex(
     (p) => p.region === region && p.country === country && samePath(p.path, path)
   );
-  const prevPlace = currentIndex === -1 ? null : ALL_PLACES[(currentIndex - 1 + ALL_PLACES.length) % ALL_PLACES.length];
-  const nextPlace = currentIndex === -1 ? null : ALL_PLACES[(currentIndex + 1) % ALL_PLACES.length];
 
   const goTo = (delta) => {
     if (currentIndex === -1) return;
     const next = ALL_PLACES[(currentIndex + delta + ALL_PLACES.length) % ALL_PLACES.length];
-    setRegion(next.region);
-    setPath(next.path);
-    setCountry(next.country);
+    nav(section, next.region, next.path, next.country);
   };
 
-  const goHome = () => { setRegion(null); setPath([]); setCountry(null); };
-  const goToSections = () => { setSection(null); setRegion(null); setPath([]); setCountry(null); };
+  const goHome = () => { nav(section); };
+  const goToSections = () => { nav(); };
   const navigateToPlace = (p) => {
-    setSection("region");
-    setRegion(p.region);
-    setPath(p.path);
-    setCountry(p.country);
+    nav("region", p.region, p.path, p.country);
   };
 
   const isAtRegionRoot = !region;
@@ -56,25 +118,31 @@ export default function CuisineAtlas() {
   if (!isAtRegionRoot) {
     ancestors.push({ label: "By Region", onClick: goHome });
     if (!isRegionTitle) {
-      ancestors.push({ label: region, onClick: () => { setPath([]); setCountry(null); } });
+      ancestors.push({ label: region, onClick: () => nav(section, region) });
     }
     const pathAncestors = country ? path : path.slice(0, -1);
     pathAncestors.forEach((seg, i) => {
       ancestors.push({
         label: seg,
-        onClick: () => { setPath(path.slice(0, i + 1)); setCountry(null); },
+        onClick: () => nav(section, region, path.slice(0, i + 1)),
       });
     });
   }
   const title = isAtRegionRoot ? "By Region" : (country || (path.length > 0 ? path[path.length - 1] : region));
 
   return (
-    <div style={styles.page}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
+		<div className={styles.page}>
+			<style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap&family=Rubik+Dirt&display=swap');
         * { box-sizing: border-box; }
+        .wc-page { padding: 32px 20px 60px; }
+        @media (min-width: 768px) { .wc-page { padding: 40px 48px 80px; } }
+        .wc-title-header { margin-top: -32px; margin-left: -20px; margin-right: -20px; }
+        @media (min-width: 768px) { .wc-title-header { margin-top: -40px; margin-left: -48px; margin-right: -48px; } }
+        // .wc-bleed { margin-left: -20px; margin-right: -20px; }
+        // @media (min-width: 768px) { .wc-bleed { margin-left: -48px; margin-right: -48px; } }
         .stamp { font-family: 'Space Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; }
-        .country-btn:hover { transform: translateY(-2px); }
+        // .country-btn:hover { transform: translateY(-2px); }
         .back-link:hover { opacity: 0.7; }
         .area-pill:hover { opacity: 0.85; }
         .dish-link { text-decoration: none; color: inherit; display: block; width: 100%; text-align: left; background: none; border: none; padding: 0; font: inherit; cursor: pointer; transition: opacity 0.15s; }
@@ -85,185 +153,393 @@ export default function CuisineAtlas() {
         .fade-left { mask-image: linear-gradient(to left, black 75%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 75%, transparent 100%); }
       `}</style>
 
-      <header style={styles.titleHeader}>
-        <div style={styles.eyebrowRow}>
-          <span style={styles.eyebrowRule} />
-          <div style={styles.eyebrow} className="stamp">Field Notes on Global Eating</div>
-          <span style={styles.eyebrowRule} />
-        </div>
-        <h1 style={styles.h1}>World Culinary</h1>
-      </header>
+			<header className={styles.titleHeader}>
+				<div className={styles.titleLogoRow}>
+					<Image
+						src={sageIcon}
+						alt="World Culinary"
+						width={120}
+						height={40}
+						className={styles.logo}
+					/>
+					<div className={styles.titleHeaderText}>
+						<h1 className={styles.titleLogoH1}>World Culinary</h1>
+						<h2 className={styles.titleLogoH2}>
+							Field Notes on Global Eating
+						</h2>
+					</div>
+				</div>
+				<nav className={styles.nav}>
+					<button
+						className={styles.navLink}
+						// onClick={() => setSection("region")}
+						onClick={() => nav("region")}
+					>
+						Region
+					</button>
+					{/* <button className={styles.navLink} onClick={() => setSection("herb")}>Herbs</button>
+          <button className={styles.navLink} onClick={() => setSection("spice")}>Spices</button> */}
+				</nav>
+			</header>
 
-      {!section && (
-        <div style={styles.sectionGrid}>
-          {SECTIONS.map((s) => (
-            <button
-              key={s.key}
-              onClick={() => setSection(s.key)}
-              style={{ ...styles.sectionCard, borderColor: s.accent }}
-              className="country-btn"
-            >
-              <div className="stamp" style={{ ...styles.sectionTag, color: s.accent }}>{s.tag}</div>
-              <div style={styles.sectionName}>{s.label}</div>
-              <div style={styles.sectionDesc}>{s.desc}</div>
-            </button>
-          ))}
-        </div>
-      )}
+			{!section && (
+				<div className={styles.sectionGrid}>
+					<div className={styles.titleHeaderText}>
+						<div className={styles.eyebrowRow}>
+							<span className={styles.eyebrowRule} />
+							<div className={`${styles.eyebrow} stamp`}>
+								Explore
+							</div>
+							<span className={styles.eyebrowRule} />
+						</div>
+					</div>
 
-      {section === "herb" && (
+					<div
+						className={styles.sectionCardRow}
+						style={{ marginInlineStart: 0 }}
+					>
+						{SECTIONS.map((s, index) => (
+							<button
+								key={s.key}
+							onClick={() => nav(s.key)}
+								className={styles.sectionCard}
+							>
+								<Image
+									src={s.img}
+									alt=""
+									width={150}
+									height={150}
+									// style={{ width: "auto", height: 200 }}
+								/>
+								<div className={styles.sectionName}>
+									{s.label}
+								</div>
+								<div className={styles.sectionDesc}>
+									{s.desc}
+								</div>
+							</button>
+						))}
+					</div>
+				</div>
+			)}
+
+			{/* {section === "herb" && (
         <ComingSoonSection section={section} onBack={goToSections} />
       )}
 
       {section === "spice" && (
         <BySpiceSection onBack={goToSections} onNavigateToPlace={navigateToPlace} />
-      )}
+      )} */}
 
-      {section === "region" && (
-        <>
-          <div style={styles.crumbTrail}>
-            <div style={styles.crumbRow}>
-              {ancestors.map((a, i) => (
-                <React.Fragment key={i}>
-                  {i > 0 && <span style={styles.crumbSep}>›</span>}
-                  <span className="back-link stamp" style={styles.crumbLink} onClick={a.onClick}>{a.label}</span>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
+			{section === "region" && (
+				<div className={styles.regionSection}>
+					<div className={`${styles.crumbTrail} wc-bleed`}>
+						<div className={styles.crumbRow}>
+							{ancestors.map((a, i) => (
+								<React.Fragment key={i}>
+									{i > 0 && (
+										<span className={styles.crumbSep}>
+											›
+										</span>
+									)}
+									<span
+										className={`back-link stamp ${styles.crumbLink}`}
+										onClick={a.onClick}
+									>
+										{a.label}
+									</span>
+								</React.Fragment>
+							))}
+						</div>
+					</div>
 
-          <div style={styles.titleBlock}>
-            <span style={styles.crumbCountry}>{title}</span>
-            {isAtRegionRoot && <p style={styles.crumbPlain}>Pick a region to begin browsing</p>}
-            {!country && node && node.overview && <p style={styles.overviewText}>{node.overview}</p>}
-            {country && dish && dish.cuisineNote && <p style={styles.overviewText}>{dish.cuisineNote}</p>}
-          </div>
+					<div className={styles.titleBlock}>
+						<div className={styles.titleBlockRow}>
+							<div className={styles.titleLogoRow}>
+								<Image
+									src={globeIcon}
+									alt="By Region"
+									width={150}
+									height={150}
+									className={styles.logoSection}
+								/>
+								<div className={styles.titleHeaderText}>
+									<h1 className={styles.titleLogoH1}>
+										{title}
+									</h1>
+									{isAtRegionRoot && (
+										<h2 className={styles.titleLogoH2}>
+											Pick a region to begin browsing
+										</h2>
+									)}
+								</div>
+							</div>
 
-          {!region && (
-            <div style={styles.regionGrid}>
-              {REGION_ORDER.map((r) => (
-                <button key={r} onClick={() => setRegion(r)} style={{ ...styles.regionCard, borderColor: SEED[r].accent }} className="country-btn">
-                  <div className="stamp" style={{ ...styles.regionTag, color: SEED[r].accent }}>Region</div>
-                  <div style={styles.regionName}>{r}</div>
-                  <div style={styles.regionCount}>{countCountries(SEED[r])} catalogued</div>
-                </button>
-              ))}
-            </div>
-          )}
+							{country && dish && (
+								<div
+									className={styles.navRow}
+									style={{ marginBottom: 0 }}
+								>
+									<button
+										onClick={() => goTo(-1)}
+										className={styles.navBtn}
+										aria-label="Previous country"
+									>
+										<span className={`${styles.navArrow}`}>
+											‹
+										</span>
+									</button>
+									<button
+										onClick={() => goTo(1)}
+										className={styles.navBtn}
+										aria-label="Next country"
+									>
+										<span className={`${styles.navArrow}`}>
+											›
+										</span>
+									</button>
+								</div>
+							)}
+						</div>
+						{!country && node && node.overview && (
+							<p className={styles.overviewText}>
+								{node.overview}
+							</p>
+						)}
+						{country && dish && dish.cuisineNote && (
+							<p className={styles.overviewText}>
+								{renderNote(dish.cuisineNote)}
+							</p>
+						)}
+					</div>
 
-          {region && node && node.groups && !country && (
-            <div style={styles.countryGrid}>
-              {Object.keys(node.groups).map((g) => (
-                <button key={g} onClick={() => setPath([...path, g])} style={{ ...styles.countryCard, borderColor: accent }} className="country-btn">
-                  {g}
-                  <div style={styles.groupCount}>{countCountries(node.groups[g])} places</div>
-                </button>
-              ))}
-            </div>
-          )}
-
-          {region && node && node.countries && !country && (
-            <div style={styles.countryGrid}>
-              {Object.keys(node.countries).sort().map((c) => (
-                <button key={c} onClick={() => setCountry(c)} style={{ ...styles.countryCard, borderColor: accent }} className="country-btn">
-                  {c}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {region && country && dish && (dish.founded || dish.belongsTo) && (
-            <div style={styles.badgeRow}>
-              {dish.belongsTo && (
-                <div style={{ ...styles.foundedBadge, borderColor: accent, color: accent }} className="stamp">
-                  Part of {dish.belongsTo}
-                </div>
-              )}
-              {dish.founded && (
-                <div style={{ ...styles.foundedBadge, borderColor: accent, color: accent }} className="stamp">
-                  Founded {dish.founded}
-                </div>
-              )}
-            </div>
-          )}
-
-          {region && country && dish && (
-            <div style={styles.detail}>
-              {dish.areas && (
-                <div style={styles.areaBox}>
-                  <p style={styles.areaNote}>No single national dish — explore by region:</p>
-                  <div style={styles.areaRow}>
-                    {dish.areas.map((a, i) => (
-                      <button
-                        key={a.name}
-                        onClick={() => setAreaIndex(i)}
-                        className="area-pill"
-                        style={{
-                          ...styles.areaPill,
-                          borderColor: accent,
-                          background: i === areaIndex ? accent : "transparent",
-                          color: i === areaIndex ? "#1C2622" : accent,
-                        }}
-                      >
-                        {a.name}
-                      </button>
-                    ))}
+					{!region && (
+						// <div className={`${styles.placeGrid} ${styles.region}`}>
+						<div className={`${styles.placeGrid} ${styles.region}`}>
+							{REGION_ORDER.map((r) => (
+								<button
+									key={r}
+									onClick={() => nav(section, r)}
+									className={`${styles.placeCard} ${styles[`${r}`]}`}
+								>
+                  <div className={styles.placeCardContent}>
+                    <div className={styles.placeCardName}>
+                      {r}
+                    </div>
+                    <Image
+                      src={SEED[r].img}
+                      alt=""
+                      width={150}
+                      height={150}
+                    />
                   </div>
-                </div>
-              )}
+								</button>
+							))}
+						</div>
+					)}
 
-              <div style={{ ...styles.officialBadge, background: accent }} className="stamp">
-                {dish.areas ? "Regional dish" : "Official"}
-              </div>
-              <ul style={styles.dishListOfficial}>
-                {activeData.official.map((d) => (
-                  <li key={d} style={{ ...styles.officialDish, borderColor: accent }}>
-                    <button className="dish-link" onClick={() => setSelectedDish({ name: d, country: dish.areas ? activeData.name : country })}>{d}</button>
-                  </li>
-                ))}
-              </ul>
+					{region && node && node.groups && !country && (
+						<div className={`${styles.placeGrid} ${styles.region}`}>
+							{Object.keys(node.groups).map((g) => (
+								<button
+									key={g}
+									onClick={() => nav(section, region, [...path, g])}
+									className={styles.placeCard}
+								>
+									<div className={styles.placeCardContent}>
+										<div className={styles.placeCardName}>
+											{g}
+										</div>
+										<Image
+											src={
+												node.groups[g].img ??
+												SEED[region].img
+											}
+											alt=""
+											width={150}
+											height={150}
+										/>
+									</div>
+								</button>
+							))}
+						</div>
+					)}
 
-              <div style={styles.recHeader} className="stamp">Also worth trying</div>
-              <ul style={styles.dishList}>
-                {activeData.recommended.map((d) => (
-                  <li key={d} style={styles.recDish}>
-                    <button className="dish-link" onClick={() => setSelectedDish({ name: d, country: dish.areas ? activeData.name : country })}>{d}</button>
-                  </li>
-                ))}
-              </ul>
+					{region && node && node.countries && !country && (
+						<div className={`${styles.placeGrid} ${styles.region} ${styles.country}`}>
+							{Object.keys(node.countries)
+								.sort()
+								.map((c) => {
+									console.log(c);
+									return (
+										<button
+											key={c}
+											onClick={() =>
+												nav(section, region, path, c)
+											}
+											className={styles.placeCard}
+										>
+											<div
+												className={
+													styles.placeCardContent
+												}
+											>
+												<div
+													className={
+														styles.placeCardName
+													}
+												>
+													{c}
+												</div>
+												{/* <Flag
+													code={node.countries[c].code}
+													size="l"
+													hasBorder={false}
+													hasBorderRadius={false}
+													className={styles.placeCardFlag}
+												/> */}
+												{/* <Image
+												src={node.countries[c].img}
+												alt=""
+												width={150}
+												height={150}
+											/> */}
+											</div>
+										</button>
+									);})}
+						</div>
+					)}
 
-              <div style={{ ...styles.recHeader, marginTop: 22 }} className="stamp">Signature spices &amp; herbs</div>
-              <div>
-                {(activeData.spices && activeData.spices.length ? activeData.spices : ["Not catalogued yet"]).map((s) => (
-                  <span key={s} className="spice-chip" style={{ background: `${accent}22`, color: accent, border: `1px solid ${accent}55` }}>
-                    {s}
-                  </span>
-                ))}
-              </div>
+					{region && country && dish && (
+						<div className={styles.detail}>
+							{dish.areas && (
+								<div className={styles.areaBox}>
+									<p className={styles.areaNote}>
+										No single national dish — explore by
+										region:
+									</p>
+									<div className={styles.areaRow}>
+										{dish.areas.map((a, i) => (
+											<button
+												key={a.name}
+												onClick={() => setAreaIndex(i)}
+												className="area-pill"
+												style={{
+													...styles.areaPill,
+													borderColor: accent,
+													background:
+														i === areaIndex
+															? accent
+															: "transparent",
+													color:
+														i === areaIndex
+															? "#FFFFFF"
+															: accent,
+												}}
+											>
+												{a.name}
+											</button>
+										))}
+									</div>
+								</div>
+							)}
 
-              <div style={styles.navRow}>
-                <button onClick={() => goTo(-1)} style={{ ...styles.navBtn, borderColor: accent }} aria-label={`Previous: ${prevPlace?.country}`}>
-                  <span style={{ ...styles.navArrow, color: accent }}>‹</span>
-                  <span className="nav-label fade-right" style={styles.navLabel}>{prevPlace?.country}</span>
-                </button>
-                <button onClick={() => goTo(1)} style={{ ...styles.navBtn, borderColor: accent, justifyContent: "flex-end" }} aria-label={`Next: ${nextPlace?.country}`}>
-                  <span className="nav-label fade-left" style={{ ...styles.navLabel, textAlign: "right" }}>{nextPlace?.country}</span>
-                  <span style={{ ...styles.navArrow, color: accent }}>›</span>
-                </button>
-              </div>
-              <p style={{ ...styles.navHint, margin: "12px 0 0" }}>Tap ‹ › to browse — tap any dish to search recipes.</p>
-            </div>
-          )}
+							<div
+								className={`${styles.officialBadge} stamp`}
+								style={{ background: accent }}
+							>
+								{dish.areas ? "Regional dish" : "Official"}
+							</div>
+							<ul className={styles.dishListOfficial}>
+								{activeData.official.map((d) => (
+									<li
+										key={d}
+										className={styles.officialDish}
+										style={{ borderColor: accent }}
+									>
+										<button
+											className="dish-link"
+											onClick={() =>
+												setSelectedDish({
+													name: d,
+													country: dish.areas
+														? activeData.name
+														: country,
+												})
+											}
+										>
+											{d}
+										</button>
+									</li>
+								))}
+							</ul>
 
-          <footer style={styles.footer}>
-            <span className="stamp">
-              {REGION_ORDER.reduce((n, r) => n + countCountries(SEED[r]), 0)} places catalogued
-            </span>
-          </footer>
+							<div className={`${styles.recHeader} stamp`}>
+								Also worth trying
+							</div>
+							<ul className={styles.dishList}>
+								{activeData.recommended.map((d) => (
+									<li key={d} className={styles.recDish}>
+										<button
+											className="dish-link"
+											onClick={() =>
+												setSelectedDish({
+													name: d,
+													country: dish.areas
+														? activeData.name
+														: country,
+												})
+											}
+										>
+											{d}
+										</button>
+									</li>
+								))}
+							</ul>
 
-          <DishModal dish={selectedDish} onClose={() => setSelectedDish(null)} />
-        </>
-      )}
-    </div>
+							<div
+								className={`${styles.recHeader} stamp`}
+								style={{ marginTop: 22 }}
+							>
+								Signature spices &amp; herbs
+							</div>
+							<div>
+								{(activeData.spices && activeData.spices.length
+									? activeData.spices
+									: ["Not catalogued yet"]
+								).map((s) => (
+									<span
+										key={s}
+										className="spice-chip"
+										style={{
+											background: `${accent}22`,
+											color: accent,
+											border: `1px solid ${accent}55`,
+										}}
+									>
+										{s}
+									</span>
+								))}
+							</div>
+						</div>
+					)}
+
+					<footer className={styles.footer}>
+						<span className="stamp">
+							{REGION_ORDER.reduce(
+								(n, r) => n + countCountries(SEED[r]),
+								0,
+							)}{" "}
+							places catalogued
+						</span>
+					</footer>
+
+					<DishModal
+						dish={selectedDish}
+						onClose={() => setSelectedDish(null)}
+					/>
+				</div>
+			)}
+		</div>
   );
 }
