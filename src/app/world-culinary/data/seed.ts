@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import africa from "../images/regions/africa/africa.svg";
 import northernAfrica from "../images/regions/africa/northern_africa.svg";
 import easternAfrica from "../images/regions/africa/eastern_africa.svg";

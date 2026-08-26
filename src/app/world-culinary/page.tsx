@@ -15,8 +15,8 @@ import { BySpiceSection } from "./components/BySpiceSection";
 import Image from "next/image";
 import sageIcon from "./images/sage_icon.png";
 import globeIcon from "./images/globe.png";
-import Flag from "react-flagpack";
-import "react-flagpack/dist/style.css";
+// import Flag from "react-flagpack";
+// import "react-flagpack/dist/style.css";
 
 function NoteTooltip({ label, tip }: { label: string; tip: string }) {
   const [open, setOpen] = React.useState(false);
@@ -391,13 +391,13 @@ function CuisineAtlas() {
 												>
 													{c}
 												</div>
-												<Flag
+												{/* <Flag
 													code={node.countries[c].code}
 													size="l"
 													hasBorder={false}
 													hasBorderRadius={false}
 													className={styles.placeCardFlag}
-												/>
+												/> */}
 												{/* <Image
 												src={node.countries[c].img}
 												alt=""
