@@ -3,7 +3,8 @@
 	background: #fefefe;
 	color: #2c2c2c;
 	font-family: 'Work Sans', sans-serif;
-  padding-top: 115px;
+  padding-top: 95px;
+	padding: 95px 30px 40px;
 }
 
 .titleHeader {
@@ -44,6 +45,16 @@
 
 .logo {
 	width: 35px;
+}
+.logoSection {
+	width: auto;
+	height: 35px;
+}
+
+.regionSection {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 
 .titleLogoH1 {
@@ -108,16 +119,17 @@
 }
 
 .crumbTrail {
-	margin-top: 0;
-	margin-bottom: 16px;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-	padding: 0 20px;
+	padding: 30px 0 0;
 }
 
 .titleBlock {
-	margin-bottom: 20px;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .titleBlockRow {
@@ -131,7 +143,8 @@
 	font-size: 14px;
 	line-height: 1.6;
 	color: #6b7280;
-	margin: 10px 0 0;
+	/* margin: 10px 0 0; */
+	padding-inline-start: 55px;
 }
 
 .crumbRow {
@@ -188,7 +201,8 @@
 .sectionGrid {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
+	padding-block-start: 30px;
 }
 
 .sectionCard {
@@ -200,7 +214,14 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 8px;
+
+	& > img {
+		width: 300px;
+		height: auto;
+		aspect-ratio: 1/1;
+	}
 }
 
 .sectionCardRow {
@@ -212,6 +233,7 @@
 
   @media (min-width: 576px) {
     flex-direction: row;
+		margin-inline-start: 55px;
   }
 }
 
@@ -232,6 +254,7 @@
 	font-family: 'Cinzel', serif;
 	font-size: 28px;
 	font-weight: 300;
+	line-height: 1;
 	color: #1a1a1a;
 }
 
@@ -264,11 +287,133 @@
 	margin: 0 auto;
 }
 
-.regionGrid {
+.placeGrid {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 12px;
+	grid-template-columns: repeat(2, 1fr);
+	padding-inline-start: 55px;
+	gap: 10px;
+	padding: 10px;
+	background-color: #91b19d25;
+
+	.placeCard {
+		background-color: #ffffff;
+		cursor: pointer;
+	}
+
+	.placeCard {
+
+		.placeCardContent {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 8px;
+			padding: 0 18px;
+			max-block-size: 150px;
+			overflow-block: hidden;
+		}
+
+		.placeCardName {
+			font-family: 'Rubik Dirt', cursive;
+			color: #91b19d;
+			order: 1;
+		}
+
+		& img {
+			width: 260px;
+		}
+
+		&.Europe {
+			& img {
+				position: relative;
+				top: -30px;
+			}
+		}
+	}
+
+	&.country {
+		color: red;
+
+		& .placeCard {
+			.placeCardContent {
+				max-block-size: 70px;
+
+				& img {
+					position: static;
+					width: 150px;
+				}
+			}
+		}
+	}
 }
+
+/* Region-specific overrides — referenced via styles[r] in the region grid */
+.Africa {}
+.Americas {}
+.Asia {}
+.Europe {
+	color: red;
+}
+.Oceania {}
+
+/* .placeCard {
+	background: #ffffff;
+	padding: 20px 18px;
+	cursor: pointer;
+	color: #2c2c2c;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 8px;
+	text-align: left;
+	border: 1px solid rgba(145, 177, 157, 0.4); */
+	/* border-bottom: 1px solid rgba(145, 177, 157, 0.4); */
+
+	/* &:nth-child(2n) {
+		border-right: none;
+	}
+	&:nth-last-child(-n + 2) {
+		border-bottom: none;
+	} */
+
+	/* @media (min-width: 576px) {
+		&:nth-child(2n) {
+			border-right: 1px solid rgba(145, 177, 157, 0.4);
+		}
+		&:nth-child(4n) {
+			border-right: none;
+		}
+		&:nth-last-child(-n + 2) {
+			border-bottom: 1px solid rgba(145, 177, 157, 0.4);
+		}
+		&:nth-last-child(-n + 4) {
+			border-bottom: none;
+		}
+	} */
+/* } */
+
+/* .placeCardName {
+	font-family: 'Cinzel', serif;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 1;
+	color: #1a1a1a;
+	text-align: center;
+} */
+
+/* .placeCardDesc {
+	font-family: Nunito, sans-serif;
+	font-size: 13px;
+	color: #6b7280;
+	line-height: 1.5;
+} */
+
+/* .regionGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	padding-inline-start: 55px;
+} */
 
 .spiceLetterGrid {
 	display: grid;

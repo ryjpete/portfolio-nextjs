@@ -1,14 +1,103 @@
 // @ts-nocheck
+import africa from "../images/regions/africa/africa.svg";
+import northernAfrica from "../images/regions/africa/northern_africa/northern_africa.svg";
+import algeria from "../images/regions/africa/northern_africa/algeria.svg";
+import egypt from "../images/regions/africa/northern_africa/egypt.svg";
+import libya from "../images/regions/africa/northern_africa/libya.svg";
+import morocco from "../images/regions/africa/northern_africa/morocco.svg";
+import sudan from "../images/regions/africa/northern_africa/sudan.svg";
+import tunisia from "../images/regions/africa/northern_africa/tunisia.svg";
+import westernSahara from "../images/regions/africa/northern_africa/western_sahara.svg";
+import easternAfrica from "../images/regions/africa/eastern_africa/eastern_africa.svg";
+import burundi from "../images/regions/africa/eastern_africa/burundi.svg";
+import comoros from "../images/regions/africa/eastern_africa/comoros.svg";
+import djibouti from "../images/regions/africa/eastern_africa/djibouti.svg";
+import eritrea from "../images/regions/africa/eastern_africa/eritrea.svg";
+import ethiopia from "../images/regions/africa/eastern_africa/ethiopia.svg";
+import kenya from "../images/regions/africa/eastern_africa/kenya.svg";
+import madagascar from "../images/regions/africa/eastern_africa/madagascar.svg";
+import malawi from "../images/regions/africa/eastern_africa/malawi.svg";
+import mauritius from "../images/regions/africa/eastern_africa/mauritius.svg";
+import mozambique from "../images/regions/africa/eastern_africa/mozambique.svg";
+// import reunion from "../images/regions/africa/eastern_africa/reunion.svg";
+import rwanda from "../images/regions/africa/eastern_africa/rwanda.svg";
+import seychelles from "../images/regions/africa/eastern_africa/seychelles.svg";
+import somalia from "../images/regions/africa/eastern_africa/somalia.svg";
+import southSudan from "../images/regions/africa/eastern_africa/south_sudan.svg";
+import tanzania from "../images/regions/africa/eastern_africa/tanzania.svg";
+import uganda from "../images/regions/africa/eastern_africa/uganda.svg";
+import zambia from "../images/regions/africa/eastern_africa/zambia.svg";
+import zimbabwe from "../images/regions/africa/eastern_africa/zimbabwe.svg";
+import middleAfrica from "../images/regions/africa/middle_africa/middle_africa.svg";
+import angola from "../images/regions/africa/middle_africa/angola.svg";
+import cameroon from "../images/regions/africa/middle_africa/cameroon.svg";
+import centralAfricanRepublic from "../images/regions/africa/middle_africa/central_african_republic.svg";
+import chad from "../images/regions/africa/middle_africa/chad.svg";
+import democraticRepublicOfTheCongo from "../images/regions/africa/middle_africa/democratic_republic_congo.svg";
+import equatorialGuinea from "../images/regions/africa/middle_africa/equatorial_guinea.svg";
+import gabon from "../images/regions/africa/middle_africa/gabon.svg";
+import republicOfTheCongo from "../images/regions/africa/middle_africa/republic_congo.svg";
+import saoTomeAndPrincipe from "../images/regions/africa/middle_africa/sao_tome_principe.svg";
+import southernAfrica from "../images/regions/africa/southern_africa/southern_africa.svg";
+import botswana from "../images/regions/africa/southern_africa/botswana.svg";
+import eswatini from "../images/regions/africa/southern_africa/eswatini.svg";
+import lesotho from "../images/regions/africa/southern_africa/lesotho.svg";
+import namibia from "../images/regions/africa/southern_africa/namibia.svg";
+import southAfrica from "../images/regions/africa/southern_africa/southern_africa.svg";
+import westernAfrica from "../images/regions/africa/western_africa/western_africa.svg";
+import benin from "../images/regions/africa/western_africa/benin.svg";
+import burkinaFaso from "../images/regions/africa/western_africa/burkinaFaso.svg";
+import caboVerde from "../images/regions/africa/western_africa/caboVerde.svg";
+import cotedIvoire from "../images/regions/africa/western_africa/cotedIvoire.svg";
+import gambia from "../images/regions/africa/western_africa/gambia.svg";
+import ghana from "../images/regions/africa/western_africa/ghana.svg";
+import guinea from "../images/regions/africa/western_africa/guinea.svg";
+import guineaBissau from "../images/regions/africa/western_africa/guineaBissau.svg";
+import liberia from "../images/regions/africa/western_africa/liberia.svg";
+import mali from "../images/regions/africa/western_africa/mali.svg";
+import mauritania from "../images/regions/africa/western_africa/mauritania.svg";
+import niger from "../images/regions/africa/western_africa/niger.svg";
+import nigeria from "../images/regions/africa/western_africa/nigeria.svg";
+import senegal from "../images/regions/africa/western_africa/senegal.svg";
+import sierraLeone from "../images/regions/africa/western_africa/sierraLeone.svg";
+import togo from "../images/regions/africa/western_africa/togo.svg";
+
+import asia from "../images/regions/asia/asia.svg";
+
+import europe from "../images/regions/europe/europe.svg";
+import oceania from "../images/regions/oceania/oceania.svg";
+
+import americas from "../images/regions/americas/americas.svg";
+import carribean from "../images/regions/americas/caribbean/caribbean.svg";
+import antiguaBarbadu from "../images/regions/americas/caribbean/antiguaBarbuda.svg";
+import bahamas from "../images/regions/americas/caribbean/bahamas.svg";
+import barbados from "../images/regions/americas/caribbean/barbados.svg";
+import caymanIslands from "../images/regions/americas/caribbean/caymanIslands.svg";
+import cuba from "../images/regions/americas/caribbean/cuba.svg";
+import dominica from "../images/regions/americas/caribbean/dominica.svg";
+import dominicanRepublic from "../images/regions/americas/caribbean/dominicanRepublic.svg";
+import grenada from "../images/regions/americas/caribbean/grenada.svg";
+
+import centralAmerica from "../images/regions/americas/central_america/central_america.svg";
+import northAmerica from "../images/regions/americas/north_america/north_america.svg";
+import bermuda from "../images/regions/americas/north_america/bermuda.svg";
+import canada from "../images/regions/americas/north_america/canada.svg";
+import greenland from "../images/regions/americas/north_america/greenland.svg";
+// import saintPierreAndMiquelon from "../images/regions/americas/north_america/saintPierreMiquelon.svg";
+import unitedStates from "../images/regions/americas/north_america/unitedStates.svg";
+import southAmerica from "../images/regions/americas/south_america/south_america.svg";
 
 export const SEED = {
 	Africa: {
 		accent: "#C97A3D",
+		img: africa,
 		overview:
 			"African cuisine spans an extraordinary range of climates and traditions, but common threads run through much of it: hearty grain- or root-based staples (maize, cassava, millet, sorghum, yams) paired with vegetable, meat, or legume stews; heavy use of peanuts, palm oil, and leafy greens; and a strong tradition of communal, hands-on eating. North Africa's Mediterranean and Arab influences, the Horn's Indian Ocean trade ties, and the lasting marks of European colonization all give different parts of the continent a distinct culinary character.",
 		groups: {
 			"Northern Africa": {
 				overview:
 					"Northern African cuisine reflects the region's Mediterranean coastline and centuries of Berber, Arab, and Ottoman influence. Couscous, tagines, and flatbreads are everyday staples, built on warming spice blends like ras el hanout, cumin, and coriander alongside olive oil, preserved lemon, and dried fruit — closer in spirit to Middle Eastern and Mediterranean cooking than to the rest of the continent.",
+				img: northernAfrica,
 				countries: {
 					Algeria: {
 						official: ["Couscous"],
@@ -17,6 +106,7 @@ export const SEED = {
 						founded: "1962 (from France)",
 						cuisineNote:
 							"Algerian cuisine reflects the country's Berber roots and centuries of Arab and Ottoman influence, with French colonial-era touches still visible in bread and pastry culture. Couscous anchors the everyday table, and dishes lean on warming spices, dried fruit, and slow-simmered stews.",
+						img: algeria,
 					},
 					Egypt: {
 						official: ["Koshari"],
@@ -25,6 +115,7 @@ export const SEED = {
 						founded: "1922 (from UK)",
 						cuisineNote:
 							"Egyptian cuisine is built on humble, ancient staples — fava beans, lentils, bread, and rice — some traceable to the era of the pharaohs. Its position as a crossroads between Africa, the Middle East, and the Mediterranean shows in dishes blending Levantine, Ottoman, and North African influence.",
+						img: egypt,
 					},
 					Libya: {
 						official: ["Bazin"],
@@ -38,6 +129,7 @@ export const SEED = {
 						founded: "1951 (from Italy/UN)",
 						cuisineNote:
 							"Libyan cuisine draws on Berber, Arab, and Ottoman roots, with Italian colonial influence adding pasta-adjacent dishes like the barley-based bazin. Simple, hearty grain staples and slow-cooked stews dominate, reflecting the country's largely desert geography and semi-nomadic history.",
+						img: libya,
 					},
 					Morocco: {
 						official: ["Couscous", "Tagine"],
@@ -51,6 +143,7 @@ export const SEED = {
 						founded: "1956 (from France)",
 						cuisineNote:
 							"Moroccan cuisine is one of North Africa's most internationally recognized, known for elaborate spice blends like ras el hanout, slow-cooked tagines, and a rich pastry and tea culture shaped by Berber, Arab, Andalusian, and French influence.",
+						img: morocco,
 					},
 					Sudan: {
 						official: ["Ful medames"],
@@ -59,6 +152,7 @@ export const SEED = {
 						founded: "1956 (from UK/Egypt)",
 						cuisineNote:
 							"Sudanese cuisine bridges North and East Africa, with fava beans (ful medames), sorghum-based flatbreads, and simple, slow-cooked stews reflecting the country's Nile Valley agricultural tradition and shared culinary history with Egypt.",
+						img: sudan,
 					},
 					Tunisia: {
 						official: ["Couscous"],
@@ -71,6 +165,7 @@ export const SEED = {
 						founded: "1956 (from France)",
 						cuisineNote:
 							"Tunisian cuisine is known for its heavy use of harissa chili paste and bolder, spicier flavors than its North African neighbors, shaped by Berber, Arab, Ottoman, and French influence along the country's Mediterranean coast.",
+						img: tunisia,
 					},
 					"Western Sahara": {
 						official: ["Camel meat tagine"],
@@ -82,12 +177,14 @@ export const SEED = {
 						spices: ["Cumin", "Mint", "Cinnamon", "Cloves"],
 						cuisineNote:
 							"Sahrawi cuisine reflects a nomadic desert herding tradition, centered on camel meat and milk, dates, and mint tea, with relatively few fresh vegetables due to the region's arid Saharan geography.",
+						img: westernSahara,
 					},
 				},
 			},
 			"Eastern Africa": {
 				overview:
 					"Eastern African cuisine is shaped by the Horn of Africa's ancient grain traditions (teff, sorghum) alongside Indian Ocean trade routes that brought cardamom, cloves, and cinnamon from Arabia and South Asia. Fermented flatbreads like injera and anjero, spiced stews, and rice pilafs are common, with Ethiopian and Somali cooking especially known for complex spice blends like berbere and xawaash.",
+				img: easternAfrica,
 				countries: {
 					Burundi: {
 						official: ["Ubugali with beans"],
@@ -96,6 +193,7 @@ export const SEED = {
 						founded: "1962 (from Belgium)",
             cuisineNote:
               "Burundian cuisine is centered on local agriculture, featuring staples like red kidney beans, plantains, sweet potatoes, cassava, and maize. Meat is a luxury, so meals are predominantly plant-based and savory, highlighted by dishes like ibiharage (bean stew) and ubugali (a dense cassava or maize paste).",
+						img: burundi,
 					},
 					Comoros: {
 						official: ["Langouste à la vanille"],
@@ -103,6 +201,7 @@ export const SEED = {
 						spices: ["Vanilla", "Clove", "Cinnamon", "Nutmeg"],
 						founded: "1975 (from France)",
             cuisineNote: "Comoros cuisine is a rich mix of African, Arab, and French tastes. It uses fresh seafood, coconut, and local spices like vanilla, cloves, and cinnamon. The most famous local dish is langouste à la vanille (lobster in a smooth vanilla sauce).",
+						img: comoros,
 					},
 					Djibouti: {
 						official: ["Skoudehkaris"],
@@ -110,6 +209,7 @@ export const SEED = {
 						spices: ["Cardamom", "Cumin", "Cinnamon", "Cloves"],
 						founded: "1977 (from France)",
             cuisineNote: "Djiboutian cuisine is a vibrant fusion of Somali, Afar, Yemeni, and French influences, seasoned with warm Middle Eastern spices like cardamom, cumin, and cinnamon. Staple meals feature rice, pasta, and fresh Red Sea fish, often accompanied by the spongy flatbread laxoox.",
+						img: djibouti,
 					},
 					Eritrea: {
 						official: ["Tsebhi with injera"],
@@ -122,6 +222,7 @@ export const SEED = {
 						],
 						founded: "1993 (from Ethiopia)",
             cuisineNote: "Eritrean cuisine features spicy meat and lentil stews (tsebhi) served on spongy sourdough flatbread (injera). It blends East African traditions with coastal seafood and Italian pasta influences from its colonial history.",
+						img: eritrea,
 					},
 					Ethiopia: {
 						official: ["Doro wat with injera"],
@@ -133,6 +234,7 @@ export const SEED = {
 							"Korarima",
 						],
             cuisineNote: "Ethiopian cuisine is renowned for its rich, spicy stews (wats) and the use of injera, a sourdough flatbread made from teff flour. The cuisine emphasizes communal eating, with dishes often shared from a central platter. Berbere spice blend is a cornerstone of flavor, alongside niter kibbeh (spiced clarified butter).",
+						img: ethiopia,
 					},
 					Kenya: {
 						official: ["Ugali with nyama choma"],
@@ -140,6 +242,7 @@ export const SEED = {
 						spices: ["Coriander", "Cumin", "Curry powder", "Chili"],
 						founded: "1963 (from UK)",
             cuisineNote: "Kenyan cuisine is a vibrant mix of indigenous traditions and global influences, centered around hearty, farm-fresh staples like cornmeal, rice, and meats. Meals feature bold spices, fresh vegetables, and communal grilling styles that highlight the country's diverse culture.",
+						img: kenya,
 					},
 					Madagascar: {
 						official: ["Romazava"],
@@ -156,6 +259,7 @@ export const SEED = {
 						],
 						founded: "1960 (from France)",
             cuisineNote: "Madagascar cuisine centers around rice (vary), which is eaten at almost every meal, usually piled high and accompanied by a side dish of meat, vegetables, or greens called laoka. Blending Southeast Asian, African, and French flavors, the food relies on fresh ginger, garlic, tomatoes, and fiery chili pastes (sakay) rather than heavy spice blends.",
+						img: madagascar,
 					},
 					Malawi: {
 						official: ["Nsima with ndiwo"],
@@ -167,6 +271,7 @@ export const SEED = {
 						spices: ["Paprika", "Garlic", "Curry powder", "Chili"],
 						founded: "1964 (from UK)",
             cuisineNote: "Malawian cuisine centers around nsima, a thick, comforting staple porridge made from ground maize. Eaten with the hands, it is almost always paired with savory side dishes called relishes, which feature fresh fish from Lake Malawi, goat, beef, beans, or pumpkin leaves cooked in rich peanut flour.",
+						img: malawi,
 					},
 					Mauritius: {
 						official: ["Dholl puri"],
@@ -174,6 +279,7 @@ export const SEED = {
 						spices: ["Curry leaves", "Cumin", "Turmeric", "Ginger"],
 						founded: "1968 (from UK)",
             cuisineNote: "Mauritian cuisine is a vibrant melting pot blending Indian, French, Chinese, and African flavors. Staples include aromatic curries made without coconut milk, spicy tomato-based rougaille, and iconic street foods like dholl puri (split-pea flatbreads) and gâteaux piments (chilli bites).",
+						img: mauritius,
 					},
 					Mozambique: {
 						official: ["Piri-piri chicken"],
@@ -186,6 +292,7 @@ export const SEED = {
 						],
 						founded: "1975 (from Portugal)",
             cuisineNote: "Mozambican cuisine is a vibrant fusion of African, Portuguese, and Arab-Indian flavors, defined by fiery peri-peri chili, rich coconut milk, and fresh Indian Ocean seafood.",
+						img: mozambique,
 					},
 					Rwanda: {
 						official: ["Ubugali with isombe"],
@@ -193,6 +300,7 @@ export const SEED = {
 						spices: ["Garlic", "Chili", "Curry powder", "Ginger"],
 						founded: "1962 (from Belgium)",
             cuisineNote: "Rwandan cuisine features fresh, local, farm-grown ingredients like plantains, sweet potatoes, beans, and cassava. Meals are typically hearty, mild in spice, and centered around staple starches and rich, peanut-based sauces.",
+						img: rwanda,
 					},
 					Seychelles: {
 						official: ["Grilled fish with rice"],
@@ -200,6 +308,7 @@ export const SEED = {
 						spices: ["Cinnamon", "Vanilla", "Turmeric", "Chili"],
 						founded: "1976 (from UK)",
             cuisineNote: "Seychelles cuisine is a vibrant Creole fusion blending African, French, Chinese, and Indian flavors. It centers on fresh seafood like red snapper and octopus paired with rice. Dishes feature aromatic coconut milk, local spices, and fiery chili sauces.",
+						img: seychelles,
 					},
 					Somalia: {
 						official: ["Bariis iskukaris"],
@@ -212,29 +321,31 @@ export const SEED = {
 						],
 						founded: "1960 (from Italy/UK)",
             cuisineNote: "Somali cuisine is a vibrant fusion of East African, Arabic, Italian, and Indian flavors, shaped by centuries of trade and nomadic traditions. It features halal meats like goat, beef, lamb, and camel, fragrant spice blends like xawaash, and unique pairings like spiced rice served with fresh bananas",
+						img: somalia,
 					},
-					Somaliland: {
-						official: ["Anjero with suqaar"],
-						recommended: [
-							"Bariis iskukaris",
-							"Malawah",
-							"Sabaayad",
-						],
-						spices: [
-							"Cumin",
-							"Cardamom",
-							"Cinnamon",
-							"Xawaash blend",
-						],
-						founded: "1991 (self-declared)",
-            cuisineNote: "Somaliland cuisine is a rich blend of traditional nomadic pastoralist staples and vibrant global influences from the Middle East, Italy, and India. Meals heavily feature flavorful meats like goat, lamb, and camel, paired with aromatic spiced rice, flatbreads, and a banana on the side.",
-					},
+					// Somaliland: {
+					// 	official: ["Anjero with suqaar"],
+					// 	recommended: [
+					// 		"Bariis iskukaris",
+					// 		"Malawah",
+					// 		"Sabaayad",
+					// 	],
+					// 	spices: [
+					// 		"Cumin",
+					// 		"Cardamom",
+					// 		"Cinnamon",
+					// 		"Xawaash blend",
+					// 	],
+					// 	founded: "1991 (self-declared)",
+          //   cuisineNote: "Somaliland cuisine is a rich blend of traditional nomadic pastoralist staples and vibrant global influences from the Middle East, Italy, and India. Meals heavily feature flavorful meats like goat, lamb, and camel, paired with aromatic spiced rice, flatbreads, and a banana on the side.",
+					// },
 					"South Sudan": {
 						official: ["Kisra with stew"],
 						recommended: ["Ful medames", "Asida", "Grilled goat"],
 						spices: ["Chili", "Garlic", "Cumin", "Coriander"],
 						founded: "2011 (from Sudan)",
             cuisineNote: "South Sudanese cuisine centers on hearty, grain-based staples like sorghum and millet, frequently served as stiff porridges or fermented flatbreads paired with rich peanut, meat, or vegetable stews.",
+						img: southSudan,
 					},
 					Tanzania: {
 						official: ["Ugali"],
@@ -246,7 +357,8 @@ export const SEED = {
 							"Curry powder",
 						],
 						founded: "1961 (Tanganyika)",
-            cuisineNote: "Tanzanian cuisine blends indigenous African traditions with Arab, Indian, and European influences. Spices like cardamom, cloves, and cinnamon shine brightly, especially in coastal regions and Zanzibar."
+            cuisineNote: "Tanzanian cuisine blends indigenous African traditions with Arab, Indian, and European influences. Spices like cardamom, cloves, and cinnamon shine brightly, especially in coastal regions and Zanzibar.",
+						img: tanzania,
 					},
 					Uganda: {
 						official: ["Matoke"],
@@ -263,6 +375,7 @@ export const SEED = {
 						],
 						founded: "1962 (from UK)",
             cuisineNote: "Ugandan cuisine centers on hearty starchy staples like matoke (steamed green bananas) and rich groundnut (peanut) sauces, influenced by British, Arab, and Indian traditions.",
+						img: uganda,
 					},
 					Zambia: {
 						official: ["Nshima with ndiwo"],
@@ -270,6 +383,7 @@ export const SEED = {
 						spices: ["Paprika", "Garlic", "Chili", "Curry powder"],
 						founded: "1964 (from UK)",
             cuisineNote: "Zambian cuisine centers on nshima, a thick maize porridge that serves as the national staple. Eaten by hand, nshima is paired with savory side dishes called relishes.",
+						img: zambia,
 					},
 					Zimbabwe: {
 						official: ["Sadza with relish"],
@@ -277,12 +391,14 @@ export const SEED = {
 						spices: ["Paprika", "Garlic", "Thyme", "Chili"],
 						founded: "1980 (from UK)",
             cuisineNote: "Zimbabwean cuisine centers around sadza, a thick, comforting porridge made from white maize meal. It is served with savory meat stews, peanut butter sauces like dovi, and nutritious green vegetable relishes like pumpkin leaves (muboora).",
+						img: zimbabwe,
 					},
 				},
 			},
 			"Middle Africa": {
 				overview:
 					"Central African cuisine centers on the Congo Basin's cassava, plantain, and leafy greens, cooked with palm oil and often peanuts. Freshwater fish and bushmeat are important protein sources in this heavily forested region, and dishes tend to be slow-simmered stews eaten with a starchy dough for scooping.",
+				img: middleAfrica,
 				countries: {
 					Angola: {
 						official: ["Muamba de galinha"],
@@ -295,6 +411,7 @@ export const SEED = {
 						],
 						founded: "1975 (from Portugal)",
             cuisineNote: "Angolan cuisine is a vibrant fusion of indigenous African traditions and Portuguese colonial flavors. It relies heavily on comforting staples like funge (a savory cassava or cornmeal paste), beans, and rice, paired with bold, rich stews flavored with red palm oil, garlic, okra, and gindungo (chili peppers).",
+						img: angola,
 					},
 					Cameroon: {
 						official: ["Ndolé"],
@@ -302,6 +419,7 @@ export const SEED = {
 						spices: ["Njangsa", "Chili", "Ginger", "Garlic"],
 						founded: "1960 (from France/UK)",
             cuisineNote: "Cameroon cuisine is one of the most diverse in Africa, blending indigenous West-Central African traditions with French, German, and British colonial influences. Meals rely heavily on fresh local produce like plantains, cassava, peanuts, and leafy greens, paired with bold, spicy flavors.",
+						img: cameroon,
 					},
 					"Central African Republic": {
 						official: ["Gozo with peanut sauce"],
@@ -309,6 +427,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Ginger", "Cayenne"],
 						founded: "1960 (from France)",
             cuisineNote: "Central African Republic cuisine centers on hearty starches like cassava, yams, and plantains paired with savory peanut, tomato, or ground melon seed (egusi) sauces. Meals frequently feature freshwater fish like Nile perch, chicken, or goat, often served alongside fufu or gozo (cassava paste).",
+						img: centralAfricanRepublic,
 					},
 					Chad: {
 						official: ["Boule with daraba"],
@@ -320,6 +439,7 @@ export const SEED = {
 						spices: ["Chili", "Cumin", "Ginger", "Garlic"],
 						founded: "1960 (from France)",
             cuisineNote: "Chadian cuisine blends Arab, Sahelian, and tropical African traditions. Staples include grains like millet and sorghum, fresh fish from Lake Chad, and rich peanut- or okra-based stews. Meals are deeply social, typically shared communally from a large central platter.",
+						img: chad,
 					},
 					"Democratic Republic of the Congo": {
 						official: ["Moambe chicken"],
@@ -327,6 +447,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Ginger", "Bay leaf"],
 						founded: "1960 (from Belgium)",
             cuisineNote: "Democratic Republic of the Congo cuisine relies on staples like cassava, plantains, rice, and peanuts. Popular dishes feature fresh fish, goat, or chicken paired with flavorful sauces and green leaves like saka-saka. Meals are hearty, savory, and often served with a side of fufu or kwanga.",
+						img: democraticRepublicOfTheCongo,
 					},
 					"Equatorial Guinea": {
 						official: ["Succotash (peanut & fish stew)"],
@@ -338,6 +459,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Ginger", "Bay leaf"],
 						founded: "1968 (from Spain)",
             cuisineNote: "Equatorial Guinea cuisine blends traditional Central African flavors with Spanish colonial influences. Staple ingredients include plantains, cassava, peanuts, yams, and fresh seafood, featured in popular dishes like spicy fish pepesup and peanut-based meat stews.",
+						img: equatorialGuinea,
 					},
 					Gabon: {
 						official: ["Poulet nyembwe"],
@@ -349,6 +471,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Ginger", "Bay leaf"],
 						founded: "1960 (from France)",
             cuisineNote: "Gabonese cuisine blends traditional Central African flavors with heavy French influence. Staple ingredients include cassava, plantains, peanuts, and palm nut pulp, paired with fresh Atlantic seafood or bushmeat.",
+						img: gabon,
 					},
 					"Republic of the Congo": {
 						official: ["Saka-saka"],
@@ -356,6 +479,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Ginger", "Bay leaf"],
 						founded: "1960 (from France)",
             cuisineNote: "Republic of the Congo cuisine relies on hearty staples like cassava, plantains, peanuts, and fresh river fish. Meals center on savory stews and rich sauces spiced with hot pili pili.",
+						img: republicOfTheCongo,
 					},
 					"São Tomé and Príncipe": {
 						official: ["Calulu"],
@@ -367,12 +491,14 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Bay leaf", "Cinnamon"],
 						founded: "1975 (from Portugal)",
             cuisineNote: "São Tomé and Príncipe cuisine relies on fresh fish, tropical fruits, and local spices. Staple ingredients include plantains, beans, corn, and cassava.",
+						img: saoTomeAndPrincipe,
 					},
 				},
 			},
 			"Southern Africa": {
 				overview:
 					"Southern African cuisine blends Indigenous grain and stewing traditions — maize porridge, or 'pap', is the everyday staple — with strong British, Dutch (Afrikaner), and Indian influences left by colonial-era settlement and labor migration, seen in dishes like braai (barbecue), bobotie, and bunny chow.",
+				img: southernAfrica,
 				countries: {
 					Botswana: {
 						official: ["Seswaa"],
@@ -380,13 +506,15 @@ export const SEED = {
 						spices: ["Black pepper", "Garlic", "Thyme", "Paprika"],
 						founded: "1966 (from UK)",
             cuisineNote: "Botswana cuisine is hearty and simple, centered on high-quality beef, local grains like sorghum and maize, and seasonal wild vegetables. Flavors are natural and lightly spiced, letting the rich taste of farm-raised meats and earthy starches take center stage.",
+						img: botswana,
 					},
 					Eswatini: {
 						official: ["Sishwala with sidvudvu"],
 						recommended: ["Emahewu", "Incwancwa", "Roasted meat"],
 						spices: ["Paprika", "Garlic", "Thyme", "Chili"],
 						founded: "1968 (from UK)",
-            cuisineNote: "Eswatini cuisine is rooted in subsistence farming, relying heavily on sorghum, maize, and seasonal vegetables like pumpkin leaves. Hearty, thick porridges and fermented milk (emasi) form the foundation of traditional Swazi meals, while meat is typically reserved for special events or social gatherings like a braai (barbecue)."
+            cuisineNote: "Eswatini cuisine is rooted in subsistence farming, relying heavily on sorghum, maize, and seasonal vegetables like pumpkin leaves. Hearty, thick porridges and fermented milk (emasi) form the foundation of traditional Swazi meals, while meat is typically reserved for special events or social gatherings like a braai (barbecue).",
+						img: eswatini,
 					},
 					Lesotho: {
 						official: ["Papa with moroho"],
@@ -394,6 +522,7 @@ export const SEED = {
 						spices: ["Paprika", "Garlic", "Thyme", "Chili"],
 						founded: "1966 (from UK)",
             cuisineNote: "Lesotho cuisine is deeply tied to the mountainous terrain and agricultural roots of the Basotho people. It centers on hearty, comforting staples like papa (stiff maize porridge), moroho (cooked leafy greens), and likhobe (a traditional stew of mixed beans, sorghum, and wheat).",
+						img: lesotho,
 					},
 					Namibia: {
 						official: ["Kapana (braai)"],
@@ -401,6 +530,7 @@ export const SEED = {
 						spices: ["Black pepper", "Paprika", "Garlic", "Thyme"],
 						founded: "1990 (from South Africa)",
             cuisineNote: "Namibian cuisine is a hearty mix of indigenous African traditions and colonial European influences, heavily centered on meat. It features game meats like kudu and oryx, roadside grilled kapana, slow-cooked potjiekos stews, and German-inspired baked goods and lagers.",
+						img: namibia,
 					},
 					"South Africa": {
 						official: ["Braai"],
@@ -413,12 +543,14 @@ export const SEED = {
 						],
 						founded: "1910 (Union)",
             cuisineNote: `South African cuisine is a vibrant "Rainbow Nation" mix of Indigenous African, Dutch, Malay, French, and Indian flavors.`,
+						img: southAfrica,
 					},
 				},
 			},
 			"Western Africa": {
 				overview:
 					"West African cuisine is known for bold, spicy one-pot dishes — jollof rice, groundnut (peanut) stews, and fufu with rich soups — built on staples like rice, cassava, and yams. Palm oil, chili, ginger, and dried or smoked fish and meat are common threads running across the region's many distinct national cuisines.",
+				img: westernAfrica,
 				countries: {
 					Benin: {
 						official: ["Amiwo"],
@@ -426,6 +558,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Nutmeg"],
 						founded: "1960 (from France)",
             cuisineNote: "Beninese cuisine features fresh coastal seafood, rich peanut and tomato sauces, and staple starches like corn paste in the south and yams in the north, all elevated by red palm oil and fiery chili peppers.",
+						img: benin,
 					},
 					"Burkina Faso": {
 						official: ["Tô with sauce"],
@@ -437,6 +570,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Cloves"],
 						founded: "1960 (from France)",
 						cuisineNote: "Burkinabé cuisine is hearty and communal, centered on local grains like sorghum, millet, and maize. Meals typically feature a thick starch base paired with rich, savory vegetable or peanut sauces, often enhanced with *[soumbala]*{Fermented locust beans} and dried fish for deep flavor.",
+						img: burkinaFaso,
 					},
 					"Cabo Verde": {
 						official: ["Cachupa"],
@@ -448,6 +582,7 @@ export const SEED = {
 						spices: ["Garlic", "Bay leaf", "Cilantro", "Paprika"],
 						founded: "1975 (from Portugal)",
 						cuisineNote: "Cabo Verde cuisine is a hearty fusion of West African, Portuguese, and maritime influences. It relies heavily on local staples like corn, beans, and fresh seafood, shaped by a history of resilience and island resources.",
+						img: caboVerde,
 					},
 					"Côte d'Ivoire": {
 						official: ["Attiéké with grilled fish"],
@@ -455,6 +590,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Curry powder"],
 						founded: "1960 (from France)",
 						cuisineNote: "Côte d'Ivoire cuisine is vibrant and rich. It relies heavily on root vegetables like cassava and yams, grains, plantains, peanuts, and fresh fish or chicken. Meals are famous for bold, spicy flavors and hearty, slow-simmered sauces.",
+						img: cotedIvoire,
 					},
 					Gambia: {
 						official: ["Domoda"],
@@ -462,6 +598,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Bay leaf"],
 						founded: "1965 (from UK)",
 						cuisineNote: "Gambian cuisine features rich West African flavors built on staples like rice, peanuts, fish, and fresh local vegetables. Meals are often communal, bringing people together around a single large serving bowl.",
+						img: gambia,
 					},
 					Ghana: {
 						official: ["Jollof rice"],
@@ -473,6 +610,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Nutmeg"],
 						founded: "1957 (from UK)",
 						cuisineNote: "Ghanaian cuisine is hearty, flavorful, and centered around bold stews, rich soups, and filling starchy staples like cassava, plantains, yams, and maize. Meals often combine a mild starch base with a spicy, savory meat or fish accompaniment.",
+						img: ghana,
 					},
 					Guinea: {
 						official: ["Riz gras"],
@@ -480,6 +618,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Black pepper"],
 						founded: "1958 (from France)",
 						cuisineNote: "Guinean cuisine features rich West African staples like rice, cassava, fonio, and peanuts, combined with savory leaf and peanut sauces. Meals are heavily communal, often eaten by hand from a shared central dish.",
+						img: guinea,
 					},
 					"Guinea-Bissau": {
 						official: ["Jollof rice"],
@@ -487,6 +626,7 @@ export const SEED = {
 						spices: ["Chili", "Garlic", "Bay leaf", "Coriander"],
 						founded: "1974 (from Portugal)",
 						cuisineNote: "Bissau-Guinean cuisine relies heavily on rice along the coast, millet in the interior, fresh seafood, and root vegetables. It blends West African staples like peanuts and palm oil with Portuguese flavors, featuring hearty stews, chili peppers, and local ingredients like sweet potatoes, cassava, and plantains.",
+						img: guineaBissau,
 					},
 					Liberia: {
 						official: ["Cassava leaf soup"],
@@ -498,6 +638,7 @@ export const SEED = {
 						spices: ["Chili", "Thyme", "Garlic", "Bay leaf"],
 						founded: "1847",
 						cuisineNote: "Liberian cuisine is a vibrant West African tradition blended with cooking styles from the American South and Creole culture. Meals center on staples like rice, cassava, plantains, and fresh fish, heavily spiced with hot habanero or Scotch bonnet peppers.",
+						img: liberia,
 					},
 					Mali: {
 						official: ["Riz au gras"],
@@ -505,6 +646,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Cloves"],
 						founded: "1960 (from France)",
 						cuisineNote: "Malian cuisine is centered on cereal grains like rice and millet, paired with rich peanut, tomato, or leafy green sauces, and meats like beef, goat, or chicken. Meals emphasize community, traditionally eaten from a shared central bowl using the right hand.",
+						img: mali,
 					},
 					Mauritania: {
 						official: ["Mechoui camel"],
@@ -512,6 +654,7 @@ export const SEED = {
 						spices: ["Cumin", "Mint", "Cinnamon", "Cloves"],
 						founded: "1960 (from France)",
 						cuisineNote: "Mauritanian cuisine blends Arab, Berber, and West African flavors, using staples like rice, fish, and goat or lamb meat. Meals are communal, heavily influenced by nomadic traditions, and famously accompanied by sweet green mint tea.",
+						img: mauritania,
 					},
 					Niger: {
 						official: ["Tuwo with miyan"],
@@ -519,6 +662,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Cloves", "Garlic"],
 						founded: "1960 (from France)",
 						cuisineNote: "Cuisine in Niger relies on staple grains like millet, sorghum, and rice, paired with vegetable, peanut, or meat sauces. Influenced by West African, Sahelian, and North African traditions, meals frequently feature grilled meats (mutton, goat, camel) and fresh seasonal vegetable salads.",
+						img: niger,
 					},
 					Nigeria: {
 						official: ["Jollof rice"],
@@ -526,6 +670,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Curry powder"],
 						founded: "1960 (from UK)",
 						cuisineNote: "Nigerian cuisine is a vibrant, bold, and spicy food culture defined by rich stews, aromatic rice dishes, and hearty starchy sides known as \"swallow\". It relies heavily on fresh local vegetables, palm oil, chili peppers, and complex spice blends.",
+						img: nigeria,
 					},
 					Senegal: {
 						official: ["Thieboudienne"],
@@ -533,6 +678,7 @@ export const SEED = {
 						spices: ["Garlic", "Ginger", "Chili", "Bay leaf"],
 						founded: "1960 (from France)",
 						cuisineNote: "Senegalese cuisine is a vibrant West African culinary tradition shaped by coastal fishing, French and North African influences, and Islamic culture. It emphasizes bold flavors from citrus, onions, peanuts, and fermented seafood, usually served as a communal, one-bowl meal.",
+						img: senegal,
 					},
 					"Sierra Leone": {
 						official: ["Cassava leaf stew"],
@@ -540,6 +686,7 @@ export const SEED = {
 						spices: ["Chili", "Thyme", "Garlic", "Ginger"],
 						founded: "1961 (from UK)",
 						cuisineNote: "Sierra Leonean cuisine relies on rice as its absolute staple, paired with rich, smoky stews, peanuts, and leafy greens. Local food centers on bold, savory flavors created from palm oil, ginger, onions, and chili or peppercorns.",
+						img: sierraLeone,
 					},
 					Togo: {
 						official: ["Fufu with groundnut soup"],
@@ -547,6 +694,7 @@ export const SEED = {
 						spices: ["Chili", "Ginger", "Garlic", "Curry powder"],
 						founded: "1960 (from France)",
 						cuisineNote: "Togolese cuisine is a vibrant West African fusion of local traditions with French and German influences. Meals center around starches like corn, maize, and yams, paired with rich, spicy chili sauces, peanut pastes, fresh seafood along the coast, and meats like goat or chicken.",
+						img: togo,
 					},
 				},
 			},
@@ -554,12 +702,14 @@ export const SEED = {
 	},
 	Americas: {
 		accent: "#3D6B7A",
+		img: americas,
 		overview:
 			"The Americas span two continents and thousands of years of Indigenous culinary tradition — corn, beans, squash, chilies, potatoes, and cassava — layered with European colonization, African diasporic cooking (especially strong in the Caribbean and Brazil), and later waves of Asian and Middle Eastern immigration. The result is a hemisphere where fusion is often the rule rather than the exception, from Tex-Mex to Peruvian-Japanese Nikkei cuisine.",
 		groups: {
 			Caribbean: {
 				overview:
 					"Caribbean cuisine blends Indigenous Taíno and Arawak foodways with West African cooking brought during slavery, European colonial influences (Spanish, French, British, Dutch), and South Asian flavors introduced by indentured laborers after emancipation. Rice and peas, saltfish, plantains, and fiery Scotch bonnet chili are threads running through many islands' otherwise distinct national cuisines.",
+				img: carribean,
 				countries: {
 					"Antigua and Barbuda": {
 						official: ["Fungee and pepperpot"],
@@ -572,6 +722,7 @@ export const SEED = {
 						],
 						founded: "1981 (from UK)",
 						cuisineNote: "The Antigua and Barbuda cuisine blends African, British, and indigenous culinary traditions. Its iconic national dish pairs fungee with pepperpot, a hearty, spiced vegetable and meat stew. Fresh seafood like Barbudan lobster and salted cod are also staples.",
+						img: antiguaBarbadu,
 					},
 					Bahamas: {
 						official: ["Conch salad"],
@@ -588,6 +739,7 @@ export const SEED = {
 						],
 						founded: "1973 (from UK)",
 						cuisineNote: "Bahamian cuisine is a vibrant style of island cooking that blends fresh seafood, tropical fruits, and warm spices with heavy influences from African, Southern American, and Caribbean traditions. Meals frequently feature conch, local fish, rice, and pepper seasonings",
+						img: bahamas,
 					},
 					Barbados: {
 						official: ["Cou-cou and flying fish"],
@@ -603,6 +755,7 @@ export const SEED = {
 							"Bay leaf",
 						],
 						founded: "1966 (from UK)",
+						img: barbados,
 					},
 					"Cayman Islands": {
 						official: ["Cayman-style turtle stew"],
@@ -619,6 +772,7 @@ export const SEED = {
 						],
 						founded: "1670 (ceded to Britain)",
 						belongsTo: "United Kingdom",
+						img: caymanIslands,
 					},
 					"United States Virgin Islands": {
 						official: ["Fungi and fish"],
@@ -635,6 +789,7 @@ export const SEED = {
 						],
 						founded: "1917 (purchased from Denmark)",
 						belongsTo: "United States",
+
 					},
 					Cuba: {
 						official: ["Ropa vieja"],
@@ -645,6 +800,7 @@ export const SEED = {
 						],
 						spices: ["Cumin", "Oregano", "Bay leaf", "Garlic"],
 						founded: "1902 (from US)",
+						img: cuba,
 					},
 					Dominica: {
 						official: ["Callaloo"],
@@ -660,12 +816,14 @@ export const SEED = {
 							"Garlic",
 						],
 						founded: "1978 (from UK)",
+						img: dominica,
 					},
 					"Dominican Republic": {
 						official: ["La bandera"],
 						recommended: ["Mangú", "Sancocho", "Mofongo"],
 						spices: ["Oregano", "Cilantro", "Garlic", "Bay leaf"],
 						founded: "1844 (from Haiti)",
+						img: dominicanRepublic,
 					},
 					Grenada: {
 						official: ["Oil down"],
@@ -676,6 +834,7 @@ export const SEED = {
 						],
 						spices: ["Nutmeg", "Cinnamon", "Clove", "Bay leaf"],
 						founded: "1974 (from UK)",
+						img: grenada,
 					},
 					Haiti: {
 						official: ["Griot with pikliz"],
@@ -768,6 +927,7 @@ export const SEED = {
 			"Central America": {
 				overview:
 					"Central American cuisine is rooted in Mesoamerican staples — corn, beans, and squash — dating back to the Maya and other Indigenous civilizations, with Spanish colonization adding rice, pork, and dairy. Corn tortillas and tamales, in countless regional forms, remain the throughline connecting the isthmus's otherwise quite distinct national cuisines.",
+				img: centralAmerica,
 				countries: {
 					Belize: {
 						official: ["Rice and beans with stewed chicken"],
@@ -910,6 +1070,7 @@ export const SEED = {
 			"North America": {
 				overview:
 					"In this narrower geoscheme sense — just Canada, the United States, and their nearby territories — North American cuisine is shaped by Indigenous foodways, successive waves of European and later global immigration, and vast regional variation, from Quebecois French tradition to the American South's West African-influenced cooking.",
+				img: northAmerica,
 				countries: {
 					Bermuda: {
 						official: ["Bermuda fish chowder"],
@@ -926,6 +1087,7 @@ export const SEED = {
 						],
 						founded: "1609 (settled)",
 						belongsTo: "United Kingdom",
+						img: bermuda,
 					},
 					Canada: {
 						official: ["Poutine"],
@@ -936,6 +1098,7 @@ export const SEED = {
 						],
 						spices: ["Dill", "Thyme", "Bay leaf", "Black pepper"],
 						founded: "1867 (Confederation)",
+						img: canada,
 					},
 					Greenland: {
 						official: ["Suaasat"],
@@ -947,6 +1110,7 @@ export const SEED = {
 						spices: ["Salt", "Onion", "Bay leaf", "Allspice"],
 						founded: "1979 (home rule)",
 						belongsTo: "Denmark",
+						img: greenland,
 					},
 					"United States": {
 						areas: [
@@ -1027,12 +1191,14 @@ export const SEED = {
 							},
 						],
 						founded: "1776",
+						img: unitedStates,
 					},
 				},
 			},
 			"South America": {
 				overview:
 					"South American cuisine draws on deep Indigenous roots — potatoes and quinoa in the Andes, cassava across the Amazon and Brazil — combined with Spanish and Portuguese colonization, African culinary influence from the slave trade (especially strong in Brazil), and later Italian, German, and Japanese immigration that left a lasting mark on countries like Argentina, Chile, and Peru.",
+				img: southAmerica,
 				countries: {
 					Argentina: {
 						official: ["Asado"],
@@ -1268,6 +1434,7 @@ export const SEED = {
 	},
 	Asia: {
 		accent: "#9C4B3F",
+		img: asia,
 		overview:
 			"Asia is the largest and most populous continent, and its cuisines reflect an equally vast range of climates, religions, and trade histories. Rice, wheat, and noodles form the backbone of many diets, while spice trade routes — the Silk Road, and the maritime Spice Routes through Southeast Asia — shaped flavors from the Mediterranean to Japan. Religious traditions (halal, kosher, Buddhist and Hindu vegetarianism) and regional geography divide the continent into culinary worlds that often share as much with neighboring continents as with each other.",
 		groups: {
@@ -1852,6 +2019,7 @@ export const SEED = {
 	},
 	Europe: {
 		accent: "#6B7A4F",
+		img: europe,
 		overview:
 			"European cuisine varies enormously by climate and history, but shares deep roots in Mediterranean trade (olive oil, wine, wheat), the agricultural traditions of the northern and eastern plains (dairy, rye, root vegetables), and centuries of cross-border exchange through empire, migration, and trade. Regional identity remains strong — a meal in Lisbon and a meal in Helsinki can feel like different culinary worlds — even as shared techniques like bread-baking, cured meats, and cheese-making run throughout the continent.",
 		groups: {
@@ -2430,6 +2598,7 @@ export const SEED = {
 	},
 	Oceania: {
 		accent: "#4F7A6B",
+		img: oceania,
 		overview:
 			"Oceania spans thousands of islands across the Pacific, and its cuisines reflect both deep Indigenous seafaring and earth-oven cooking traditions and, in Australia and New Zealand, significant British colonial and later multicultural immigrant influence. Coconut, taro, breadfruit, and fresh seafood are staples across much of the Pacific Islands, while Australia and New Zealand's food cultures more closely resemble other British-settler nations, layered with strong Indigenous and immigrant influences of their own.",
 		groups: {
