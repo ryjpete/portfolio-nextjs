@@ -22,7 +22,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!category) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
           </div>
@@ -53,7 +53,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!catMeta.ready) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -74,7 +74,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!selectedLetter) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -84,12 +84,12 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
         <div style={styles.titleBlock}>
           <span style={styles.crumbCountry}>Alphabetical</span>
         </div>
-        <div style={styles.regionGrid}>
+        <div style={styles.spiceLetterGrid}>
           {SPICE_LETTERS.map((letter) => (
             <button
               key={letter}
               onClick={() => setSelectedLetter(letter)}
-              style={{ ...styles.regionCard, borderColor: accent }}
+              style={{ ...styles.spiceLetterCard, borderColor: accent }}
               className="country-btn"
             >
               <div style={styles.regionName}>{letter}</div>
@@ -103,7 +103,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   if (!selectedSpice) {
     return (
       <div>
-        <div style={styles.crumbTrail}>
+        <div style={styles.crumbTrail} className="wc-bleed">
           <div style={styles.crumbRow}>
             <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
             <span style={styles.crumbSep}>›</span>
@@ -130,7 +130,7 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
   const info = SPICE_INFO[selectedSpice];
   return (
     <div>
-      <div style={styles.crumbTrail}>
+      <div style={styles.crumbTrail} className="wc-bleed">
         <div style={styles.crumbRow}>
           <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
           <span style={styles.crumbSep}>›</span>
@@ -163,22 +163,6 @@ export function BySpiceSection({ onBack, onNavigateToPlace }) {
         ) : (
           <p style={styles.modalBodyMuted}>Not catalogued yet.</p>
         )}
-        <div style={{ ...styles.recHeader, marginTop: 22 }} className="stamp">
-          Used in {places.length} place{places.length === 1 ? "" : "s"}
-        </div>
-        <ul style={styles.dishList}>
-          {places
-            .slice()
-            .sort((a, b) => a.country.localeCompare(b.country))
-            .map((p, i) => (
-              <li key={i} style={styles.recDish}>
-                <button className="dish-link" onClick={() => onNavigateToPlace(p)}>
-                  {p.country}
-                  <span style={styles.spiceListCount}>{p.region}{p.path.length ? ` · ${p.path[p.path.length - 1]}` : ""}</span>
-                </button>
-              </li>
-            ))}
-        </ul>
       </div>
     </div>
   );

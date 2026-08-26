@@ -10,7 +10,7 @@ export function ComingSoonSection({ section, onBack }) {
   const meta = SECTIONS.find((s) => s.key === section);
   return (
     <div>
-      <div style={styles.crumbTrail}>
+      <div style={styles.crumbTrail} className="wc-bleed">
         <div style={styles.crumbRow}>
           <span className="back-link stamp" style={styles.crumbLink} onClick={onBack}>All</span>
         </div>
