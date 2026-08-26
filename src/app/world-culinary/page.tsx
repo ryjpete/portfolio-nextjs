@@ -15,6 +15,8 @@ import { BySpiceSection } from "./components/BySpiceSection";
 import Image from "next/image";
 import sageIcon from "./images/sage_icon.png";
 import globeIcon from "./images/globe.png";
+import Flag from "react-flagpack";
+import "react-flagpack/dist/style.css";
 
 function NoteTooltip({ label, tip }: { label: string; tip: string }) {
   const [open, setOpen] = React.useState(false);
@@ -367,25 +369,44 @@ function CuisineAtlas() {
 						<div className={`${styles.placeGrid} ${styles.region} ${styles.country}`}>
 							{Object.keys(node.countries)
 								.sort()
-								.map((c) => (
-									<button
-										key={c}
-										onClick={() => nav(section, region, path, c)}
-										className={styles.placeCard}
-									>
-										<div className={styles.placeCardContent}>
-											<div className={styles.placeCardName}>
-												{c}
-											</div>
-											<Image
+								.map((c) => {
+									console.log(c);
+									return (
+										<button
+											key={c}
+											onClick={() =>
+												nav(section, region, path, c)
+											}
+											className={styles.placeCard}
+										>
+											<div
+												className={
+													styles.placeCardContent
+												}
+											>
+												<div
+													className={
+														styles.placeCardName
+													}
+												>
+													{c}
+												</div>
+												<Flag
+													code={node.countries[c].code}
+													size="l"
+													hasBorder={false}
+													hasBorderRadius={false}
+													className={styles.placeCardFlag}
+												/>
+												{/* <Image
 												src={node.countries[c].img}
 												alt=""
 												width={150}
 												height={150}
-											/>
-										</div>
-									</button>
-								))}
+											/> */}
+											</div>
+										</button>
+									);})}
 						</div>
 					)}
 
